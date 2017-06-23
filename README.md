@@ -3,8 +3,8 @@
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/pranavpandey/dynamic-toasts.svg?branch=master)](https://travis-ci.org/pranavpandey/dynamic-toasts)
 
-A simple library to display themed toasts with icon and text. If no color is supplied, it will 
-display default toast based on vanilla Android.
+A simple library to display themed toasts with icon and text on Android 9+ (Gingerbread or above) 
+devices.
 
 ---
 

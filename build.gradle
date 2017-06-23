@@ -30,8 +30,8 @@ task clean(type: Delete) {
 
 ext {
     projectName = 'dynamic-toasts'
-    projectDesc = 'A simple library to display themed toasts with icon and text. If no color is ' +
-            'supplied, it will display default toast based on vanilla Android.'
+    projectDesc = 'A simple library to display themed toasts with icon and text on Android 9+ ' +
+            '(Gingerbread or above) devices.'
     siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     gitUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     issueUrl = 'https://github.com/pranavpandey/dynamic-toasts/issues'
