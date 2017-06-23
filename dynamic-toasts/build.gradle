@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+
+    defaultConfig {
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
+        versionCode versionCode
+        versionName mavenVersion
+    }
+
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    sourceSets {
+        main.res.srcDirs = [
+                'src/main/res'
+        ]
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.pranavpandey.android:dynamic-utils:$mavenVersion"
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: '../maven.gradle'
+    apply from: '../bintray.gradle'
+}

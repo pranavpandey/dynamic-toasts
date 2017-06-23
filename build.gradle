@@ -1,0 +1,62 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.2'
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+
+        maven {
+            url 'https://dl.bintray.com/pranavpandey/android/'
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    projectName = 'dynamic-toasts'
+    projectDesc = 'A simple library to display themed toasts with icon and text. If no color is ' +
+            'supplied, it will display default toast based on vanilla Android.'
+    siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
+    gitUrl = 'https://github.com/pranavpandey/dynamic-toasts'
+    issueUrl = 'https://github.com/pranavpandey/dynamic-toasts/issues'
+
+    mavenGroup = 'com.pranavpandey.android'
+    mavenVersion = '0.1.0'
+    mavenInceptionYear = 2017
+    mavenArtifactId = 'dynamic-toasts'
+    bintrayRepo = 'android'
+
+    developerId = 'pranavpandey'
+    developerName = 'Pranav Pandey'
+    developerEmail = 'pranavpande92@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    licenseDistribution = 'repo'
+    allLicenses = ["Apache-2.0"]
+
+    versionCode = 1
+
+    buildTools = '25.0.3'
+    minSdk = 9
+    compileSdk = 25
+    targetSdk = 25
+
+    androidSupport = '25.3.1'
+}
