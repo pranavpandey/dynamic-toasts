@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts_512x512.png" width="160" height="160" align="right" hspace="20">
+
 # Dynamic Toasts
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?)](https://www.apache.org/licenses/LICENSE-2.0.html)
@@ -12,14 +14,14 @@ devices.
 
 1. [Installation](https://github.com/pranavpandey/dynamic-toasts#installation)
 2. [Usage](https://github.com/pranavpandey/dynamic-toasts#usage)
-    1. [Default Toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
-    2. [Default Toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
-    3. [Default Toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
-    4. [Default Toast icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
-    5. [Custom Toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
-    6. [Custom Toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
-    7. [Custom Toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
-    8. [Custom Toast icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
+    1. [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
+    2. [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
+    3. [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
+    4. [Default toast icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
+    5. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
+    6. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
+    7. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
+    8. [Custom toast icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
     9. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
 3. [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
@@ -30,18 +32,6 @@ devices.
 It can be installed by adding the following dependency to your `build.gradle` file:
 
 ```groovy
-allprojects {
-    repositories {
-        ...
-        
-        maven {
-            url 'https://dl.bintray.com/pranavpandey/android/'
-        }
-    }
-}
-
-...
- 
 dependencies {
     compile 'com.pranavpandey.android:dynamic-toasts:0.1.0'
 }
