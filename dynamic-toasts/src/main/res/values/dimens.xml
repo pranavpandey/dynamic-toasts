@@ -21,5 +21,6 @@
     <dimen name="das_font_toast">15sp</dimen>
     <dimen name="das_icon_toast">24dp</dimen>
     <dimen name="das_margin_toast">8dp</dimen>
+    <dimen name="das_margin_toast_small">4dp</dimen>
 
 </resources>

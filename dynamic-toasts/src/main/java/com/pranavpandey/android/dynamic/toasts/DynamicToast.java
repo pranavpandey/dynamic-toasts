@@ -112,9 +112,9 @@ public class DynamicToast {
      */
     public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_success), ERROR_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
-                Toast.LENGTH_SHORT);
+                ERROR_BACKGROUND_COLOR);
     }
 
     /**
@@ -132,8 +132,9 @@ public class DynamicToast {
     public static Toast makeError(@NonNull Context context,
                              @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_error), ERROR_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
+                ERROR_BACKGROUND_COLOR,
                 duration);
     }
 
@@ -150,9 +151,9 @@ public class DynamicToast {
      */
     public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_error), SUCCESS_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
-                Toast.LENGTH_SHORT);
+                SUCCESS_BACKGROUND_COLOR);
     }
 
     /**
@@ -170,8 +171,9 @@ public class DynamicToast {
     public static Toast makeSuccess(@NonNull Context context,
                                   @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_success), SUCCESS_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
+                SUCCESS_BACKGROUND_COLOR,
                 duration);
     }
 
@@ -188,9 +190,9 @@ public class DynamicToast {
      */
     public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_warning), WARNING_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
-                Toast.LENGTH_SHORT);
+                WARNING_BACKGROUND_COLOR);
     }
 
     /**
@@ -208,8 +210,9 @@ public class DynamicToast {
     public static Toast makeWarning(@NonNull Context context,
                                     @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_warning), WARNING_BACKGROUND_COLOR,
+                context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
+                WARNING_BACKGROUND_COLOR,
                 duration);
     }
 
@@ -352,7 +355,8 @@ public class DynamicToast {
         if (icon != null) {
             toastIcon.setColorFilter(tintColor);
             toastIcon.setImageDrawable(icon);
-            toastIcon.setVisibility(View.VISIBLE);
+        } else {
+            toastIcon.setVisibility(View.GONE);
         }
 
         toastText.setTextColor(tintColor);
