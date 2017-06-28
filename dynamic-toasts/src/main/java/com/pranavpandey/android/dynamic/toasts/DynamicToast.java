@@ -46,13 +46,28 @@ public class DynamicToast {
     private static final @ColorInt int DEFAULT_BACKGROUND_COLOR = Color.parseColor("#454545");
 
     /**
+     * Background color for the error toast.
+     */
+    private static final @ColorInt int ERROR_BACKGROUND_COLOR = Color.parseColor("#F44336");
+
+    /**
+     * Background color for the success toast.
+     */
+    private static final @ColorInt int SUCCESS_BACKGROUND_COLOR = Color.parseColor("#4CAF50");
+
+    /**
+     * Background color for the warning toast.
+     */
+    private static final @ColorInt int WARNING_BACKGROUND_COLOR = Color.parseColor("#FFEB3B");
+
+    /**
      * Default tint color for the toast.
      */
     private static final @ColorInt int DEFAULT_TINT_COLOR = Color.parseColor("#FFFFFF");
 
     /**
-     * Make a standard toast that just contains a text view. Toast
-     * duration will be {@link Toast#LENGTH_SHORT}.
+     * Make a standard toast that just contains a text view. Toast duration will
+     * be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
@@ -62,7 +77,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, null, DEFAULT_TINT_COLOR ,
+        return make(context, text, null, DEFAULT_TINT_COLOR,
                 DEFAULT_BACKGROUND_COLOR, Toast.LENGTH_SHORT);
     }
 
@@ -85,8 +100,122 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with icon and the text. Toast
-     * duration will be {@link Toast#LENGTH_SHORT}.
+     * Make a error toast with icon and the text. Toast duration will
+     * be {@link Toast#LENGTH_SHORT}.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     *
+     * @return Error toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_success), ERROR_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
+                Toast.LENGTH_SHORT);
+    }
+
+    /**
+     * Make a error toast with icon and the text.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     * @param duration How long to display the message. Either
+     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     *
+     * @return Error toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeError(@NonNull Context context,
+                             @NonNull CharSequence text, int duration) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_error), ERROR_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
+                duration);
+    }
+
+    /**
+     * Make a success toast with icon and the text. Toast duration will
+     * be {@link Toast#LENGTH_SHORT}.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     *
+     * @return Success toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_error), SUCCESS_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
+                Toast.LENGTH_SHORT);
+    }
+
+    /**
+     * Make a success toast with icon and the text.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     * @param duration How long to display the message. Either
+     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     *
+     * @return Success toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeSuccess(@NonNull Context context,
+                                  @NonNull CharSequence text, int duration) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_success), SUCCESS_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
+                duration);
+    }
+
+    /**
+     * Make a warning toast with icon and the text. Toast duration will
+     * be {@link Toast#LENGTH_SHORT}.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     *
+     * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_warning), WARNING_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
+                Toast.LENGTH_SHORT);
+    }
+
+    /**
+     * Make a warning toast with icon and the text.
+     *
+     * @param context The context to use. Usually your {@link android.app.Application}
+     *                or {@link android.app.Activity} object.
+     * @param text The text to show. Can be formatted text.
+     * @param duration How long to display the message. Either
+     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     *
+     * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
+     *         to display the toast.
+     */
+    public static Toast makeWarning(@NonNull Context context,
+                                    @NonNull CharSequence text, int duration) {
+        return make(context, text, ContextCompat.getDrawable(
+                context, R.drawable.adt_ic_warning), WARNING_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
+                duration);
+    }
+
+    /**
+     * Make a themed toast with icon and the text. Toast duration
+     * will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
@@ -98,7 +227,7 @@ public class DynamicToast {
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
                              @NonNull Drawable icon) {
-        return make(context, text, icon, DEFAULT_TINT_COLOR ,
+        return make(context, text, icon, DEFAULT_TINT_COLOR,
                 DEFAULT_BACKGROUND_COLOR, Toast.LENGTH_SHORT);
     }
 
