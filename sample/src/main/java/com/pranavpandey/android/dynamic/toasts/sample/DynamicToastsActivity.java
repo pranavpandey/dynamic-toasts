@@ -67,28 +67,42 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicLinkUtils.viewUrl(DynamicToastsActivity.this,
                         "https://github.com/pranavpandey/dynamic-toasts");
                 break;
+
+            // Default toast without icon.
             case R.id.toast_default:
                 DynamicToast.make(this, getString(R.string.without_icon_desc)).show();
                 break;
+
+            // Default toast with icon.
             case R.id.toast_default_icon:
                 DynamicToast.make(this, getString(R.string.with_icon_desc),
                         ContextCompat.getDrawable(this, R.drawable.ic_toast_icon)).show();
                 break;
+
+            // Success toast.
             case R.id.toast_success:
                 DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
                 break;
+
+            // Error toast.
             case R.id.toast_error:
                 DynamicToast.makeError(this, getString(R.string.error_desc)).show();
                 break;
+
+            // Warning toast.
             case R.id.toast_warning:
                 DynamicToast.makeWarning(this, getString(R.string.warning_desc)).show();
                 break;
+
+            // Custom toast with icon.
             case R.id.toast_custom_icon:
                 DynamicToast.make(this, getString(R.string.custom_desc),
                         ContextCompat.getDrawable(this, R.drawable.ic_social_github),
                         Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
                         Toast.LENGTH_LONG).show();
                 break;
+
+            // Custom toast without icon.
             case R.id.toast_custom:
                 DynamicToast.make(this, getString(R.string.custom_desc),
                         Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),

@@ -12,7 +12,6 @@
     <string name="without_icon_desc">A default toast without icon.</string>
     <string name="with_icon">With icon</string>
     <string name="with_icon_desc">A default toast with icon.</string>
-
     <string name="inbuilt_toasts">In-built toasts</string>
     <string name="success">Success</string>
     <string name="success_desc">Task has been completed successfully.</string>
