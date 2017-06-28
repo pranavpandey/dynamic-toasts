@@ -19,12 +19,18 @@ devices.
     1. [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
     2. [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
     3. [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
-    4. [Default toast icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
-    5. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
-    6. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
-    7. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
-    8. [Custom toast icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
-    9. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
+    4. [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
+    5. [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
+    6. [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
+    7. [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
+    8. [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
+    9. [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
+    10. [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
+    11. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
+    12. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
+    13. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
+    14. [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
+    15. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
 3. [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
@@ -61,7 +67,7 @@ DynamicToast.make(context, "Default toast").show();
 Simple toast based on the vanilla Android theme for supplied duration.
 
 ```java
-DynamicToast.make(context, "Default toast", duration).show();
+DynamicToast.make(context, "Default toast with duration", duration).show();
 ```
 
 ### Default toast with icon
@@ -77,7 +83,7 @@ DynamicToast.make(context, "Default toast with icon", drawable).show();
 Simple toast based on the vanilla Android theme with a icon for supplied duration.
 
 ```java
-DynamicToast.make(context, "Default toast with icon", drawable, duration).show();
+DynamicToast.make(context, "Default toast with icon and duration", drawable, duration).show();
 ```
 
 ### Error toast
@@ -93,7 +99,7 @@ DynamicToast.makeError(context, "Error toast").show();
 Error toast with `#F44336` background for supplied duration.
 
 ```java
-DynamicToast.makeError(context, "Error toast", duration).show();
+DynamicToast.makeError(context, "Error toast with duration", duration).show();
 ```
 
 ### Success toast
@@ -109,7 +115,7 @@ DynamicToast.makeSuccess(context, "Success toast").show();
 Success toast with `#4CAF50` background for supplied duration.
 
 ```java
-DynamicToast.makeSuccess(context, "Success toast", duration).show();
+DynamicToast.makeSuccess(context, "Success toast with duration", duration).show();
 ```
 
 ### Warning toast
@@ -125,7 +131,7 @@ DynamicToast.makeWarning(context, "Warning toast").show();
 Warning toast with `#FFEB3B` background for supplied duration.
 
 ```java
-DynamicToast.makeWarning(context, "Warning toast", duration).show();
+DynamicToast.makeWarning(context, "Warning toast with duration", duration).show();
 ```
 
 ### Custom toast
@@ -141,7 +147,7 @@ DynamicToast.make(context, "Custom toast", tintColor, backgroundColor).show();
 Custom toast based on the supplied background and tint color for supplied duration.
 
 ```java
-DynamicToast.make(context, "Custom toast", tintColor, backgroundColor, duration).show();
+DynamicToast.make(context, "Custom toast with duration", tintColor, backgroundColor, duration).show();
 ```
 
 ### Custom toast with icon
@@ -158,7 +164,7 @@ DynamicToast.make(context, "Custom toast with icon", drawable, tintColor, backgr
 Custom toast based on the supplied icon, background and tint color theme for supplied duration.
 
 ```java
-DynamicToast.make(context, "Custom toast with icon", drawable, tintColor, backgroundColor, duration).show();
+DynamicToast.make(context, "Custom toast with icon and duration", drawable, tintColor, backgroundColor, duration).show();
 ```
 
 ### Dependency
