@@ -8,6 +8,8 @@
 A simple library to display themed toasts with icon and text on Android 9+ (Gingerbread or above) 
 devices.
 
+<img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts-preview.png">
+
 ---
 
 ## Table of Contents
@@ -51,7 +53,7 @@ Please call `show` method to display the toast.
 Simple toast based on the vanilla Android theme for `Toast.LENGTH_SHORT` duration.
 
 ```java
-DynamicToast.make(context, "Default Toast").show();
+DynamicToast.make(context, "Default toast").show();
 ```
 
 ### Default toast with duration
@@ -59,7 +61,7 @@ DynamicToast.make(context, "Default Toast").show();
 Simple toast based on the vanilla Android theme for supplied duration.
 
 ```java
-DynamicToast.make(context, "Default Toast", duration).show();
+DynamicToast.make(context, "Default toast", duration).show();
 ```
 
 ### Default toast with icon
@@ -67,7 +69,7 @@ DynamicToast.make(context, "Default Toast", duration).show();
 Simple toast based on the vanilla Android theme with a icon for `Toast.LENGTH_SHORT` duration.
 
 ```java
-DynamicToast.make(context, "Default Toast with icon", drawable).show();
+DynamicToast.make(context, "Default toast with icon", drawable).show();
 ```
 
 ### Default toast with icon and duration
@@ -75,7 +77,55 @@ DynamicToast.make(context, "Default Toast with icon", drawable).show();
 Simple toast based on the vanilla Android theme with a icon for supplied duration.
 
 ```java
-DynamicToast.make(context, "Default Toast with icon", drawable, duration).show();
+DynamicToast.make(context, "Default toast with icon", drawable, duration).show();
+```
+
+### Error toast
+
+Error toast with `#F44336` background for `Toast.LENGTH_SHORT` duration.
+
+```java
+DynamicToast.makeError(context, "Error toast").show();
+```
+
+### Error toast with duration
+
+Error toast with `#F44336` background for supplied duration.
+
+```java
+DynamicToast.makeError(context, "Error toast", duration).show();
+```
+
+### Success toast
+
+Success toast with `#4CAF50` background for `Toast.LENGTH_SHORT` duration.
+
+```java
+DynamicToast.makeSuccess(context, "Success toast").show();
+```
+
+### Success toast with duration
+
+Success toast with `#4CAF50` background for supplied duration.
+
+```java
+DynamicToast.makeSuccess(context, "Success toast", duration).show();
+```
+
+### Warning toast
+
+Warning toast with `#FFEB3B` background for `Toast.LENGTH_SHORT` duration.
+
+```java
+DynamicToast.makeWarning(context, "Warning toast").show();
+```
+
+### Warning toast with duration
+
+Warning toast with `#FFEB3B` background for supplied duration.
+
+```java
+DynamicToast.makeWarning(context, "Warning toast", duration).show();
 ```
 
 ### Custom toast
@@ -83,7 +133,7 @@ DynamicToast.make(context, "Default Toast with icon", drawable, duration).show()
 Custom toast based on the supplied background and tint color for `Toast.LENGTH_SHORT` duration.
 
 ```java
-DynamicToast.make(context, "Custom Toast", tintColor, backgroundColor).show();
+DynamicToast.make(context, "Custom toast", tintColor, backgroundColor).show();
 ```
 
 ### Custom toast with duration
@@ -91,7 +141,7 @@ DynamicToast.make(context, "Custom Toast", tintColor, backgroundColor).show();
 Custom toast based on the supplied background and tint color for supplied duration.
 
 ```java
-DynamicToast.make(context, "Custom Toast", tintColor, backgroundColor, duration).show();
+DynamicToast.make(context, "Custom toast", tintColor, backgroundColor, duration).show();
 ```
 
 ### Custom toast with icon
@@ -100,7 +150,7 @@ Custom toast based on the supplied icon, background and tint color theme for `To
 duration.
 
 ```java
-DynamicToast.make(context, "Custom Toast with icon", drawable, tintColor, backgroundColor).show();
+DynamicToast.make(context, "Custom toast with icon", drawable, tintColor, backgroundColor).show();
 ```
 
 ### Custom toast with icon and duration
@@ -108,7 +158,7 @@ DynamicToast.make(context, "Custom Toast with icon", drawable, tintColor, backgr
 Custom toast based on the supplied icon, background and tint color theme for supplied duration.
 
 ```java
-DynamicToast.make(context, "Custom Toast with icon", drawable, tintColor, backgroundColor, duration).show();
+DynamicToast.make(context, "Custom toast with icon", drawable, tintColor, backgroundColor, duration).show();
 ```
 
 ### Dependency
