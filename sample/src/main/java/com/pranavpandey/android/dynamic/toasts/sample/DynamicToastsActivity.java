@@ -1,52 +1,99 @@
 package com.pranavpandey.android.dynamic.toasts.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class DynamicToastsActivity extends AppCompatActivity {
+import com.pranavpandey.android.dynamic.toasts.DynamicToast;
+import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
+import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
+import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils;
+
+import org.w3c.dom.Text;
+
+public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
+
+    /**
+     * Enable vector drawable support for this activity. Please consider
+     * adding {@code vectorDrawables.useSupportLibrary = true} in the
+     * project's {@code build.gradle} file.
+     */
+    static {
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_dynamic_toasts);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setSubtitle(R.string.app_name_sample);
         setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setColorFilter(DynamicColorUtils.getTintColor(
+                ContextCompat.getColor(this, R.color.colorAccent)));
+
+        ((TextView) findViewById(R.id.gradle)).setText(String.format(
+                getString(R.string.version_format),
+                DynamicPackageUtils.getAppVersion(this)));
+
+        fab.setOnClickListener(this);
+        findViewById(R.id.toast_default).setOnClickListener(this);
+        findViewById(R.id.toast_default_icon).setOnClickListener(this);
+        findViewById(R.id.toast_success).setOnClickListener(this);
+        findViewById(R.id.toast_success).setOnClickListener(this);
+        findViewById(R.id.toast_error).setOnClickListener(this);
+        findViewById(R.id.toast_warning).setOnClickListener(this);
+        findViewById(R.id.toast_custom_icon).setOnClickListener(this);
+        findViewById(R.id.toast_custom).setOnClickListener(this);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_dynamic_toasts, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab:
+                DynamicLinkUtils.viewUrl(DynamicToastsActivity.this,
+                        "https://github.com/pranavpandey/dynamic-toasts");
+                break;
+            case R.id.toast_default:
+                DynamicToast.make(this, getString(R.string.without_icon_desc)).show();
+                break;
+            case R.id.toast_default_icon:
+                DynamicToast.make(this, getString(R.string.with_icon_desc),
+                        ContextCompat.getDrawable(this, R.drawable.ic_toast_icon)).show();
+                break;
+            case R.id.toast_success:
+                DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
+                break;
+            case R.id.toast_error:
+                DynamicToast.makeError(this, getString(R.string.error_desc)).show();
+                break;
+            case R.id.toast_warning:
+                DynamicToast.makeWarning(this, getString(R.string.warning_desc)).show();
+                break;
+            case R.id.toast_custom_icon:
+                DynamicToast.make(this, getString(R.string.custom_desc),
+                        ContextCompat.getDrawable(this, R.drawable.ic_social_github),
+                        Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
+                        Toast.LENGTH_LONG).show();
+                break;
+            case R.id.toast_custom:
+                DynamicToast.make(this, getString(R.string.custom_desc),
+                        Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
+                        Toast.LENGTH_LONG).show();
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,4 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
+
     <string name="app_name">Dynamic Toasts</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name_sample">Sample</string>
+    <string name="gradle">Gradle dependency</string>
+    <string name="version_format">com.pranavpandey.android.dynamic-toasts:%1$s</string>
+
+    <string name="default_toasts">Default toasts</string>
+    <string name="without_icon">Without icon</string>
+    <string name="without_icon_desc">A default toast without icon.</string>
+    <string name="with_icon">With icon</string>
+    <string name="with_icon_desc">A default toast with icon.</string>
+
+    <string name="inbuilt_toasts">In-built toasts</string>
+    <string name="success">Success</string>
+    <string name="success_desc">Task has been completed successfully.</string>
+    <string name="error">Error</string>
+    <string name="error_desc">An error has been occured.</string>
+    <string name="warning">Warning</string>
+    <string name="warning_desc">This is a warning!</string>
+    <string name="custom_toasts">Custom toasts</string>
+    <string name="custom_desc">Sources are available on GitHub.</string>
+
 </resources>
