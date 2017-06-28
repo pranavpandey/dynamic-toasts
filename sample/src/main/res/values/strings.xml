@@ -5,7 +5,7 @@
     <string name="app_name">Dynamic Toasts</string>
     <string name="app_name_sample">Sample</string>
     <string name="gradle">Gradle dependency</string>
-    <string name="version_format">com.pranavpandey.android.dynamic-toasts:%1$s</string>
+    <string name="version_format">com.pranavpandey.android:dynamic-toasts:%1$s</string>
 
     <string name="default_toasts">Default toasts</string>
     <string name="without_icon">Without icon</string>
