@@ -21,5 +21,10 @@
     <string name="warning_desc">This is a warning!</string>
     <string name="custom_toasts">Custom toasts</string>
     <string name="custom_desc">Sources are available on GitHub.</string>
+    <string name="config">Customisations</string>
+    <string name="text">text</string>
+    <string name="text_desc">Custom text size and typeface.</string>
+    <string name="background">background</string>
+    <string name="background_desc">Custom toast background.</string>
 
 </resources>

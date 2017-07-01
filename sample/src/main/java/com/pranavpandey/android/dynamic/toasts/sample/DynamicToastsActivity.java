@@ -1,6 +1,7 @@
 package com.pranavpandey.android.dynamic.toasts.sample;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -58,6 +59,8 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_warning).setOnClickListener(this);
         findViewById(R.id.toast_custom_icon).setOnClickListener(this);
         findViewById(R.id.toast_custom).setOnClickListener(this);
+        findViewById(R.id.toast_config_text).setOnClickListener(this);
+        findViewById(R.id.toast_config_background).setOnClickListener(this);
     }
 
     @Override
@@ -94,6 +97,13 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.makeWarning(this, getString(R.string.warning_desc)).show();
                 break;
 
+            // Custom toast without icon.
+            case R.id.toast_custom:
+                DynamicToast.make(this, getString(R.string.custom_desc),
+                        Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
+                        Toast.LENGTH_LONG).show();
+                break;
+
             // Custom toast with icon.
             case R.id.toast_custom_icon:
                 DynamicToast.make(this, getString(R.string.custom_desc),
@@ -102,11 +112,33 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         Toast.LENGTH_LONG).show();
                 break;
 
-            // Custom toast without icon.
-            case R.id.toast_custom:
-                DynamicToast.make(this, getString(R.string.custom_desc),
-                        Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
-                        Toast.LENGTH_LONG).show();
+            // Custom text size and typeface by using DynamicToast.Config class.
+            case R.id.toast_config_text:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setTextSize(18)
+                        .setTextTypeface(Typeface.create(
+                                Typeface.SERIF, Typeface.BOLD_ITALIC))
+                        .apply();
+
+                DynamicToast.makeError(this, getString(R.string.text_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom background by using DynamicToast.Config class.
+            case R.id.toast_config_background:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setToastBackground(ContextCompat.getDrawable(
+                                this, R.drawable.custom_toast_background))
+                        .apply();
+
+                DynamicToast.makeSuccess(this, getString(R.string.background_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
                 break;
         }
     }

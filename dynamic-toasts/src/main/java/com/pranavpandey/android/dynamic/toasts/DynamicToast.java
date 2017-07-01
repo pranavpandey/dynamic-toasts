@@ -19,11 +19,13 @@ package com.pranavpandey.android.dynamic.toasts;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -41,7 +43,7 @@ import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 public class DynamicToast {
 
     /**
-     * Default background color for the toast.
+     * Default toastBackground color for the toast.
      */
     private static final @ColorInt int DEFAULT_BACKGROUND_COLOR = Color.parseColor("#454545");
 
@@ -64,6 +66,39 @@ public class DynamicToast {
      * Default tint color for the toast.
      */
     private static final @ColorInt int DEFAULT_TINT_COLOR = Color.parseColor("#FFFFFF");
+
+    /**
+     * Default text size for the toast in SP. {@code -1} to use system
+     * text size.
+     */
+    private static final @ColorInt int DEFAULT_TEXT_SIZE = -1;
+
+    /**
+     * Default typeface used by the toast. {@code null} to use system
+     * typeface.
+     */
+    private static final Typeface DEFAULT_TEXT_TYPEFACE = null;
+
+    /**
+     * Default background used by the toast. {@code null} to use system
+     * typeface.
+     */
+    private static final Drawable DEFAULT_TOAST_BACKGROUND = null;
+
+    /**
+     * Text size for the toast in SP.
+     */
+    private static int textSize = DEFAULT_TEXT_SIZE;
+
+    /**
+     * Custom typeface used by the toast.
+     */
+    private static Typeface textTypeface = DEFAULT_TEXT_TYPEFACE;
+
+    /**
+     * Custom background used by the toast.
+     */
+    private static Drawable toastBackground = DEFAULT_TOAST_BACKGROUND;
 
     /**
      * Make a standard toast that just contains a text view. Toast duration will
@@ -254,16 +289,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, background and the tint color. Toast
+     * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
@@ -274,16 +309,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, background and the tint color. Toast
+     * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
@@ -297,17 +332,17 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, icon, background and the tint color. Toast
+     * Make a themed toast with text, icon, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
@@ -319,16 +354,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, icon, background and the tint color.
+     * Make a themed toast with text, icon, toastBackground and the tint color.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
@@ -359,16 +394,132 @@ public class DynamicToast {
             toastIcon.setVisibility(View.GONE);
         }
 
+        if (textTypeface != null) {
+            toastText.setTypeface(textTypeface);
+        }
+        if (textSize != DEFAULT_TEXT_SIZE) {
+            toastText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+        }
         toastText.setTextColor(tintColor);
         toastText.setText(text);
 
-        DynamicDrawableUtils.setBackground(toastLayout, DynamicDrawableUtils.colorizeDrawable(
-                ContextCompat.getDrawable(context, R.drawable.adt_toast_frame),
-                backgroundColor, PorterDuff.Mode.MULTIPLY));
+        if (toastBackground != null) {
+            DynamicDrawableUtils.setBackground(toastLayout,
+                    DynamicDrawableUtils.colorizeDrawable(toastBackground,
+                            backgroundColor, PorterDuff.Mode.MULTIPLY));
+        } else {
+            DynamicDrawableUtils.setBackground(toastLayout,
+                    DynamicDrawableUtils.colorizeDrawable(
+                    ContextCompat.getDrawable(context, R.drawable.adt_toast_frame),
+                    backgroundColor, PorterDuff.Mode.MULTIPLY));
+        }
 
         toast.setDuration(duration);
         toast.setView(toastLayout);
 
         return toast;
+    }
+
+    /**
+     * Configuration class to customise toast attributes.
+     */
+    public static class Config {
+
+        /**
+         * Singleton instance of {@link Config}.
+         */
+        private static Config sInstance;
+
+        /**
+         * Text size for the toast in SP.
+         */
+        private int textSize = DynamicToast.textSize;
+
+        /**
+         * Custom text typeface used by the toast.
+         */
+        private Typeface textTypeface = null;
+
+        /**
+         * Custom background used by the toast.
+         */
+        private Drawable toastBackground = null;
+
+        /**
+         * Making default constructor private to avoid instantiation.
+         */
+        private Config() { }
+
+        /**
+         * Get instance to access public methods. Must be called before accessing
+         * methods.
+         *
+         * @return {@link #sInstance} Singleton {@link Config} instance.
+         */
+        public static Config getInstance() {
+            if (sInstance == null) {
+                sInstance = new Config();
+            }
+
+            return sInstance;
+        }
+
+        /**
+         * Setter for {@link #textSize}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setTextSize(int textSize) {
+            this.textSize = textSize;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #textTypeface}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setTextTypeface(@NonNull Typeface textTypeface) {
+            this.textTypeface = textTypeface;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #toastBackground}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setToastBackground(@NonNull Drawable toastBackground) {
+            this.toastBackground = toastBackground;
+
+            return this;
+        }
+
+        /**
+         * Apply customisations.
+         */
+        public void apply() {
+            DynamicToast.textSize = textSize;
+            DynamicToast.textTypeface = textTypeface;
+            DynamicToast.toastBackground = toastBackground;
+
+            sInstance = null;
+        }
+
+        /**
+         * Reset customisations.
+         */
+        public void reset() {
+            DynamicToast.textSize = DynamicToast.DEFAULT_TEXT_SIZE;
+            DynamicToast.textTypeface = DynamicToast.DEFAULT_TEXT_TYPEFACE;
+            DynamicToast.toastBackground = DynamicToast.DEFAULT_TOAST_BACKGROUND;
+
+            sInstance = null;
+        }
     }
 }
