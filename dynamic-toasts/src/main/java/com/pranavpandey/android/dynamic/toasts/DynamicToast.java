@@ -91,6 +91,12 @@ public class DynamicToast {
     private static final Drawable DEFAULT_WARNING_ICON = null;
 
     /**
+     * Default value for {@link #disableIcon}. {@code false} to enable
+     * toast icon.
+     */
+    private static final boolean DEFAULT_DISABLE_ICON = false;
+
+    /**
      * Default text size for the toast in SP. {@code -1} to use system
      * text size.
      */
@@ -152,6 +158,11 @@ public class DynamicToast {
      * Custom icon for the warning toast.
      */
     private static Drawable warningIcon = DEFAULT_WARNING_ICON;
+
+    /**
+     * {@code true} to disable icon for all the toasts.
+     */
+    private static boolean disableIcon = DEFAULT_DISABLE_ICON;
 
     /**
      * Text size for the toast in SP.
@@ -455,7 +466,7 @@ public class DynamicToast {
 
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
-        if (icon != null) {
+        if (icon != null && !disableIcon) {
             toastIcon.setColorFilter(tintColor);
             toastIcon.setImageDrawable(icon);
         } else {
@@ -542,6 +553,11 @@ public class DynamicToast {
          * Custom icon for the warning toast.
          */
         private Drawable warningIcon = DynamicToast.warningIcon;
+
+        /**
+         * {@code true} to disable icon for all the toasts.
+         */
+        private boolean disableIcon = DynamicToast.disableIcon;
 
         /**
          * Text size for the toast in SP.
@@ -677,6 +693,19 @@ public class DynamicToast {
         }
 
         /**
+         * Setter for {@link #disableIcon}. {@code true} to disable icon for all
+         * the toasts.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setDisableIcon(boolean disableIcon) {
+            this.disableIcon = disableIcon;
+
+            return this;
+        }
+
+        /**
          * Setter for {@link #textSize}.
          *
          * @return {@link Config} object to allow for chaining of calls to set
@@ -726,6 +755,7 @@ public class DynamicToast {
             DynamicToast.errorIcon = errorIcon;
             DynamicToast.successIcon = successIcon;
             DynamicToast.warningIcon = warningIcon;
+            DynamicToast.disableIcon = disableIcon;
             DynamicToast.textSize = textSize;
             DynamicToast.textTypeface = textTypeface;
             DynamicToast.toastBackground = toastBackground;
@@ -745,6 +775,7 @@ public class DynamicToast {
             DynamicToast.errorIcon = DEFAULT_ERROR_ICON;
             DynamicToast.successIcon = DEFAULT_SUCCESS_ICON;
             DynamicToast.warningIcon = DEFAULT_WARNING_ICON;
+            DynamicToast.disableIcon = DEFAULT_DISABLE_ICON;
             DynamicToast.textSize = DEFAULT_TEXT_SIZE;
             DynamicToast.textTypeface = DEFAULT_TEXT_TYPEFACE;
             DynamicToast.toastBackground = DEFAULT_TOAST_BACKGROUND;

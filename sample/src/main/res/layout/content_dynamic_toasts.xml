@@ -210,6 +210,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_margin"
+            android:text="@string/disable_icons" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/toast_error_icon_disable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_success_icon_disable" />
+
+            <Button
+                android:id="@+id/toast_success_icon_disable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/success"
+                app:layout_constraintStart_toEndOf="@id/toast_error_icon_disable"
+                app:layout_constraintEnd_toStartOf="@+id/toast_warning_icon_disable" />
+
+            <Button
+                android:id="@+id/toast_warning_icon_disable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/warning"
+                app:layout_constraintStart_toEndOf="@id/toast_success_icon_disable" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/config" />
 
         <android.support.constraint.ConstraintLayout

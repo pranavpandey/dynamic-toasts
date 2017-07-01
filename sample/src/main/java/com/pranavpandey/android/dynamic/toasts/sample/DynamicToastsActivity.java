@@ -77,6 +77,9 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_error_icon).setOnClickListener(this);
         findViewById(R.id.toast_success_icon).setOnClickListener(this);
         findViewById(R.id.toast_warning_icon).setOnClickListener(this);
+        findViewById(R.id.toast_error_icon_disable).setOnClickListener(this);
+        findViewById(R.id.toast_success_icon_disable).setOnClickListener(this);
+        findViewById(R.id.toast_warning_icon_disable).setOnClickListener(this);
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
     }
@@ -130,7 +133,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         Toast.LENGTH_LONG).show();
                 break;
 
-            // Custom error toast.
+            // Error toast with custom color.
             case R.id.toast_error_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -143,7 +146,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom success toast.
+            // Success toast with custom color.
             case R.id.toast_success_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -156,7 +159,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom warning toast.
+            // Warning toast with custom color.
             case R.id.toast_warning_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -169,7 +172,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom default toast.
+            // Default toast with custom color.
             case R.id.toast_default_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -184,7 +187,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom error toast.
+            // Error toast with custom icon.
             case R.id.toast_error_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -192,13 +195,14 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
-                DynamicToast.makeError(this, getString(R.string.error_icon_desc)).show();
+                DynamicToast.makeError(this,
+                        getString(R.string.error_icon_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom success toast.
+            // Success toast with custom icon.
             case R.id.toast_success_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -206,13 +210,14 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
-                DynamicToast.makeSuccess(this, getString(R.string.success_icon_desc)).show();
+                DynamicToast.makeSuccess(this,
+                        getString(R.string.success_icon_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom warning toast.
+            // Warning toast with custom icon.
             case R.id.toast_warning_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -220,13 +225,56 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
-                DynamicToast.makeWarning(this, getString(R.string.warning_icon_desc)).show();
+                DynamicToast.makeWarning(this,
+                        getString(R.string.warning_icon_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom text size and typeface by using DynamicToast.Config class.
+            // Error toast without icon.
+            case R.id.toast_error_icon_disable:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setDisableIcon(true)
+                        .apply();
+
+                DynamicToast.makeError(this,
+                        getString( R.string.error_icon_disable_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Success toast without icon.
+            case R.id.toast_success_icon_disable:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setDisableIcon(true)
+                        .apply();
+
+                DynamicToast.makeSuccess(this,
+                        getString(R.string.success_icon_disable_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Warning toast without icon.
+            case R.id.toast_warning_icon_disable:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setDisableIcon(true)
+                        .apply();
+
+                DynamicToast.makeWarning(this, getString(
+                        R.string.warning_icon_disable_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom toast text size and typeface.
             case R.id.toast_config_text:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -241,7 +289,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom background by using DynamicToast.Config class.
+            // Custom toast background.
             case R.id.toast_config_background:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
