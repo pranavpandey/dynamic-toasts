@@ -82,6 +82,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_warning_icon_disable).setOnClickListener(this);
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
+        findViewById(R.id.toast_config_icon_size).setOnClickListener(this);
     }
 
     @Override
@@ -274,7 +275,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom toast text size and typeface.
+            // Toast with custom text size and typeface.
             case R.id.toast_config_text:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -289,7 +290,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 DynamicToast.Config.getInstance().reset();
                 break;
 
-            // Custom toast background.
+            // Toast with custom background.
             case R.id.toast_config_background:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
@@ -298,6 +299,19 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         .apply();
 
                 DynamicToast.makeSuccess(this, getString(R.string.background_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Toast with custom icon size.
+            case R.id.toast_config_icon_size:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setIconSize(100)
+                        .apply();
+
+                DynamicToast.makeWarning(this, getString(R.string.icon_size_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();

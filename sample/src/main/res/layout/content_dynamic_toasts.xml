@@ -264,7 +264,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/background"
-                app:layout_constraintStart_toEndOf="@id/toast_config_text" />
+                app:layout_constraintStart_toEndOf="@id/toast_config_text"
+                app:layout_constraintEnd_toStartOf="@+id/toast_config_icon_size" />
+
+            <Button
+                android:id="@+id/toast_config_icon_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icon_size"
+                app:layout_constraintStart_toEndOf="@id/toast_config_background" />
 
         </android.support.constraint.ConstraintLayout>
 

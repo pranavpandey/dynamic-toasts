@@ -52,8 +52,10 @@
     <string name="disable_icons">Disable icons</string>
     <string name="config">Other customisations</string>
     <string name="text">text</string>
-    <string name="text_desc">Custom text size and typeface.</string>
+    <string name="text_desc">Toast with custom text size and typeface.</string>
     <string name="background">background</string>
-    <string name="background_desc">Custom toast background.</string>
+    <string name="background_desc">Toast with custom background.</string>
+    <string name="icon_size">Icon size</string>
+    <string name="icon_size_desc">Toast with custom icon size.</string>
 
 </resources>

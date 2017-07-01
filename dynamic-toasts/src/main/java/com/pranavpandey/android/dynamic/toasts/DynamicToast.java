@@ -97,8 +97,16 @@ public class DynamicToast {
     private static final boolean DEFAULT_DISABLE_ICON = false;
 
     /**
+     * Default icon size for the toast in pixels. {@code -1} to use
+     * in-built icon size.
+     */
+    private static final @ColorInt int DEFAULT_ICON_SIZE = -1;
+
+    /**
      * Default text size for the toast in SP. {@code -1} to use system
      * text size.
+     *
+     * @see TypedValue#COMPLEX_UNIT_SP;
      */
     private static final @ColorInt int DEFAULT_TEXT_SIZE = -1;
 
@@ -165,7 +173,14 @@ public class DynamicToast {
     private static boolean disableIcon = DEFAULT_DISABLE_ICON;
 
     /**
+     * Icon size for the toast in pixels.
+     */
+    private static int iconSize = DEFAULT_ICON_SIZE;
+
+    /**
      * Text size for the toast in SP.
+     *
+     * @see TypedValue#COMPLEX_UNIT_SP;
      */
     private static int textSize = DEFAULT_TEXT_SIZE;
 
@@ -467,6 +482,11 @@ public class DynamicToast {
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
         if (icon != null && !disableIcon) {
+            if (iconSize != DEFAULT_ICON_SIZE) {
+                toastIcon.getLayoutParams().width = iconSize;
+                toastIcon.getLayoutParams().height = iconSize;
+                toastIcon.requestLayout();
+            }
             toastIcon.setColorFilter(tintColor);
             toastIcon.setImageDrawable(icon);
         } else {
@@ -560,7 +580,14 @@ public class DynamicToast {
         private boolean disableIcon = DynamicToast.disableIcon;
 
         /**
+         * Icon size for the toast in pixels.
+         */
+        private int iconSize = DynamicToast.iconSize;
+
+        /**
          * Text size for the toast in SP.
+         *
+         * @see TypedValue#COMPLEX_UNIT_SP;
          */
         private @ColorInt int textSize = DynamicToast.textSize;
 
@@ -706,6 +733,18 @@ public class DynamicToast {
         }
 
         /**
+         * Setter for {@link #iconSize}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setIconSize(int iconSize) {
+            this.iconSize = iconSize;
+
+            return this;
+        }
+
+        /**
          * Setter for {@link #textSize}.
          *
          * @return {@link Config} object to allow for chaining of calls to set
@@ -756,6 +795,7 @@ public class DynamicToast {
             DynamicToast.successIcon = successIcon;
             DynamicToast.warningIcon = warningIcon;
             DynamicToast.disableIcon = disableIcon;
+            DynamicToast.iconSize = iconSize;
             DynamicToast.textSize = textSize;
             DynamicToast.textTypeface = textTypeface;
             DynamicToast.toastBackground = toastBackground;
@@ -776,6 +816,7 @@ public class DynamicToast {
             DynamicToast.successIcon = DEFAULT_SUCCESS_ICON;
             DynamicToast.warningIcon = DEFAULT_WARNING_ICON;
             DynamicToast.disableIcon = DEFAULT_DISABLE_ICON;
+            DynamicToast.iconSize = DEFAULT_ICON_SIZE;
             DynamicToast.textSize = DEFAULT_TEXT_SIZE;
             DynamicToast.textTypeface = DEFAULT_TEXT_TYPEFACE;
             DynamicToast.toastBackground = DEFAULT_TOAST_BACKGROUND;
