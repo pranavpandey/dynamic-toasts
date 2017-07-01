@@ -280,8 +280,11 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setTextSize(18)
+                        .setErrorIcon(ContextCompat.getDrawable(
+                                this, R.drawable.ic_toast_icon))
                         .setTextTypeface(Typeface.create(
                                 Typeface.SERIF, Typeface.BOLD_ITALIC))
+                        .setErrorBackgroundColor(Color.parseColor("#2196F3"))
                         .apply();
 
                 DynamicToast.makeError(this, getString(R.string.text_desc)).show();
