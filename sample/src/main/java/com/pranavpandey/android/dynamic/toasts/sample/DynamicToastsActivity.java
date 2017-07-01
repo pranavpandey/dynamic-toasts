@@ -32,6 +32,7 @@ import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils;
+import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
 public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -311,7 +312,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             case R.id.toast_config_icon_size:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
-                        .setIconSize(100)
+                        .setIconSize(DynamicUnitUtils.convertDpToPixels(48))
                         .apply();
 
                 DynamicToast.makeWarning(this, getString(R.string.icon_size_desc)).show();

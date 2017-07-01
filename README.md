@@ -16,21 +16,22 @@ devices.
 
 1. [Installation](https://github.com/pranavpandey/dynamic-toasts#installation)
 2. [Usage](https://github.com/pranavpandey/dynamic-toasts#usage)
-    1. [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
-    2. [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
-    3. [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
-    4. [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
-    5. [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
-    6. [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
-    7. [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
-    8. [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
-    9. [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
-    10. [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
-    11. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
-    12. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
-    13. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
-    14. [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
-    15. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
+    1. [Configuration](https://github.com/pranavpandey/dynamic-toasts#cofiguaration)
+    2. [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
+    3. [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
+    4. [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
+    5. [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
+    6. [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
+    7. [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
+    8. [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
+    9. [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
+    10. [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
+    11. [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
+    12. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
+    13. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
+    14. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
+    15. [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
+    16. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
 3. [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
@@ -41,7 +42,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    compile 'com.pranavpandey.android:dynamic-toasts:0.2.0'
+    compile 'com.pranavpandey.android:dynamic-toasts:0.3.0'
 }
 ```
 
@@ -53,6 +54,52 @@ It has several method to display toasts based on the requirement. Each method re
 object which can be customised further.
 
 Please call `show` method to display the toast.
+
+### Configuration
+
+Optional configuration to customise the toasts further like custom background color or drawable, 
+custom text size, typeface or icon size, etc.
+
+Various methods can be called anywhere in the app to do customisations.
+
+```java
+DynamicToast.Config.getInstance()
+    // Background color for default toast.
+    .setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor)
+    // Tint color for default toast.
+    .setDefaultTintColor(@ColorInt int defaultTintColor)
+    // Background color for error toast.
+    .setErrorBackgroundColor(@ColorInt int errorBackgroundColor)
+    // Background color for success toast.
+    .setSuccessBackgroundColor(@ColorInt int successBackgroundColor)
+    // Background color for warning toast.
+    .setWarningBackgroundColor(@ColorInt int warningBackgroundColor)
+    // Custom icon for error toast. Pass `null` to use default icon.
+    .setErrorIcon(@Nullable Drawable errorIcon)
+    // Custom icon for success toast. Pass `null` to use default icon.
+    .setSuccessIcon(@Nullable Drawable successIcon)
+    // Custom icon for warning toast. Pass `null` to use default icon.
+    .setWarningIcon(@Nullable Drawable warningIcon)
+    // Disable icon for all the toasts.
+    .setDisableIcon(boolean disableIcon)
+    // Custom icon size in `pixels` for all the toasts.
+    .setIconSize(int iconSize)
+    // Custom text size in `SP` for all the toasts.
+    .setTextSize(int textSize)
+    // Custom text typeface for all the toasts. Pass `null` to use system typeface.
+    .setTextTypeface(@Nullable Typeface textTypeface)
+    // Custom background drawable for all the toasts. Pass `null` to use default background.
+    .setToastBackground(@Nullable Drawable toastBackground)
+    // Apply customisations.
+    .apply();
+```
+
+Call `reset()` method to reset all the customisations.
+
+```java
+// Reset customisations.
+DynamicToast.Config.getInstance().reset();
+```
 
 ### Default toast
 
@@ -164,7 +211,8 @@ DynamicToast.make(context, "Custom toast with icon", drawable, tintColor, backgr
 Custom toast based on the supplied icon, background and tint color theme for supplied duration.
 
 ```java
-DynamicToast.make(context, "Custom toast with icon and duration", drawable, tintColor, backgroundColor, duration).show();
+DynamicToast.make(context, "Custom toast with icon and duration", drawable, 
+        tintColor, backgroundColor, duration).show();
 ```
 
 ### Dependency
