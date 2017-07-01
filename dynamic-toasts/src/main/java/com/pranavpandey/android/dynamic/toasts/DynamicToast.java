@@ -73,6 +73,24 @@ public class DynamicToast {
             DEFAULT_WARNING_BACKGROUND_COLOR = Color.parseColor("#FFEB3B");
 
     /**
+     * Default icon used by the error toast. {@code null} to use
+     * in-built icon.
+     */
+    private static final Drawable DEFAULT_ERROR_ICON = null;
+
+    /**
+     * Default icon used by the success toast. {@code null} to use
+     * in-built icon.
+     */
+    private static final Drawable DEFAULT_SUCCESS_ICON = null;
+
+    /**
+     * Default icon used by the warning toast. {@code null} to use
+     * in-built icon.
+     */
+    private static final Drawable DEFAULT_WARNING_ICON = null;
+
+    /**
      * Default text size for the toast in SP. {@code -1} to use system
      * text size.
      */
@@ -93,27 +111,47 @@ public class DynamicToast {
     /**
      * Background color for the default toast.
      */
-    private static @ColorInt int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+    private static @ColorInt int
+            defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static @ColorInt int defaultTintColor = DEFAULT_TINT_COLOR;
+    private static @ColorInt int
+            defaultTintColor = DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static @ColorInt int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+    private static @ColorInt int
+            errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static @ColorInt int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+    private static @ColorInt int
+            successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static @ColorInt int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+    private static @ColorInt int
+            warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+
+    /**
+     * Custom icon for the error toast.
+     */
+    private static Drawable errorIcon = DEFAULT_ERROR_ICON;
+
+    /**
+     * Custom icon for the success toast.
+     */
+    private static Drawable successIcon = DEFAULT_SUCCESS_ICON;
+
+    /**
+     * Custom icon for the warning toast.
+     */
+    private static Drawable warningIcon = DEFAULT_WARNING_ICON;
 
     /**
      * Text size for the toast in SP.
@@ -176,8 +214,8 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_error),
+        return make(context, text, errorIcon != DEFAULT_ERROR_ICON ? errorIcon
+                : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
                 errorBackgroundColor);
     }
@@ -215,8 +253,8 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_success),
+        return make(context, text, successIcon != DEFAULT_SUCCESS_ICON ? successIcon
+                : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
                 successBackgroundColor);
     }
@@ -254,8 +292,8 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_warning),
+        return make(context, text, warningIcon != DEFAULT_WARNING_ICON ? warningIcon
+                : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
                 warningBackgroundColor);
     }
@@ -463,27 +501,47 @@ public class DynamicToast {
         /**
          * Background color for the default toast.
          */
-        private @ColorInt  int defaultBackgroundColor = DynamicToast.defaultBackgroundColor;
+        private @ColorInt  int
+                defaultBackgroundColor = DynamicToast.defaultBackgroundColor;
 
         /**
          * Tint color for the default toast.
          */
-        private @ColorInt int defaultTintColor = DynamicToast.defaultTintColor;
+        private @ColorInt int
+                defaultTintColor = DynamicToast.defaultTintColor;
 
         /**
          * Background color for the error toast.
          */
-        private @ColorInt int errorBackgroundColor = DynamicToast.errorBackgroundColor;
+        private @ColorInt int
+                errorBackgroundColor = DynamicToast.errorBackgroundColor;
 
         /**
          * Background color for the success toast.
          */
-        private @ColorInt int successBackgroundColor = DynamicToast.successBackgroundColor;
+        private @ColorInt int
+                successBackgroundColor = DynamicToast.successBackgroundColor;
 
         /**
          * Background color for the warning toast.
          */
-        private @ColorInt int warningBackgroundColor = DynamicToast.warningBackgroundColor;
+        private @ColorInt int
+                warningBackgroundColor = DynamicToast.warningBackgroundColor;
+
+        /**
+         * Custom icon for the error toast.
+         */
+        private Drawable errorIcon = DynamicToast.errorIcon;
+
+        /**
+         * Custom icon for the success toast.
+         */
+        private Drawable successIcon = DynamicToast.successIcon;
+
+        /**
+         * Custom icon for the warning toast.
+         */
+        private Drawable warningIcon = DynamicToast.warningIcon;
 
         /**
          * Text size for the toast in SP.
@@ -580,6 +638,45 @@ public class DynamicToast {
         }
 
         /**
+         * Setter for {@link #errorIcon}. Pass {@code null} to use default
+         * icon.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setErrorIcon(@Nullable Drawable errorIcon) {
+            this.errorIcon = errorIcon;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #successIcon}. Pass {@code null} to use default
+         * icon.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setSuccessIcon(@Nullable Drawable successIcon) {
+            this.successIcon = successIcon;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #warningIcon}. Pass {@code null} to use default
+         * icon.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setWarningIcon(@Nullable Drawable warningIcon) {
+            this.warningIcon = warningIcon;
+
+            return this;
+        }
+
+        /**
          * Setter for {@link #textSize}.
          *
          * @return {@link Config} object to allow for chaining of calls to set
@@ -592,24 +689,26 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #textTypeface}.
+         * Setter for {@link #textTypeface}. Pass {@code null} to use default
+         * typeface.
          *
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        public Config setTextTypeface(@NonNull Typeface textTypeface) {
+        public Config setTextTypeface(@Nullable Typeface textTypeface) {
             this.textTypeface = textTypeface;
 
             return this;
         }
 
         /**
-         * Setter for {@link #toastBackground}.
+         * Setter for {@link #toastBackground}. Pass {@code null} to use default
+         * background.
          *
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        public Config setToastBackground(@NonNull Drawable toastBackground) {
+        public Config setToastBackground(@Nullable Drawable toastBackground) {
             this.toastBackground = toastBackground;
 
             return this;
@@ -624,6 +723,9 @@ public class DynamicToast {
             DynamicToast.errorBackgroundColor = errorBackgroundColor;
             DynamicToast.successBackgroundColor = successBackgroundColor;
             DynamicToast.warningBackgroundColor = warningBackgroundColor;
+            DynamicToast.errorIcon = errorIcon;
+            DynamicToast.successIcon = successIcon;
+            DynamicToast.warningIcon = warningIcon;
             DynamicToast.textSize = textSize;
             DynamicToast.textTypeface = textTypeface;
             DynamicToast.toastBackground = toastBackground;
@@ -640,6 +742,9 @@ public class DynamicToast {
             DynamicToast.errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
             DynamicToast.successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
             DynamicToast.warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+            DynamicToast.errorIcon = DEFAULT_ERROR_ICON;
+            DynamicToast.successIcon = DEFAULT_SUCCESS_ICON;
+            DynamicToast.warningIcon = DEFAULT_WARNING_ICON;
             DynamicToast.textSize = DEFAULT_TEXT_SIZE;
             DynamicToast.textTypeface = DEFAULT_TEXT_TYPEFACE;
             DynamicToast.toastBackground = DEFAULT_TOAST_BACKGROUND;

@@ -117,25 +117,56 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/toast_default_custom"
+                android:id="@+id/toast_default_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/default_custom" />
 
             <Button
-                android:id="@+id/toast_error_custom"
+                android:id="@+id/toast_error_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/error" />
 
             <Button
-                android:id="@+id/toast_success_custom"
+                android:id="@+id/toast_success_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/success" />
 
             <Button
-                android:id="@+id/toast_warning_custom"
+                android:id="@+id/toast_warning_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/warning" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin"
+            android:text="@string/custom_icons" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/toast_error_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/error" />
+
+            <Button
+                android:id="@+id/toast_success_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/success" />
+
+            <Button
+                android:id="@+id/toast_warning_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/warning" />

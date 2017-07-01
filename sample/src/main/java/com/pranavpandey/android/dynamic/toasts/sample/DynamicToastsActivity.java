@@ -4,14 +4,11 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,8 +16,6 @@ import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils;
-
-import org.w3c.dom.Text;
 
 public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -59,10 +54,13 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_warning).setOnClickListener(this);
         findViewById(R.id.toast_custom_icon).setOnClickListener(this);
         findViewById(R.id.toast_custom).setOnClickListener(this);
-        findViewById(R.id.toast_default_custom).setOnClickListener(this);
-        findViewById(R.id.toast_error_custom).setOnClickListener(this);
-        findViewById(R.id.toast_success_custom).setOnClickListener(this);
-        findViewById(R.id.toast_warning_custom).setOnClickListener(this);
+        findViewById(R.id.toast_default_color).setOnClickListener(this);
+        findViewById(R.id.toast_error_color).setOnClickListener(this);
+        findViewById(R.id.toast_success_color).setOnClickListener(this);
+        findViewById(R.id.toast_warning_color).setOnClickListener(this);
+        findViewById(R.id.toast_error_icon).setOnClickListener(this);
+        findViewById(R.id.toast_success_icon).setOnClickListener(this);
+        findViewById(R.id.toast_warning_icon).setOnClickListener(this);
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
     }
@@ -117,7 +115,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 break;
 
             // Custom default toast.
-            case R.id.toast_default_custom:
+            case R.id.toast_default_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setDefaultBackgroundColor(Color.parseColor("#607d8b"))
@@ -125,46 +123,88 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                                 Color.parseColor("#607d8b")))
                         .apply();
 
-                DynamicToast.make(this, getString(R.string.default_custom_desc)).show();
+                DynamicToast.make(this, getString(R.string.default_color_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
             // Custom error toast.
-            case R.id.toast_error_custom:
+            case R.id.toast_error_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setErrorBackgroundColor(Color.parseColor("#673AB7"))
                         .apply();
 
-                DynamicToast.makeError(this, getString(R.string.error_custom_desc)).show();
+                DynamicToast.makeError(this, getString(R.string.error_color_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
             // Custom success toast.
-            case R.id.toast_success_custom:
+            case R.id.toast_success_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setSuccessBackgroundColor(Color.parseColor("#2196F3"))
                         .apply();
 
-                DynamicToast.makeSuccess(this, getString(R.string.success_custom_desc)).show();
+                DynamicToast.makeSuccess(this, getString(R.string.success_color_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
                 break;
 
             // Custom warning toast.
-            case R.id.toast_warning_custom:
+            case R.id.toast_warning_color:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setWarningBackgroundColor(Color.parseColor("#8BC34A"))
                         .apply();
 
-                DynamicToast.makeWarning(this, getString(R.string.warning_custom_desc)).show();
+                DynamicToast.makeWarning(this, getString(R.string.warning_color_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom error toast.
+            case R.id.toast_error_icon:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setErrorIcon(ContextCompat.getDrawable(
+                                this, R.drawable.ic_toast_icon))
+                        .apply();
+
+                DynamicToast.makeError(this, getString(R.string.error_icon_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom success toast.
+            case R.id.toast_success_icon:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setSuccessIcon(ContextCompat.getDrawable(
+                                this, R.drawable.ic_toast_icon))
+                        .apply();
+
+                DynamicToast.makeSuccess(this, getString(R.string.success_icon_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom warning toast.
+            case R.id.toast_warning_icon:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setWarningIcon(ContextCompat.getDrawable(
+                                this, R.drawable.ic_toast_icon))
+                        .apply();
+
+                DynamicToast.makeWarning(this, getString(R.string.warning_icon_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
