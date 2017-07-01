@@ -54,10 +54,10 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_warning).setOnClickListener(this);
         findViewById(R.id.toast_custom_icon).setOnClickListener(this);
         findViewById(R.id.toast_custom).setOnClickListener(this);
-        findViewById(R.id.toast_default_color).setOnClickListener(this);
         findViewById(R.id.toast_error_color).setOnClickListener(this);
         findViewById(R.id.toast_success_color).setOnClickListener(this);
         findViewById(R.id.toast_warning_color).setOnClickListener(this);
+        findViewById(R.id.toast_default_color).setOnClickListener(this);
         findViewById(R.id.toast_error_icon).setOnClickListener(this);
         findViewById(R.id.toast_success_icon).setOnClickListener(this);
         findViewById(R.id.toast_warning_icon).setOnClickListener(this);
@@ -114,21 +114,6 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         Toast.LENGTH_LONG).show();
                 break;
 
-            // Custom default toast.
-            case R.id.toast_default_color:
-                // Customise toast.
-                DynamicToast.Config.getInstance()
-                        .setDefaultBackgroundColor(Color.parseColor("#607d8b"))
-                        .setDefaultTintColor(DynamicColorUtils.getTintColor(
-                                Color.parseColor("#607d8b")))
-                        .apply();
-
-                DynamicToast.make(this, getString(R.string.default_color_desc)).show();
-
-                // Reset customisations.
-                DynamicToast.Config.getInstance().reset();
-                break;
-
             // Custom error toast.
             case R.id.toast_error_color:
                 // Customise toast.
@@ -163,6 +148,21 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         .apply();
 
                 DynamicToast.makeWarning(this, getString(R.string.warning_color_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom default toast.
+            case R.id.toast_default_color:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setDefaultBackgroundColor(Color.parseColor("#607d8b"))
+                        .setDefaultTintColor(DynamicColorUtils.getTintColor(
+                                Color.parseColor("#607d8b")))
+                        .apply();
+
+                DynamicToast.make(this, getString(R.string.default_color_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();

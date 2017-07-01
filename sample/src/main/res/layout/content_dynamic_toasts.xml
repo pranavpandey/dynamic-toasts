@@ -30,24 +30,26 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/default_toasts" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/without_icon" />
+                android:text="@string/without_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_default_icon" />
 
             <Button
                 android:id="@+id/toast_default_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/with_icon" />
+                android:text="@string/with_icon"
+                app:layout_constraintStart_toEndOf="@id/toast_default" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,30 +57,34 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/inbuilt_toasts" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_error"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/error" />
+                android:text="@string/error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_success" />
 
             <Button
                 android:id="@+id/toast_success"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/success" />
+                android:text="@string/success"
+                app:layout_constraintStart_toEndOf="@id/toast_error"
+                app:layout_constraintEnd_toStartOf="@+id/toast_warning" />
 
             <Button
                 android:id="@+id/toast_warning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/warning" />
+                android:text="@string/warning"
+                app:layout_constraintStart_toEndOf="@id/toast_success" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -86,24 +92,26 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/custom_toasts" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_custom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/without_icon" />
+                android:text="@string/without_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_custom_icon" />
 
             <Button
                 android:id="@+id/toast_custom_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/with_icon" />
+                android:text="@string/with_icon"
+                app:layout_constraintStart_toEndOf="@id/toast_custom" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -111,36 +119,42 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/custom_colors" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/toast_default_color"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/default_custom" />
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_error_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/error" />
+                android:text="@string/error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_success_color" />
 
             <Button
                 android:id="@+id/toast_success_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/success" />
+                android:text="@string/success"
+                app:layout_constraintStart_toEndOf="@id/toast_error_color"
+                app:layout_constraintEnd_toStartOf="@+id/toast_warning_color" />
 
             <Button
                 android:id="@+id/toast_warning_color"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/warning" />
+                android:text="@string/warning"
+                app:layout_constraintStart_toEndOf="@id/toast_success_color" />
 
-        </LinearLayout>
+            <Button
+                android:id="@+id/toast_default_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_custom"
+                app:layout_constraintTop_toBottomOf="@id/toast_error_color"
+                app:layout_constraintStart_toStartOf="parent"  />
+
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -148,30 +162,34 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/custom_icons" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_error_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/error" />
+                android:text="@string/error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_success_icon" />
 
             <Button
                 android:id="@+id/toast_success_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/success" />
+                android:text="@string/success"
+                app:layout_constraintStart_toEndOf="@id/toast_error_icon"
+                app:layout_constraintEnd_toStartOf="@+id/toast_warning_icon" />
 
             <Button
                 android:id="@+id/toast_warning_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/warning" />
+                android:text="@string/warning"
+                app:layout_constraintStart_toEndOf="@id/toast_success_icon" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -179,24 +197,26 @@
             android:layout_marginTop="@dimen/activity_margin"
             android:text="@string/config" />
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/toast_config_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/text" />
+                android:text="@string/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/toast_config_background" />
 
             <Button
                 android:id="@+id/toast_config_background"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/background" />
+                android:text="@string/background"
+                app:layout_constraintStart_toEndOf="@id/toast_config_text" />
 
-        </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>
 
