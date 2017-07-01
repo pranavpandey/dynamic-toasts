@@ -43,29 +43,34 @@ import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 public class DynamicToast {
 
     /**
-     * Default toastBackground color for the toast.
+     * Default background color for the toast.
      */
-    private static final @ColorInt int DEFAULT_BACKGROUND_COLOR = Color.parseColor("#454545");
-
-    /**
-     * Background color for the error toast.
-     */
-    private static final @ColorInt int ERROR_BACKGROUND_COLOR = Color.parseColor("#F44336");
-
-    /**
-     * Background color for the success toast.
-     */
-    private static final @ColorInt int SUCCESS_BACKGROUND_COLOR = Color.parseColor("#4CAF50");
-
-    /**
-     * Background color for the warning toast.
-     */
-    private static final @ColorInt int WARNING_BACKGROUND_COLOR = Color.parseColor("#FFEB3B");
+    private static final @ColorInt int
+            DEFAULT_BACKGROUND_COLOR = Color.parseColor("#454545");
 
     /**
      * Default tint color for the toast.
      */
-    private static final @ColorInt int DEFAULT_TINT_COLOR = Color.parseColor("#FFFFFF");
+    private static final @ColorInt int
+            DEFAULT_TINT_COLOR = Color.parseColor("#FFFFFF");
+
+    /**
+     * Default background color for the error toast.
+     */
+    private static final @ColorInt int
+            DEFAULT_ERROR_BACKGROUND_COLOR = Color.parseColor("#F44336");
+
+    /**
+     * Default background color for the success toast.
+     */
+    private static final @ColorInt int
+            DEFAULT_SUCCESS_BACKGROUND_COLOR = Color.parseColor("#4CAF50");
+
+    /**
+     * Default background color for the warning toast.
+     */
+    private static final @ColorInt int
+            DEFAULT_WARNING_BACKGROUND_COLOR = Color.parseColor("#FFEB3B");
 
     /**
      * Default text size for the toast in SP. {@code -1} to use system
@@ -84,6 +89,31 @@ public class DynamicToast {
      * typeface.
      */
     private static final Drawable DEFAULT_TOAST_BACKGROUND = null;
+
+    /**
+     * Background color for the default toast.
+     */
+    private static int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+
+    /**
+     * Tint color for the default toast.
+     */
+    private static int defaultTintColor = DEFAULT_TINT_COLOR;
+
+    /**
+     * Background color for the error toast.
+     */
+    private static int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+
+    /**
+     * Background color for the success toast.
+     */
+    private static int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+
+    /**
+     * Background color for the warning toast.
+     */
+    private static int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
 
     /**
      * Text size for the toast in SP.
@@ -112,8 +142,8 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, null, DEFAULT_TINT_COLOR,
-                DEFAULT_BACKGROUND_COLOR, Toast.LENGTH_SHORT);
+        return make(context, text, null, defaultTintColor,
+                defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
 
     /**
@@ -130,8 +160,8 @@ public class DynamicToast {
      */
     public static Toast make(@NonNull Context context,
                              @NonNull CharSequence text, int duration) {
-        return make(context, text, null, DEFAULT_TINT_COLOR,
-                DEFAULT_BACKGROUND_COLOR, duration);
+        return make(context, text, null, defaultTintColor,
+                defaultBackgroundColor, duration);
     }
 
     /**
@@ -148,8 +178,8 @@ public class DynamicToast {
     public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_error),
-                DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
-                ERROR_BACKGROUND_COLOR);
+                DynamicColorUtils.getTintColor(errorBackgroundColor),
+                errorBackgroundColor);
     }
 
     /**
@@ -168,8 +198,8 @@ public class DynamicToast {
                              @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_error),
-                DynamicColorUtils.getTintColor(ERROR_BACKGROUND_COLOR),
-                ERROR_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(errorBackgroundColor),
+                errorBackgroundColor,
                 duration);
     }
 
@@ -187,8 +217,8 @@ public class DynamicToast {
     public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_success),
-                DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
-                SUCCESS_BACKGROUND_COLOR);
+                DynamicColorUtils.getTintColor(successBackgroundColor),
+                successBackgroundColor);
     }
 
     /**
@@ -207,8 +237,8 @@ public class DynamicToast {
                                   @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_success),
-                DynamicColorUtils.getTintColor(SUCCESS_BACKGROUND_COLOR),
-                SUCCESS_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(successBackgroundColor),
+                successBackgroundColor,
                 duration);
     }
 
@@ -226,8 +256,8 @@ public class DynamicToast {
     public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_warning),
-                DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
-                WARNING_BACKGROUND_COLOR);
+                DynamicColorUtils.getTintColor(warningBackgroundColor),
+                warningBackgroundColor);
     }
 
     /**
@@ -246,8 +276,8 @@ public class DynamicToast {
                                     @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_warning),
-                DynamicColorUtils.getTintColor(WARNING_BACKGROUND_COLOR),
-                WARNING_BACKGROUND_COLOR,
+                DynamicColorUtils.getTintColor(warningBackgroundColor),
+                warningBackgroundColor,
                 duration);
     }
 
@@ -265,8 +295,8 @@ public class DynamicToast {
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
                              @NonNull Drawable icon) {
-        return make(context, text, icon, DEFAULT_TINT_COLOR,
-                DEFAULT_BACKGROUND_COLOR, Toast.LENGTH_SHORT);
+        return make(context, text, icon, defaultTintColor,
+                defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
 
     /**
@@ -284,8 +314,8 @@ public class DynamicToast {
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
                              @NonNull Drawable icon, int duration) {
-        return make(context, text, icon, DEFAULT_TINT_COLOR,
-                DEFAULT_BACKGROUND_COLOR, duration);
+        return make(context, text, icon, defaultTintColor,
+                defaultBackgroundColor, duration);
     }
 
     /**

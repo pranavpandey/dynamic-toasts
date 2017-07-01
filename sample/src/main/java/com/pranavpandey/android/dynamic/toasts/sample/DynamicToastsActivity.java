@@ -54,11 +54,14 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_default).setOnClickListener(this);
         findViewById(R.id.toast_default_icon).setOnClickListener(this);
         findViewById(R.id.toast_success).setOnClickListener(this);
-        findViewById(R.id.toast_success).setOnClickListener(this);
         findViewById(R.id.toast_error).setOnClickListener(this);
+        findViewById(R.id.toast_success).setOnClickListener(this);
         findViewById(R.id.toast_warning).setOnClickListener(this);
         findViewById(R.id.toast_custom_icon).setOnClickListener(this);
         findViewById(R.id.toast_custom).setOnClickListener(this);
+        findViewById(R.id.toast_error_custom).setOnClickListener(this);
+        findViewById(R.id.toast_success_custom).setOnClickListener(this);
+        findViewById(R.id.toast_warning_custom).setOnClickListener(this);
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
     }
@@ -82,14 +85,14 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         ContextCompat.getDrawable(this, R.drawable.ic_toast_icon)).show();
                 break;
 
-            // Success toast.
-            case R.id.toast_success:
-                DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
-                break;
-
             // Error toast.
             case R.id.toast_error:
                 DynamicToast.makeError(this, getString(R.string.error_desc)).show();
+                break;
+
+            // Success toast.
+            case R.id.toast_success:
+                DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
                 break;
 
             // Warning toast.
@@ -110,6 +113,30 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         ContextCompat.getDrawable(this, R.drawable.ic_social_github),
                         Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
                         Toast.LENGTH_LONG).show();
+                break;
+
+            // Custom error toast.
+            case R.id.toast_error_custom:
+                DynamicToast.makeError(this, getString(R.string.error_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom success toast.
+            case R.id.toast_success_custom:
+                DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Custom warning toast.
+            case R.id.toast_warning_custom:
+                DynamicToast.makeWarning(this, getString(R.string.warning_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
                 break;
 
             // Custom text size and typeface by using DynamicToast.Config class.
