@@ -59,6 +59,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_warning).setOnClickListener(this);
         findViewById(R.id.toast_custom_icon).setOnClickListener(this);
         findViewById(R.id.toast_custom).setOnClickListener(this);
+        findViewById(R.id.toast_default_custom).setOnClickListener(this);
         findViewById(R.id.toast_error_custom).setOnClickListener(this);
         findViewById(R.id.toast_success_custom).setOnClickListener(this);
         findViewById(R.id.toast_warning_custom).setOnClickListener(this);
@@ -115,9 +116,29 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         Toast.LENGTH_LONG).show();
                 break;
 
+            // Custom default toast.
+            case R.id.toast_default_custom:
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setDefaultBackgroundColor(Color.parseColor("#607d8b"))
+                        .setDefaultTintColor(DynamicColorUtils.getTintColor(
+                                Color.parseColor("#607d8b")))
+                        .apply();
+
+                DynamicToast.make(this, getString(R.string.default_custom_desc)).show();
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset();
+                break;
+
             // Custom error toast.
             case R.id.toast_error_custom:
-                DynamicToast.makeError(this, getString(R.string.error_desc)).show();
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setErrorBackgroundColor(Color.parseColor("#673AB7"))
+                        .apply();
+
+                DynamicToast.makeError(this, getString(R.string.error_custom_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
@@ -125,7 +146,12 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
 
             // Custom success toast.
             case R.id.toast_success_custom:
-                DynamicToast.makeSuccess(this, getString(R.string.success_desc)).show();
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setSuccessBackgroundColor(Color.parseColor("#2196F3"))
+                        .apply();
+
+                DynamicToast.makeSuccess(this, getString(R.string.success_custom_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
@@ -133,7 +159,12 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
 
             // Custom warning toast.
             case R.id.toast_warning_custom:
-                DynamicToast.makeWarning(this, getString(R.string.warning_desc)).show();
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setWarningBackgroundColor(Color.parseColor("#8BC34A"))
+                        .apply();
+
+                DynamicToast.makeWarning(this, getString(R.string.warning_custom_desc)).show();
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();

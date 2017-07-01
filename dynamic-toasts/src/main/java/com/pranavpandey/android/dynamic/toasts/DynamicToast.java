@@ -93,27 +93,27 @@ public class DynamicToast {
     /**
      * Background color for the default toast.
      */
-    private static int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+    private static @ColorInt int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static int defaultTintColor = DEFAULT_TINT_COLOR;
+    private static @ColorInt int defaultTintColor = DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+    private static @ColorInt int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+    private static @ColorInt int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+    private static @ColorInt int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
 
     /**
      * Text size for the toast in SP.
@@ -461,9 +461,34 @@ public class DynamicToast {
         private static Config sInstance;
 
         /**
+         * Background color for the default toast.
+         */
+        private @ColorInt  int defaultBackgroundColor = DynamicToast.defaultBackgroundColor;
+
+        /**
+         * Tint color for the default toast.
+         */
+        private @ColorInt int defaultTintColor = DynamicToast.defaultTintColor;
+
+        /**
+         * Background color for the error toast.
+         */
+        private @ColorInt int errorBackgroundColor = DynamicToast.errorBackgroundColor;
+
+        /**
+         * Background color for the success toast.
+         */
+        private @ColorInt int successBackgroundColor = DynamicToast.successBackgroundColor;
+
+        /**
+         * Background color for the warning toast.
+         */
+        private @ColorInt int warningBackgroundColor = DynamicToast.warningBackgroundColor;
+
+        /**
          * Text size for the toast in SP.
          */
-        private int textSize = DynamicToast.textSize;
+        private @ColorInt int textSize = DynamicToast.textSize;
 
         /**
          * Custom text typeface used by the toast.
@@ -492,6 +517,66 @@ public class DynamicToast {
             }
 
             return sInstance;
+        }
+
+        /**
+         * Setter for {@link #defaultBackgroundColor}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
+            this.defaultBackgroundColor = defaultBackgroundColor;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #defaultTintColor}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setDefaultTintColor(@ColorInt int defaultTintColor) {
+            this.defaultTintColor = defaultTintColor;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #errorBackgroundColor}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setErrorBackgroundColor(@ColorInt int errorBackgroundColor) {
+            this.errorBackgroundColor = errorBackgroundColor;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #successBackgroundColor}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setSuccessBackgroundColor(@ColorInt int successBackgroundColor) {
+            this.successBackgroundColor = successBackgroundColor;
+
+            return this;
+        }
+
+        /**
+         * Setter for {@link #warningBackgroundColor}.
+         *
+         * @return {@link Config} object to allow for chaining of calls to set
+         *         methods.
+         */
+        public Config setWarningBackgroundColor(@ColorInt int warningBackgroundColor) {
+            this.warningBackgroundColor = warningBackgroundColor;
+
+            return this;
         }
 
         /**
@@ -534,6 +619,11 @@ public class DynamicToast {
          * Apply customisations.
          */
         public void apply() {
+            DynamicToast.defaultBackgroundColor = defaultBackgroundColor;
+            DynamicToast.defaultTintColor = defaultTintColor;
+            DynamicToast.errorBackgroundColor = errorBackgroundColor;
+            DynamicToast.successBackgroundColor = successBackgroundColor;
+            DynamicToast.warningBackgroundColor = warningBackgroundColor;
             DynamicToast.textSize = textSize;
             DynamicToast.textTypeface = textTypeface;
             DynamicToast.toastBackground = toastBackground;
@@ -545,9 +635,14 @@ public class DynamicToast {
          * Reset customisations.
          */
         public void reset() {
-            DynamicToast.textSize = DynamicToast.DEFAULT_TEXT_SIZE;
-            DynamicToast.textTypeface = DynamicToast.DEFAULT_TEXT_TYPEFACE;
-            DynamicToast.toastBackground = DynamicToast.DEFAULT_TOAST_BACKGROUND;
+            DynamicToast.defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+            DynamicToast.defaultTintColor = DEFAULT_TINT_COLOR;
+            DynamicToast.errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+            DynamicToast.successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+            DynamicToast.warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+            DynamicToast.textSize = DEFAULT_TEXT_SIZE;
+            DynamicToast.textTypeface = DEFAULT_TEXT_TYPEFACE;
+            DynamicToast.toastBackground = DEFAULT_TOAST_BACKGROUND;
 
             sInstance = null;
         }
