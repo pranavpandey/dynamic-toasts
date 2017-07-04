@@ -4,6 +4,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/pranavpandey/dynamic-toasts.svg?branch=master)](https://travis-ci.org/pranavpandey/dynamic-toasts)
+[![Download](https://api.bintray.com/packages/pranavpandey/android/dynamic-toasts/images/download.svg)](https://bintray.com/pranavpandey/android/dynamic-toasts/_latestVersion)
 
 A simple library to display themed toasts with icon and text on Android 9+ (Gingerbread or above) 
 devices.
@@ -12,27 +13,27 @@ devices.
 
 ---
 
-## Table of Contents
+## Contents
 
-1. [Installation](https://github.com/pranavpandey/dynamic-toasts#installation)
-2. [Usage](https://github.com/pranavpandey/dynamic-toasts#usage)
-    1. [Configuration](https://github.com/pranavpandey/dynamic-toasts#cofiguaration)
-    2. [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
-    3. [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
-    4. [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
-    5. [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
-    6. [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
-    7. [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
-    8. [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
-    9. [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
-    10. [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
-    11. [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
-    12. [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
-    13. [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
-    14. [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
-    15. [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
-    16. [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
-3. [License](https://github.com/pranavpandey/dynamic-toasts#license)
+- [Installation](https://github.com/pranavpandey/dynamic-toasts#installation)
+- [Usage](https://github.com/pranavpandey/dynamic-toasts#usage)
+    - [Configuration](https://github.com/pranavpandey/dynamic-toasts#cofiguaration)
+    - [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
+    - [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
+    - [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
+    - [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
+    - [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
+    - [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
+    - [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
+    - [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
+    - [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
+    - [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
+    - [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
+    - [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
+    - [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
+    - [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
+    - [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
+- [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
 
@@ -53,7 +54,7 @@ dependencies {
 It has several method to display toasts based on the requirement. Each method returns a `Toast`
 object which can be customised further.
 
-Please call `show` method to display the toast.
+Please call `show()` method to display the toast.
 
 ### Configuration
 
@@ -217,7 +218,7 @@ DynamicToast.make(context, "Custom toast with icon and duration", drawable,
 
 ### Dependency
 
-As it depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils), its functions
+This library depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) so, its functions
 can be used to perform other operations.
 
 ---
