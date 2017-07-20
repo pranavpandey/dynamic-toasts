@@ -21,6 +21,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.CheckResult;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -612,6 +613,7 @@ public class DynamicToast {
          *
          * @return {@link #sInstance} Singleton {@link Config} instance.
          */
+        @NonNull
         public static Config getInstance() {
             if (sInstance == null) {
                 sInstance = new Config();
@@ -626,6 +628,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
             this.defaultBackgroundColor = defaultBackgroundColor;
 
@@ -638,6 +641,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setDefaultTintColor(@ColorInt int defaultTintColor) {
             this.defaultTintColor = defaultTintColor;
 
@@ -650,6 +654,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setErrorBackgroundColor(@ColorInt int errorBackgroundColor) {
             this.errorBackgroundColor = errorBackgroundColor;
 
@@ -662,6 +667,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setSuccessBackgroundColor(@ColorInt int successBackgroundColor) {
             this.successBackgroundColor = successBackgroundColor;
 
@@ -674,6 +680,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setWarningBackgroundColor(@ColorInt int warningBackgroundColor) {
             this.warningBackgroundColor = warningBackgroundColor;
 
@@ -687,6 +694,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setErrorIcon(@Nullable Drawable errorIcon) {
             this.errorIcon = errorIcon;
 
@@ -700,6 +708,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setSuccessIcon(@Nullable Drawable successIcon) {
             this.successIcon = successIcon;
 
@@ -713,6 +722,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setWarningIcon(@Nullable Drawable warningIcon) {
             this.warningIcon = warningIcon;
 
@@ -726,6 +736,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setDisableIcon(boolean disableIcon) {
             this.disableIcon = disableIcon;
 
@@ -738,6 +749,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setIconSize(int iconSize) {
             this.iconSize = iconSize;
 
@@ -750,6 +762,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setTextSize(int textSize) {
             this.textSize = textSize;
 
@@ -763,6 +776,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setTextTypeface(@Nullable Typeface textTypeface) {
             this.textTypeface = textTypeface;
 
@@ -776,6 +790,7 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
+        @CheckResult
         public Config setToastBackground(@Nullable Drawable toastBackground) {
             this.toastBackground = toastBackground;
 

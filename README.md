@@ -218,8 +218,8 @@ DynamicToast.make(context, "Custom toast with icon and duration", drawable,
 
 ### Dependency
 
-This library depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) so, its functions
-can be used to perform other operations.
+This library depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) so, its 
+functions can be used to perform other operations.
 
 ---
 
