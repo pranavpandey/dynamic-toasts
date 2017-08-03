@@ -384,16 +384,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, toastBackground and the tint color. Toast
+     * Make a themed toast with text, background and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the toastBackground. It will
+     * @param tintColor The toast tint color based on the background. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast toastBackground color.
+     * @param backgroundColor The toast background color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
@@ -404,16 +404,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, toastBackground and the tint color. Toast
+     * Make a themed toast with text, background and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the toastBackground. It will
+     * @param tintColor The toast tint color based on the background. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast toastBackground color.
+     * @param backgroundColor The toast background color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
@@ -427,17 +427,17 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, icon, toastBackground and the tint color. Toast
+     * Make a themed toast with text, icon, background and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the toastBackground. It will
+     * @param tintColor The toast tint color based on the background. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast toastBackground color.
+     * @param backgroundColor The toast background color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
@@ -449,16 +449,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, icon, toastBackground and the tint color.
+     * Make a themed toast with text, icon, background and the tint color.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the toastBackground. It will
+     * @param tintColor The toast tint color based on the background. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast toastBackground color.
+     * @param backgroundColor The toast background color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
