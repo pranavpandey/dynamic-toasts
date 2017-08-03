@@ -24,7 +24,7 @@ android {
 }
 
 dependencies {
-    compile "com.pranavpandey.android:dynamic-utils:$mavenVersion"
+    api "com.pranavpandey.android:dynamic-utils:$mavenVersion"
 }
 
 if (project.rootProject.file('local.properties').exists()) {

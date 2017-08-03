@@ -22,9 +22,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "com.android.support:appcompat-v7:$androidSupport"
-    compile "com.android.support:design:$androidSupport"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile project(':dynamic-toasts')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$androidSupport"
+    implementation "com.android.support:design:$androidSupport"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation project(':dynamic-toasts')
 }
