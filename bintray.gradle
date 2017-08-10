@@ -11,6 +11,7 @@ bintray {
     key = properties.getProperty("bintray.key")
 
     configurations = ['archives']
+    archivesBaseName = mavenArtifactId
 
     pkg {
         repo = bintrayRepo
@@ -23,8 +24,11 @@ bintray {
         publish = true
         publicDownloadNumbers = true
 
+        githubRepo = githubUrl
+
         version {
             name = mavenVersion
+            desc = versionDesc
             released = new Date()
 
             gpg {

@@ -9,6 +9,9 @@
 A simple library to display themed toasts with icon and text on Android 9+ (Gingerbread or above) 
 devices.
 
+> Since v0.4.0, it uses [26.x.x support libraries](https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0)
+so, minimum SDK will be Android 14+ (ICS or above).
+
 <img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts-preview.png">
 
 ---
@@ -32,7 +35,6 @@ devices.
     - [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
     - [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
     - [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
-    - [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
 - [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
@@ -43,7 +45,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    compile 'com.pranavpandey.android:dynamic-toasts:0.3.0'
+    compile 'com.pranavpandey.android:dynamic-toasts:0.4.0'
 }
 ```
 
@@ -215,11 +217,6 @@ Custom toast based on the supplied icon, background and tint color theme for sup
 DynamicToast.make(context, "Custom toast with icon and duration", drawable, 
         tintColor, backgroundColor, duration).show();
 ```
-
-### Dependency
-
-This library depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) so, its 
-functions can be used to perform other operations.
 
 ---
 

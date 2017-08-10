@@ -1,5 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 
+group = mavenGroup
+
 install {
     repositories.mavenInstaller {
         pom.project {
@@ -37,34 +39,28 @@ install {
         }
     }
 
-    task javadocs(type: Javadoc) {
-        source = android.sourceSets.main.java.srcDirs
-        ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
-        classpath += files(ext.androidJar)
-
-        failOnError = false
-    }
-
-    task javadocsJar(type: Jar, dependsOn: javadocs) {
-        classifier = 'javadoc'
-        from javadocs.destinationDir
-    }
-
     task sourcesJar(type: Jar) {
-        classifier = 'sources'
         from android.sourceSets.main.java.srcDirs
+        classifier = 'sources'
     }
 
-    if (JavaVersion.current().isJava8Compatible()) {
-        allprojects {
-            tasks.withType(Javadoc) {
-                options.addStringOption('Xdoclint:none', '-quiet')
-            }
+    task javadoc(type: Javadoc) {
+        failOnError = false
+        source = android.sourceSets.main.java.srcDirs
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+
+        if (JavaVersion.current().isJava8Compatible()) {
+            options.addStringOption('Xdoclint:none', '-quiet')
         }
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
     }
 
     artifacts {
         archives sourcesJar
-        archives javadocsJar
+        archives javadocJar
     }
 }
