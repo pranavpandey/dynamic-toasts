@@ -37,26 +37,34 @@ install {
         }
     }
 
-    task sourcesJar(type: Jar) {
-        from android.sourceSets.main.java.srcDirs
-        classifier = 'sources'
-    }
-
-    task javadoc(type: Javadoc) {
+    task javadocs(type: Javadoc) {
         source = android.sourceSets.main.java.srcDirs
-        classpath += configurations.compile
-        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+        classpath += files(ext.androidJar)
 
         failOnError = false
     }
 
-    task javadocJar(type: Jar, dependsOn: javadoc) {
+    task javadocsJar(type: Jar, dependsOn: javadocs) {
         classifier = 'javadoc'
-        from javadoc.destinationDir
+        from javadocs.destinationDir
+    }
+
+    task sourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.srcDirs
+    }
+
+    if (JavaVersion.current().isJava8Compatible()) {
+        allprojects {
+            tasks.withType(Javadoc) {
+                options.addStringOption('Xdoclint:none', '-quiet')
+            }
+        }
     }
 
     artifacts {
         archives sourcesJar
-        archives javadocJar
+        archives javadocsJar
     }
 }
