@@ -29,11 +29,15 @@ task clean(type: Delete) {
 
 ext {
     projectName = 'dynamic-toasts'
-    projectDesc = 'A simple library to display themed toasts with icon and text on Android 9+ ' +
-            '(Gingerbread or above) devices.'
+    projectDesc = 'A simple library to display themed toasts with icon and text on Android ' +
+            'devices.'
+    versionDesc = 'A simple library to display themed toasts with icon and text on Android 14+ ' +
+            '(ICS or above) devices.'
     siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     gitUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     issueUrl = 'https://github.com/pranavpandey/dynamic-toasts/issues'
+
+    githubUrl = 'pranavpandey/dynamic-toasts'
 
     mavenGroup = 'com.pranavpandey.android'
     mavenVersion = '0.3.0'
@@ -53,9 +57,9 @@ ext {
     versionCode = 3
 
     buildTools = '26.0.1'
-    minSdk = 9
+    minSdk = 14
     compileSdk = 26
     targetSdk = 25
 
-    androidSupport = '25.4.0'
+    androidSupport = '26.0.1'
 }
