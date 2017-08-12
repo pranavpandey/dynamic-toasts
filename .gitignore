@@ -15,6 +15,7 @@ gen/
 # Gradle files
 .gradle/
 build/
+release/
 
 # IntelliJ project files
 **.iml
