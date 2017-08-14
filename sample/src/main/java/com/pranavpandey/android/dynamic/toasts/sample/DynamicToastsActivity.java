@@ -36,6 +36,9 @@ import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
 public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final String GITHUB_LINK =
+            "https://github.com/pranavpandey/dynamic-toasts";
+
     /**
      * Enable vector drawable support for this activity. Please consider
      * adding {@code vectorDrawables.useSupportLibrary = true} in the
@@ -90,8 +93,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab:
-                DynamicLinkUtils.viewUrl(DynamicToastsActivity.this,
-                        "https://github.com/pranavpandey/dynamic-toasts");
+                DynamicLinkUtils.viewUrl(DynamicToastsActivity.this, GITHUB_LINK);
                 break;
 
             // Default toast without icon.
