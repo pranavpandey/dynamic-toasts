@@ -34,15 +34,18 @@ import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
+/**
+ * @author Pranav Pandey
+ */
 public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String GITHUB_LINK =
             "https://github.com/pranavpandey/dynamic-toasts";
 
-    /**
-     * Enable vector drawable support for this activity. Please consider
-     * adding {@code vectorDrawables.useSupportLibrary = true} in the
-     * project's {@code build.gradle} file.
+    /*
+      Enable vector drawable support for this activity. Please consider
+      adding {@code vectorDrawables.useSupportLibrary = true} in the
+      project's {@code build.gradle} file.
      */
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -53,11 +56,11 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_dynamic_toasts);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setSubtitle(R.string.app_name_sample);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setColorFilter(DynamicColorUtils.getTintColor(
                 ContextCompat.getColor(this, R.color.colorAccent)));
 

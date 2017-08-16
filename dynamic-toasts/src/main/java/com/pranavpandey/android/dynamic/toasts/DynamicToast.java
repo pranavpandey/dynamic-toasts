@@ -475,10 +475,8 @@ public class DynamicToast {
                 .inflate(R.layout.adt_layout_toast,
                         new LinearLayout(context), false);
 
-        final ImageView toastIcon = (ImageView)
-                toastLayout.findViewById(R.id.adt_toast_icon);
-        final TextView toastText =
-                (TextView) toastLayout.findViewById(R.id.adt_toast_text);
+        final ImageView toastIcon = toastLayout.findViewById(R.id.adt_toast_icon);
+        final TextView toastText = toastLayout.findViewById(R.id.adt_toast_text);
 
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
