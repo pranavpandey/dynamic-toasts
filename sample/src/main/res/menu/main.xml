@@ -15,11 +15,15 @@
 	limitations under the License.
 -->
 
-<resources>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- App color palette. -->
-    <color name="colorPrimary">#F44336</color>
-    <color name="colorPrimaryDark">#D32F2F</color>
-    <color name="colorAccent">#673AB7</color>
+    <item
+        android:id="@+id/menu_about"
+        android:title="@string/about"
+        android:icon="@drawable/ic_info"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
 
-</resources>
+</menu>

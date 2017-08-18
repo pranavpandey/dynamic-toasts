@@ -24,6 +24,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +37,7 @@ import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
 /**
- * @author Pranav Pandey
+ *  Main activity to show the implementation of {@link DynamicToast}.
  */
 public class DynamicToastsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -65,7 +67,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 ContextCompat.getColor(this, R.color.colorAccent)));
 
         ((TextView) findViewById(R.id.gradle)).setText(String.format(
-                getString(R.string.version_format),
+                getString(R.string.format_version),
                 DynamicPackageUtils.getAppVersion(this)));
 
         fab.setOnClickListener(this);
@@ -90,6 +92,23 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
         findViewById(R.id.toast_config_icon_size).setOnClickListener(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_about) {
+            AboutDialogFragment.newInstance().showDialog(this);
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

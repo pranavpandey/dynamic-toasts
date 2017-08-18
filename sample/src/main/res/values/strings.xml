@@ -20,7 +20,23 @@
     <string name="app_name">Dynamic Toasts</string>
     <string name="app_name_sample">Sample</string>
     <string name="gradle">Gradle dependency</string>
-    <string name="version_format">com.pranavpandey.android:dynamic-toasts:%1$s</string>
+    <string name="format_version">com.pranavpandey.android:dynamic-toasts:%1$s</string>
+
+    <string name="about">About</string>
+    <string name="about_content"><![CDATA[
+        <b>dynamic-toasts</b><br/>
+        A simple library to display themed toasts with icon and text on Android devices.<br/><br/>
+        Written and designed by<br/>
+        <b>&#169; Pranav Pandey</b><br/><br/>
+        <a href=\'https://pranavpandey.com\'>Website</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/pranavpandeydev\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://www.facebook.com/pranavpandeydev\'>Facebook</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+pranavpandeydev\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/pranav-pandey-09032974\'>LinkedIn</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/pranavpandey\'>GitHub</a><br/><br/>
+        Download my other apps from Google Play to support the development.
+    ]]></string>
+    <string name="more_apps">Google Play</string>
 
     <string name="default_toasts">Default toasts</string>
     <string name="without_icon">Without icon</string>
