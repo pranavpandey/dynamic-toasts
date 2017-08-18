@@ -18,6 +18,7 @@
 <resources>
 
     <dimen name="activity_margin">16dp</dimen>
+    <dimen name="activity_margin_fab">64dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
 </resources>
