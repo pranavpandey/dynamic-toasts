@@ -45,7 +45,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    compile 'com.pranavpandey.android:dynamic-toasts:0.4.0'
+    compile 'com.pranavpandey.android:dynamic-toasts:0.5.0'
 }
 ```
 
