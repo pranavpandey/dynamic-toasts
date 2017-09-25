@@ -28,7 +28,8 @@
         </shape>
     </item>
 
-    <item android:top="2dp"
+    <item
+        android:top="2dp"
         android:left="2dp"
         android:bottom="2dp"
         android:right="2dp">

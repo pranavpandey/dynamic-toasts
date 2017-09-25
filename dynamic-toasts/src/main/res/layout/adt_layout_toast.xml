@@ -25,16 +25,16 @@
 
     <ImageView
         android:id="@+id/adt_toast_icon"
-        android:layout_width="@dimen/das_icon_toast"
-        android:layout_height="@dimen/das_icon_toast"
-        android:layout_marginRight="@dimen/das_margin_toast_small"
-        android:layout_marginEnd="@dimen/das_margin_toast_small" />
+        android:layout_width="@dimen/adt_icon_toast"
+        android:layout_height="@dimen/adt_icon_toast"
+        android:layout_marginRight="@dimen/adt_margin_toast_small"
+        android:layout_marginEnd="@dimen/adt_margin_toast_small" />
 
     <TextView
         android:id="@+id/adt_toast_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/das_margin_toast_small"
-        android:textSize="@dimen/das_font_toast" />
+        android:layout_margin="@dimen/adt_margin_toast_small"
+        android:textSize="@dimen/adt_font_toast" />
 
 </LinearLayout>
