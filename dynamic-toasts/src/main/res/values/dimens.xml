@@ -23,4 +23,10 @@
     <dimen name="adt_margin_toast">8dp</dimen>
     <dimen name="adt_margin_toast_small">4dp</dimen>
 
+    <!-- Hint dimensions -->
+    <dimen name="adt_font_hint">13sp</dimen>
+    <dimen name="adt_icon_hint">20dp</dimen>
+    <dimen name="adt_margin_hint">4dp</dimen>
+    <dimen name="adt_margin_hint_small">2dp</dimen>
+
 </resources>

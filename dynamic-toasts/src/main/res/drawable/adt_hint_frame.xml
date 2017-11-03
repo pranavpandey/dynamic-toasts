@@ -22,7 +22,7 @@
 
         <shape android:dither="true">
 
-            <corners android:radius="32dp" />
+            <corners android:radius="2dp" />
 
             <gradient
                 android:angle="90"
@@ -43,13 +43,13 @@
 
             <solid android:color="#EFFFFFFF" />
 
-            <corners android:radius="32dp" />
+            <corners android:radius="2dp" />
 
             <padding
-                android:left="12dp"
-                android:top="12dp"
-                android:right="12dp"
-                android:bottom="12dp" />
+                android:left="16dp"
+                android:top="8dp"
+                android:right="16dp"
+                android:bottom="8dp" />
 
         </shape>
 
