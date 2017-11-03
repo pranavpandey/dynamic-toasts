@@ -35,6 +35,7 @@ so, minimum SDK will be Android 14+ (ICS or above).
     - [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
     - [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
     - [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
+    - [Cheat sheets](https://github.com/pranavpandey/dynamic-toasts#cheat-sheets)
 - [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
@@ -45,7 +46,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    compile 'com.pranavpandey.android:dynamic-toasts:0.5.0'
+    compile 'com.pranavpandey.android:dynamic-toasts:0.6.0'
 }
 ```
 
@@ -217,6 +218,13 @@ Custom toast based on the supplied icon, background and tint color theme for sup
 DynamicToast.make(context, "Custom toast with icon and duration", drawable, 
         tintColor, backgroundColor, duration).show();
 ```
+
+### Cheat sheets
+
+Use `DynamicHint` class to display cheat sheets for any `view`. All the methods are same as 
+explained above, just replace `DynmaicToast` with `DynamicHint` to create a cheat sheet.
+
+> Use `DynamicHint.show(view, toast)` method to display it according to the anchor view position.
 
 ---
 
