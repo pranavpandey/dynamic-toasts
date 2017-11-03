@@ -30,6 +30,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.pranavpandey.android.dynamic.toasts.DynamicHint;
 import com.pranavpandey.android.dynamic.toasts.DynamicToast;
 import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
@@ -92,6 +93,8 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
         findViewById(R.id.toast_config_text).setOnClickListener(this);
         findViewById(R.id.toast_config_background).setOnClickListener(this);
         findViewById(R.id.toast_config_icon_size).setOnClickListener(this);
+        findViewById(R.id.hint_default).setOnClickListener(this);
+        findViewById(R.id.hint_custom).setOnClickListener(this);
     }
 
     @Override
@@ -343,6 +346,27 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset();
+                break;
+
+            // Default hint without icon.
+            case R.id.hint_default:
+                DynamicHint.show(v, DynamicHint.make(this, getString(R.string.default_hint)));
+                break;
+
+            // Custom hint with icon.
+            case R.id.hint_custom:
+                // Customise hint.
+                DynamicHint.Config.getInstance()
+                        .setDefaultBackgroundColor(Color.parseColor("#607d8b"))
+                        .setDefaultTintColor(DynamicColorUtils.getTintColor(
+                                Color.parseColor("#607d8b")))
+                        .apply();
+
+                DynamicHint.show(v, DynamicHint.make(this, getString(R.string.custom_hint),
+                        ContextCompat.getDrawable(this, R.drawable.adt_ic_warning)));
+
+                // Reset customisations.
+                DynamicHint.Config.getInstance().reset();
                 break;
         }
     }

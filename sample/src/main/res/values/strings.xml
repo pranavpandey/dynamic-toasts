@@ -45,9 +45,10 @@
     <string name="with_icon_desc">Default toast with icon.</string>
     <string name="inbuilt_toasts">In-built toasts</string>
     <string name="default_custom">Default</string>
+    <string name="custom">Custom</string>
     <string name="default_color_desc">Default toast with custom color.</string>
     <string name="error">Error</string>
-    <string name="error_desc">An error has been occured.</string>
+    <string name="error_desc">An error has been occurred.</string>
     <string name="error_color_desc">Error toast with custom color.</string>
     <string name="error_icon_desc">Error toast with custom icon.</string>
     <string name="error_icon_disable_desc">Error toast without icon.</string>
@@ -67,6 +68,9 @@
     <string name="custom_icons">Custom icons</string>
     <string name="disable_icons">Disable icons</string>
     <string name="config">Other customisations</string>
+    <string name="cheat_sheets">Cheat sheets</string>
+    <string name="default_hint">Default hint</string>
+    <string name="custom_hint">Custom hint</string>
     <string name="text">text</string>
     <string name="text_desc">Toast with custom text size and typeface.</string>
     <string name="background">background</string>
