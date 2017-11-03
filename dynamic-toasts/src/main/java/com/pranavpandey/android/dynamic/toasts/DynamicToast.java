@@ -21,7 +21,6 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.CheckResult;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -38,8 +37,9 @@ import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 
 /**
- * A simple library to display themed toasts with icon and text. If no
- * color is supplied, it will display default toast based on vanilla Android.
+ * Helper class to display themed toasts with icon and text. If no
+ * color is supplied, it will display default toast based on the vanilla
+ * Android.
  */
 public class DynamicToast {
 
@@ -126,32 +126,27 @@ public class DynamicToast {
     /**
      * Background color for the default toast.
      */
-    private static @ColorInt int
-            defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+    private static @ColorInt int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static @ColorInt int
-            defaultTintColor = DEFAULT_TINT_COLOR;
+    private static @ColorInt int defaultTintColor = DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static @ColorInt int
-            errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+    private static @ColorInt int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static @ColorInt int
-            successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+    private static @ColorInt int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static @ColorInt int
-            warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+    private static @ColorInt int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
 
     /**
      * Custom icon for the error toast.
@@ -242,7 +237,7 @@ public class DynamicToast {
      */
     public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, errorIcon != DEFAULT_ERROR_ICON ? errorIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
                 errorBackgroundColor);
     }
@@ -260,7 +255,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeError(@NonNull Context context,
-                             @NonNull CharSequence text, int duration) {
+                                  @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
@@ -281,7 +276,7 @@ public class DynamicToast {
      */
     public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, successIcon != DEFAULT_SUCCESS_ICON ? successIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
                 successBackgroundColor);
     }
@@ -299,7 +294,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeSuccess(@NonNull Context context,
-                                  @NonNull CharSequence text, int duration) {
+                                    @NonNull CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
@@ -320,7 +315,7 @@ public class DynamicToast {
      */
     public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
         return make(context, text, warningIcon != DEFAULT_WARNING_ICON ? warningIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
                 warningBackgroundColor);
     }
@@ -359,7 +354,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
-                             @NonNull Drawable icon) {
+                             @Nullable Drawable icon) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
@@ -378,22 +373,22 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
-                             @NonNull Drawable icon, int duration) {
+                             @Nullable Drawable icon, int duration) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, duration);
     }
 
     /**
-     * Make a themed toast with text, background and the tint color. Toast
+     * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
@@ -404,16 +399,16 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, background and the tint color. Toast
+     * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
@@ -427,38 +422,38 @@ public class DynamicToast {
     }
 
     /**
-     * Make a themed toast with text, icon, background and the tint color. Toast
+     * Make a themed toast with text, icon, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      *
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context, @NonNull CharSequence text,
-                             @NonNull Drawable icon, @ColorInt int tintColor,
+                             @Nullable Drawable icon, @ColorInt int tintColor,
                              @ColorInt int backgroundColor) {
         return make(context, text, icon, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
 
     /**
-     * Make a themed toast with text, icon, background and the tint color.
+     * Make a themed toast with text, icon, toastBackground and the tint color.
      *
      * @param context The context to use. Usually your {@link android.app.Application}
      *                or {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the background. It will
+     * @param tintColor The toast tint color based on the toastBackground. It will
      *                  automatically check for the contrast to provide best
      *                  visibility.
-     * @param backgroundColor The toast background color.
+     * @param backgroundColor The toast toastBackground color.
      * @param duration How long to display the message. Either
      *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
      *
@@ -508,8 +503,8 @@ public class DynamicToast {
         } else {
             DynamicDrawableUtils.setBackground(toastLayout,
                     DynamicDrawableUtils.colorizeDrawable(
-                    ContextCompat.getDrawable(context, R.drawable.adt_toast_frame),
-                    backgroundColor, PorterDuff.Mode.MULTIPLY));
+                            ContextCompat.getDrawable(context, R.drawable.adt_toast_frame),
+                            backgroundColor, PorterDuff.Mode.MULTIPLY));
         }
 
         toast.setDuration(duration);
@@ -531,32 +526,27 @@ public class DynamicToast {
         /**
          * Background color for the default toast.
          */
-        private @ColorInt  int
-                defaultBackgroundColor = DynamicToast.defaultBackgroundColor;
+        private @ColorInt  int defaultBackgroundColor = DynamicToast.defaultBackgroundColor;
 
         /**
          * Tint color for the default toast.
          */
-        private @ColorInt int
-                defaultTintColor = DynamicToast.defaultTintColor;
+        private @ColorInt int defaultTintColor = DynamicToast.defaultTintColor;
 
         /**
          * Background color for the error toast.
          */
-        private @ColorInt int
-                errorBackgroundColor = DynamicToast.errorBackgroundColor;
+        private @ColorInt int errorBackgroundColor = DynamicToast.errorBackgroundColor;
 
         /**
          * Background color for the success toast.
          */
-        private @ColorInt int
-                successBackgroundColor = DynamicToast.successBackgroundColor;
+        private @ColorInt int successBackgroundColor = DynamicToast.successBackgroundColor;
 
         /**
          * Background color for the warning toast.
          */
-        private @ColorInt int
-                warningBackgroundColor = DynamicToast.warningBackgroundColor;
+        private @ColorInt int warningBackgroundColor = DynamicToast.warningBackgroundColor;
 
         /**
          * Custom icon for the error toast.
@@ -611,7 +601,6 @@ public class DynamicToast {
          *
          * @return {@link #sInstance} Singleton {@link Config} instance.
          */
-        @NonNull
         public static Config getInstance() {
             if (sInstance == null) {
                 sInstance = new Config();
@@ -626,7 +615,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
             this.defaultBackgroundColor = defaultBackgroundColor;
 
@@ -639,7 +627,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setDefaultTintColor(@ColorInt int defaultTintColor) {
             this.defaultTintColor = defaultTintColor;
 
@@ -652,7 +639,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setErrorBackgroundColor(@ColorInt int errorBackgroundColor) {
             this.errorBackgroundColor = errorBackgroundColor;
 
@@ -665,7 +651,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setSuccessBackgroundColor(@ColorInt int successBackgroundColor) {
             this.successBackgroundColor = successBackgroundColor;
 
@@ -678,7 +663,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setWarningBackgroundColor(@ColorInt int warningBackgroundColor) {
             this.warningBackgroundColor = warningBackgroundColor;
 
@@ -692,7 +676,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setErrorIcon(@Nullable Drawable errorIcon) {
             this.errorIcon = errorIcon;
 
@@ -706,7 +689,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setSuccessIcon(@Nullable Drawable successIcon) {
             this.successIcon = successIcon;
 
@@ -720,7 +702,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setWarningIcon(@Nullable Drawable warningIcon) {
             this.warningIcon = warningIcon;
 
@@ -734,7 +715,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setDisableIcon(boolean disableIcon) {
             this.disableIcon = disableIcon;
 
@@ -747,7 +727,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setIconSize(int iconSize) {
             this.iconSize = iconSize;
 
@@ -760,7 +739,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setTextSize(int textSize) {
             this.textSize = textSize;
 
@@ -774,7 +752,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setTextTypeface(@Nullable Typeface textTypeface) {
             this.textTypeface = textTypeface;
 
@@ -788,7 +765,6 @@ public class DynamicToast {
          * @return {@link Config} object to allow for chaining of calls to set
          *         methods.
          */
-        @CheckResult
         public Config setToastBackground(@Nullable Drawable toastBackground) {
             this.toastBackground = toastBackground;
 
