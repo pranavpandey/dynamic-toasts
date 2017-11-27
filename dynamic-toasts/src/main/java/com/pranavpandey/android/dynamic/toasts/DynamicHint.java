@@ -55,32 +55,32 @@ public class DynamicHint {
     /**
      * Default background color for the toast.
      */
-    private static final @ColorInt int
-            DEFAULT_BACKGROUND_COLOR = Color.parseColor("#454545");
+    private static final @ColorInt int DEFAULT_BACKGROUND_COLOR =
+            Color.parseColor("#454545");
 
     /**
      * Default tint color for the toast.
      */
-    private static final @ColorInt int
-            DEFAULT_TINT_COLOR = Color.parseColor("#FFFFFF");
+    private static final @ColorInt int DEFAULT_TINT_COLOR =
+            Color.parseColor("#FFFFFF");
 
     /**
      * Default background color for the error toast.
      */
-    private static final @ColorInt int
-            DEFAULT_ERROR_BACKGROUND_COLOR = Color.parseColor("#F44336");
+    private static final @ColorInt int DEFAULT_ERROR_BACKGROUND_COLOR =
+            Color.parseColor("#F44336");
 
     /**
      * Default background color for the success toast.
      */
-    private static final @ColorInt int
-            DEFAULT_SUCCESS_BACKGROUND_COLOR = Color.parseColor("#4CAF50");
+    private static final @ColorInt int DEFAULT_SUCCESS_BACKGROUND_COLOR =
+            Color.parseColor("#4CAF50");
 
     /**
      * Default background color for the warning toast.
      */
-    private static final @ColorInt int
-            DEFAULT_WARNING_BACKGROUND_COLOR = Color.parseColor("#FFEB3B");
+    private static final @ColorInt int DEFAULT_WARNING_BACKGROUND_COLOR =
+            Color.parseColor("#FFEB3B");
 
     /**
      * Default icon used by the error toast. {@code null} to use
