@@ -46,7 +46,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    compile 'com.pranavpandey.android:dynamic-toasts:0.6.0'
+    implementation 'com.pranavpandey.android:dynamic-toasts:0.7.0'
 }
 ```
 
@@ -222,9 +222,14 @@ DynamicToast.make(context, "Custom toast with icon and duration", drawable,
 ### Cheat sheets
 
 Use `DynamicHint` class to display cheat sheets for any `view`. All the methods are same as 
-explained above, just replace `DynmaicToast` with `DynamicHint` to create a cheat sheet.
+explained above, just replace `DynamicToast` with `DynamicHint` to create a cheat sheet.
 
 > Use `DynamicHint.show(view, toast)` method to display it according to the anchor view position.
+
+### Dependency
+
+It depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) to perform
+various internal operations. So, its functions can also be used to perform other useful operations.
 
 ---
 

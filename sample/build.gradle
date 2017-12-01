@@ -22,9 +22,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':dynamic-toasts')
+    implementation "com.pranavpandey.android:dynamic-dialogs:$mavenVersion"
+
     implementation "com.android.support:design:$androidSupport"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "com.pranavpandey.android:dynamic-dialogs:$mavenVersion"
-    implementation project(':dynamic-toasts')
 }
