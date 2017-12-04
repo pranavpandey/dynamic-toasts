@@ -221,8 +221,8 @@ DynamicToast.make(context, "Custom toast with icon and duration", drawable,
 
 ### Cheat sheets
 
-Use `DynamicHint` class to display cheat sheets for any `view`. All the methods are same as 
-explained above, just replace `DynamicToast` with `DynamicHint` to create a cheat sheet.
+Use dynamic hint to display cheat sheets for any `view`. All the methods are same as explained 
+above, just replace `DynamicToast` with `DynamicHint` to create a cheat sheet.
 
 > Use `DynamicHint.show(view, toast)` method to display it according to the anchor view position.
 
