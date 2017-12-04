@@ -36,6 +36,7 @@ so, minimum SDK will be Android 14+ (ICS or above).
     - [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
     - [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
     - [Cheat sheets](https://github.com/pranavpandey/dynamic-toasts#cheat-sheets)
+    - [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
 - [License](https://github.com/pranavpandey/dynamic-toasts#license)
 
 ---
@@ -46,7 +47,7 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
-    implementation 'com.pranavpandey.android:dynamic-toasts:0.7.0'
+    compile 'com.pranavpandey.android:dynamic-toasts:0.7.0'
 }
 ```
 
@@ -228,7 +229,7 @@ above, just replace `DynamicToast` with `DynamicHint` to create a cheat sheet.
 
 ### Dependency
 
-It depends on the [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils) to perform
+It depends on the [dynamic-utils](https://github.com/pranavpandey/dynamic-utils) to perform
 various internal operations. So, its functions can also be used to perform other useful operations.
 
 ---
