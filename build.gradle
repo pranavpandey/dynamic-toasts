@@ -52,7 +52,7 @@ ext {
 
     versionCode = 7
 
-    buildTools = '27.0.1'
+    buildTools = '27.0.2'
     minSdk = 14
     compileSdk = 27
     targetSdk = 27
