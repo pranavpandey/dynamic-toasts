@@ -46,62 +46,62 @@ public class DynamicToast {
     /**
      * Default background color for the toast.
      */
-    private static final @ColorInt int DAT_DEFAULT_BG_COLOR =
+    private static final @ColorInt int ADT_DEFAULT_BG_COLOR =
             Color.parseColor("#454545");
 
     /**
      * Default tint color for the toast.
      */
-    private static final @ColorInt int DAT_DEFAULT_TINT_COLOR =
+    private static final @ColorInt int ADT_DEFAULT_TINT_COLOR =
             Color.parseColor("#FFFFFF");
 
     /**
      * Default background color for the error toast.
      */
-    private static final @ColorInt int DAT_DEFAULT_ERROR_BG_COLOR =
+    private static final @ColorInt int ADT_DEFAULT_ERROR_BG_COLOR =
             Color.parseColor("#F44336");
 
     /**
      * Default background color for the success toast.
      */
-    private static final @ColorInt int DAT_DEFAULT_SUCCESS_BG_COLOR =
+    private static final @ColorInt int ADT_DEFAULT_SUCCESS_BG_COLOR =
             Color.parseColor("#4CAF50");
 
     /**
      * Default background color for the warning toast.
      */
-    private static final @ColorInt int DAT_DEFAULT_WARNING_BG_COLOR =
+    private static final @ColorInt int ADT_DEFAULT_WARNING_BG_COLOR =
             Color.parseColor("#FFEB3B");
 
     /**
      * Default icon used by the error toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DAT_DEFAULT_ERROR_ICON = null;
+    private static final Drawable ADT_DEFAULT_ERROR_ICON = null;
 
     /**
      * Default icon used by the success toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DAT_DEFAULT_SUCCESS_ICON = null;
+    private static final Drawable ADT_DEFAULT_SUCCESS_ICON = null;
 
     /**
      * Default icon used by the warning toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DAT_DEFAULT_WARNING_ICON = null;
+    private static final Drawable ADT_DEFAULT_WARNING_ICON = null;
 
     /**
      * Default value for {@link #disableIcon}. {@code false} to enable
      * toast icon.
      */
-    private static final boolean DAT_DEFAULT_DISABLE_ICON = false;
+    private static final boolean ADT_DEFAULT_DISABLE_ICON = false;
 
     /**
      * Default icon size for the toast in pixels. {@code -1} to use
      * in-built icon size.
      */
-    private static final @ColorInt int DAT_DEFAULT_ICON_SIZE = -1;
+    private static final @ColorInt int ADT_DEFAULT_ICON_SIZE = -1;
 
     /**
      * Default text size for the toast in SP. {@code -1} to use system
@@ -109,86 +109,86 @@ public class DynamicToast {
      *
      * @see TypedValue#COMPLEX_UNIT_SP;
      */
-    private static final @ColorInt int DAT_DEFAULT_TEXT_SIZE = -1;
+    private static final @ColorInt int ADT_DEFAULT_TEXT_SIZE = -1;
 
     /**
      * Default typeface used by the toast. {@code null} to use system
      * typeface.
      */
-    private static final Typeface DAT_DEFAULT_TEXT_TYPEFACE = null;
+    private static final Typeface ADT_DEFAULT_TEXT_TYPEFACE = null;
 
     /**
      * Default background used by the toast. {@code null} to use system
      * typeface.
      */
-    private static final Drawable DAT_DEFAULT_TOAST_BG = null;
+    private static final Drawable ADT_DEFAULT_TOAST_BG = null;
 
     /**
      * Background color for the default toast.
      */
-    private static @ColorInt int defaultBackgroundColor = DAT_DEFAULT_BG_COLOR;
+    private static @ColorInt int defaultBackgroundColor = ADT_DEFAULT_BG_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static @ColorInt int defaultTintColor = DAT_DEFAULT_TINT_COLOR;
+    private static @ColorInt int defaultTintColor = ADT_DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static @ColorInt int errorBackgroundColor = DAT_DEFAULT_ERROR_BG_COLOR;
+    private static @ColorInt int errorBackgroundColor = ADT_DEFAULT_ERROR_BG_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static @ColorInt int successBackgroundColor = DAT_DEFAULT_SUCCESS_BG_COLOR;
+    private static @ColorInt int successBackgroundColor = ADT_DEFAULT_SUCCESS_BG_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static @ColorInt int warningBackgroundColor = DAT_DEFAULT_WARNING_BG_COLOR;
+    private static @ColorInt int warningBackgroundColor = ADT_DEFAULT_WARNING_BG_COLOR;
 
     /**
      * Custom icon for the error toast.
      */
-    private static Drawable errorIcon = DAT_DEFAULT_ERROR_ICON;
+    private static Drawable errorIcon = ADT_DEFAULT_ERROR_ICON;
 
     /**
      * Custom icon for the success toast.
      */
-    private static Drawable successIcon = DAT_DEFAULT_SUCCESS_ICON;
+    private static Drawable successIcon = ADT_DEFAULT_SUCCESS_ICON;
 
     /**
      * Custom icon for the warning toast.
      */
-    private static Drawable warningIcon = DAT_DEFAULT_WARNING_ICON;
+    private static Drawable warningIcon = ADT_DEFAULT_WARNING_ICON;
 
     /**
      * {@code true} to disable icon for all the toasts.
      */
-    private static boolean disableIcon = DAT_DEFAULT_DISABLE_ICON;
+    private static boolean disableIcon = ADT_DEFAULT_DISABLE_ICON;
 
     /**
      * Icon size for the toast in pixels.
      */
-    private static int iconSize = DAT_DEFAULT_ICON_SIZE;
+    private static int iconSize = ADT_DEFAULT_ICON_SIZE;
 
     /**
      * Text size for the toast in SP.
      *
      * @see TypedValue#COMPLEX_UNIT_SP;
      */
-    private static int textSize = DAT_DEFAULT_TEXT_SIZE;
+    private static int textSize = ADT_DEFAULT_TEXT_SIZE;
 
     /**
      * Custom typeface used by the toast.
      */
-    private static Typeface textTypeface = DAT_DEFAULT_TEXT_TYPEFACE;
+    private static Typeface textTypeface = ADT_DEFAULT_TEXT_TYPEFACE;
 
     /**
      * Custom background used by the toast.
      */
-    private static Drawable toastBackground = DAT_DEFAULT_TOAST_BG;
+    private static Drawable toastBackground = ADT_DEFAULT_TOAST_BG;
 
     /**
      * Make a standard toast that just contains a text view. Toast duration will
@@ -236,7 +236,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeError(@NonNull Context context, @Nullable CharSequence text) {
-        return make(context, text, errorIcon != DAT_DEFAULT_ERROR_ICON ? errorIcon
+        return make(context, text, errorIcon != ADT_DEFAULT_ERROR_ICON ? errorIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
                 errorBackgroundColor);
@@ -275,7 +275,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeSuccess(@NonNull Context context, @Nullable CharSequence text) {
-        return make(context, text, successIcon != DAT_DEFAULT_SUCCESS_ICON ? successIcon
+        return make(context, text, successIcon != ADT_DEFAULT_SUCCESS_ICON ? successIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
                 successBackgroundColor);
@@ -314,7 +314,7 @@ public class DynamicToast {
      *         to display the toast.
      */
     public static Toast makeWarning(@NonNull Context context, @Nullable CharSequence text) {
-        return make(context, text, warningIcon != DAT_DEFAULT_WARNING_ICON ? warningIcon
+        return make(context, text, warningIcon != ADT_DEFAULT_WARNING_ICON ? warningIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
                 warningBackgroundColor);
@@ -476,7 +476,7 @@ public class DynamicToast {
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
         if (icon != null && !disableIcon) {
-            if (iconSize != DAT_DEFAULT_ICON_SIZE) {
+            if (iconSize != ADT_DEFAULT_ICON_SIZE) {
                 toastIcon.getLayoutParams().width = iconSize;
                 toastIcon.getLayoutParams().height = iconSize;
                 toastIcon.requestLayout();
@@ -490,7 +490,7 @@ public class DynamicToast {
         if (textTypeface != null) {
             toastText.setTypeface(textTypeface);
         }
-        if (textSize != DAT_DEFAULT_TEXT_SIZE) {
+        if (textSize != ADT_DEFAULT_TEXT_SIZE) {
             toastText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         }
         toastText.setTextColor(tintColor);
@@ -796,19 +796,19 @@ public class DynamicToast {
          * Reset customisations.
          */
         public void reset() {
-            DynamicToast.defaultBackgroundColor = DAT_DEFAULT_BG_COLOR;
-            DynamicToast.defaultTintColor = DAT_DEFAULT_TINT_COLOR;
-            DynamicToast.errorBackgroundColor = DAT_DEFAULT_ERROR_BG_COLOR;
-            DynamicToast.successBackgroundColor = DAT_DEFAULT_SUCCESS_BG_COLOR;
-            DynamicToast.warningBackgroundColor = DAT_DEFAULT_WARNING_BG_COLOR;
-            DynamicToast.errorIcon = DAT_DEFAULT_ERROR_ICON;
-            DynamicToast.successIcon = DAT_DEFAULT_SUCCESS_ICON;
-            DynamicToast.warningIcon = DAT_DEFAULT_WARNING_ICON;
-            DynamicToast.disableIcon = DAT_DEFAULT_DISABLE_ICON;
-            DynamicToast.iconSize = DAT_DEFAULT_ICON_SIZE;
-            DynamicToast.textSize = DAT_DEFAULT_TEXT_SIZE;
-            DynamicToast.textTypeface = DAT_DEFAULT_TEXT_TYPEFACE;
-            DynamicToast.toastBackground = DAT_DEFAULT_TOAST_BG;
+            DynamicToast.defaultBackgroundColor = ADT_DEFAULT_BG_COLOR;
+            DynamicToast.defaultTintColor = ADT_DEFAULT_TINT_COLOR;
+            DynamicToast.errorBackgroundColor = ADT_DEFAULT_ERROR_BG_COLOR;
+            DynamicToast.successBackgroundColor = ADT_DEFAULT_SUCCESS_BG_COLOR;
+            DynamicToast.warningBackgroundColor = ADT_DEFAULT_WARNING_BG_COLOR;
+            DynamicToast.errorIcon = ADT_DEFAULT_ERROR_ICON;
+            DynamicToast.successIcon = ADT_DEFAULT_SUCCESS_ICON;
+            DynamicToast.warningIcon = ADT_DEFAULT_WARNING_ICON;
+            DynamicToast.disableIcon = ADT_DEFAULT_DISABLE_ICON;
+            DynamicToast.iconSize = ADT_DEFAULT_ICON_SIZE;
+            DynamicToast.textSize = ADT_DEFAULT_TEXT_SIZE;
+            DynamicToast.textTypeface = ADT_DEFAULT_TEXT_TYPEFACE;
+            DynamicToast.toastBackground = ADT_DEFAULT_TOAST_BG;
 
             sInstance = null;
         }
