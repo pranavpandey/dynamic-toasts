@@ -55,62 +55,62 @@ public class DynamicHint {
     /**
      * Default background color for the toast.
      */
-    private static final @ColorInt int DEFAULT_BACKGROUND_COLOR =
+    private static final @ColorInt int DAT_DEFAULT_BG_COLOR =
             Color.parseColor("#454545");
 
     /**
      * Default tint color for the toast.
      */
-    private static final @ColorInt int DEFAULT_TINT_COLOR =
+    private static final @ColorInt int DAT_DEFAULT_TINT_COLOR =
             Color.parseColor("#FFFFFF");
 
     /**
      * Default background color for the error toast.
      */
-    private static final @ColorInt int DEFAULT_ERROR_BACKGROUND_COLOR =
+    private static final @ColorInt int DAT_DEFAULT_ERROR_BG_COLOR =
             Color.parseColor("#F44336");
 
     /**
      * Default background color for the success toast.
      */
-    private static final @ColorInt int DEFAULT_SUCCESS_BACKGROUND_COLOR =
+    private static final @ColorInt int DAT_DEFAULT_SUCCESS_BG_COLOR =
             Color.parseColor("#4CAF50");
 
     /**
      * Default background color for the warning toast.
      */
-    private static final @ColorInt int DEFAULT_WARNING_BACKGROUND_COLOR =
+    private static final @ColorInt int DAT_DEFAULT_WARNING_BG_COLOR =
             Color.parseColor("#FFEB3B");
 
     /**
      * Default icon used by the error toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DEFAULT_ERROR_ICON = null;
+    private static final Drawable DAT_DEFAULT_ERROR_ICON = null;
 
     /**
      * Default icon used by the success toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DEFAULT_SUCCESS_ICON = null;
+    private static final Drawable DAT_DEFAULT_SUCCESS_ICON = null;
 
     /**
      * Default icon used by the warning toast. {@code null} to use
      * in-built icon.
      */
-    private static final Drawable DEFAULT_WARNING_ICON = null;
+    private static final Drawable DAT_DEFAULT_WARNING_ICON = null;
 
     /**
      * Default value for {@link #disableIcon}. {@code false} to enable
      * toast icon.
      */
-    private static final boolean DEFAULT_DISABLE_ICON = false;
+    private static final boolean DAT_DEFAULT_DISABLE_ICON = false;
 
     /**
      * Default icon size for the toast in pixels. {@code -1} to use
      * in-built icon size.
      */
-    private static final @ColorInt int DEFAULT_ICON_SIZE = -1;
+    private static final @ColorInt int DAT_DEFAULT_ICON_SIZE = -1;
 
     /**
      * Default text size for the toast in SP. {@code -1} to use system
@@ -118,86 +118,86 @@ public class DynamicHint {
      *
      * @see TypedValue#COMPLEX_UNIT_SP;
      */
-    private static final @ColorInt int DEFAULT_TEXT_SIZE = -1;
+    private static final @ColorInt int DAT_DEFAULT_TEXT_SIZE = -1;
 
     /**
      * Default typeface used by the toast. {@code null} to use system
      * typeface.
      */
-    private static final Typeface DEFAULT_TEXT_TYPEFACE = null;
+    private static final Typeface DAT_DEFAULT_TEXT_TYPEFACE = null;
 
     /**
      * Default background used by the toast. {@code null} to use system
      * typeface.
      */
-    private static final Drawable DEFAULT_TOAST_BACKGROUND = null;
+    private static final Drawable DAT_DEFAULT_TOAST_BG = null;
 
     /**
      * Background color for the default toast.
      */
-    private static @ColorInt int defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
+    private static @ColorInt int defaultBackgroundColor = DAT_DEFAULT_BG_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static @ColorInt int defaultTintColor = DEFAULT_TINT_COLOR;
+    private static @ColorInt int defaultTintColor = DAT_DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static @ColorInt int errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
+    private static @ColorInt int errorBackgroundColor = DAT_DEFAULT_ERROR_BG_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static @ColorInt int successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
+    private static @ColorInt int successBackgroundColor = DAT_DEFAULT_SUCCESS_BG_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static @ColorInt int warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
+    private static @ColorInt int warningBackgroundColor = DAT_DEFAULT_WARNING_BG_COLOR;
 
     /**
      * Custom icon for the error toast.
      */
-    private static Drawable errorIcon = DEFAULT_ERROR_ICON;
+    private static Drawable errorIcon = DAT_DEFAULT_ERROR_ICON;
 
     /**
      * Custom icon for the success toast.
      */
-    private static Drawable successIcon = DEFAULT_SUCCESS_ICON;
+    private static Drawable successIcon = DAT_DEFAULT_SUCCESS_ICON;
 
     /**
      * Custom icon for the warning toast.
      */
-    private static Drawable warningIcon = DEFAULT_WARNING_ICON;
+    private static Drawable warningIcon = DAT_DEFAULT_WARNING_ICON;
 
     /**
      * {@code true} to disable icon for all the toasts.
      */
-    private static boolean disableIcon = DEFAULT_DISABLE_ICON;
+    private static boolean disableIcon = DAT_DEFAULT_DISABLE_ICON;
 
     /**
      * Icon size for the toast in pixels.
      */
-    private static int iconSize = DEFAULT_ICON_SIZE;
+    private static int iconSize = DAT_DEFAULT_ICON_SIZE;
 
     /**
      * Text size for the toast in SP.
      *
      * @see TypedValue#COMPLEX_UNIT_SP;
      */
-    private static int textSize = DEFAULT_TEXT_SIZE;
+    private static int textSize = DAT_DEFAULT_TEXT_SIZE;
 
     /**
      * Custom typeface used by the toast.
      */
-    private static Typeface textTypeface = DEFAULT_TEXT_TYPEFACE;
+    private static Typeface textTypeface = DAT_DEFAULT_TEXT_TYPEFACE;
 
     /**
      * Custom background used by the toast.
      */
-    private static Drawable toastBackground = DEFAULT_TOAST_BACKGROUND;
+    private static Drawable toastBackground = DAT_DEFAULT_TOAST_BG;
 
     /**
      * Make a standard toast that just contains a text view. Toast duration will
@@ -210,7 +210,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text) {
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text) {
         return make(context, text, null, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
@@ -228,7 +228,7 @@ public class DynamicHint {
      *         to display the toast.
      */
     public static Toast make(@NonNull Context context,
-                             @NonNull CharSequence text, int duration) {
+                             @Nullable CharSequence text, int duration) {
         return make(context, text, null, defaultTintColor,
                 defaultBackgroundColor, duration);
     }
@@ -244,9 +244,9 @@ public class DynamicHint {
      * @return Error toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeError(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, errorIcon != DEFAULT_ERROR_ICON ? errorIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
+    public static Toast makeError(@NonNull Context context, @Nullable CharSequence text) {
+        return make(context, text, errorIcon != DAT_DEFAULT_ERROR_ICON ? errorIcon
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
                 errorBackgroundColor);
     }
@@ -264,7 +264,7 @@ public class DynamicHint {
      *         to display the toast.
      */
     public static Toast makeError(@NonNull Context context,
-                             @NonNull CharSequence text, int duration) {
+                                  @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
@@ -283,9 +283,9 @@ public class DynamicHint {
      * @return Success toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeSuccess(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, successIcon != DEFAULT_SUCCESS_ICON ? successIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
+    public static Toast makeSuccess(@NonNull Context context, @Nullable CharSequence text) {
+        return make(context, text, successIcon != DAT_DEFAULT_SUCCESS_ICON ? successIcon
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
                 successBackgroundColor);
     }
@@ -303,7 +303,7 @@ public class DynamicHint {
      *         to display the toast.
      */
     public static Toast makeSuccess(@NonNull Context context,
-                                  @NonNull CharSequence text, int duration) {
+                                    @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
@@ -322,9 +322,9 @@ public class DynamicHint {
      * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeWarning(@NonNull Context context, @NonNull CharSequence text) {
-        return make(context, text, warningIcon != DEFAULT_WARNING_ICON ? warningIcon
-                : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
+    public static Toast makeWarning(@NonNull Context context, @Nullable CharSequence text) {
+        return make(context, text, warningIcon != DAT_DEFAULT_WARNING_ICON ? warningIcon
+                        : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
                 warningBackgroundColor);
     }
@@ -342,7 +342,7 @@ public class DynamicHint {
      *         to display the toast.
      */
     public static Toast makeWarning(@NonNull Context context,
-                                    @NonNull CharSequence text, int duration) {
+                                    @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
@@ -362,7 +362,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @Nullable Drawable icon) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
@@ -381,7 +381,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @Nullable Drawable icon, int duration) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, duration);
@@ -402,7 +402,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @ColorInt int tintColor, @ColorInt int backgroundColor) {
         return make(context, text, null, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
@@ -424,7 +424,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @ColorInt int tintColor, @ColorInt int backgroundColor,
                              int duration) {
         return make(context, text, null, tintColor, backgroundColor, duration);
@@ -446,7 +446,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @Nullable Drawable icon, @ColorInt int tintColor,
                              @ColorInt int backgroundColor) {
         return make(context, text, icon, tintColor, backgroundColor, Toast.LENGTH_SHORT);
@@ -469,7 +469,7 @@ public class DynamicHint {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @NonNull CharSequence text,
+    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
                              @Nullable Drawable icon, @ColorInt int tintColor,
                              @ColorInt int backgroundColor, int duration) {
         final Toast toast = new Toast(context);
@@ -485,7 +485,7 @@ public class DynamicHint {
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
         if (icon != null && !disableIcon) {
-            if (iconSize != DEFAULT_ICON_SIZE) {
+            if (iconSize != DAT_DEFAULT_ICON_SIZE) {
                 toastIcon.getLayoutParams().width = iconSize;
                 toastIcon.getLayoutParams().height = iconSize;
                 toastIcon.requestLayout();
@@ -499,7 +499,7 @@ public class DynamicHint {
         if (textTypeface != null) {
             toastText.setTypeface(textTypeface);
         }
-        if (textSize != DEFAULT_TEXT_SIZE) {
+        if (textSize != DAT_DEFAULT_TEXT_SIZE) {
             toastText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         }
         toastText.setTextColor(tintColor);
@@ -512,8 +512,8 @@ public class DynamicHint {
         } else {
             DynamicDrawableUtils.setBackground(toastLayout,
                     DynamicDrawableUtils.colorizeDrawable(
-                    ContextCompat.getDrawable(context, R.drawable.adt_hint_frame),
-                    backgroundColor, PorterDuff.Mode.MULTIPLY));
+                            ContextCompat.getDrawable(context, R.drawable.adt_hint_frame),
+                            backgroundColor, PorterDuff.Mode.MULTIPLY));
         }
 
         toast.setDuration(duration);
@@ -805,19 +805,19 @@ public class DynamicHint {
          * Reset customisations.
          */
         public void reset() {
-            DynamicHint.defaultBackgroundColor = DEFAULT_BACKGROUND_COLOR;
-            DynamicHint.defaultTintColor = DEFAULT_TINT_COLOR;
-            DynamicHint.errorBackgroundColor = DEFAULT_ERROR_BACKGROUND_COLOR;
-            DynamicHint.successBackgroundColor = DEFAULT_SUCCESS_BACKGROUND_COLOR;
-            DynamicHint.warningBackgroundColor = DEFAULT_WARNING_BACKGROUND_COLOR;
-            DynamicHint.errorIcon = DEFAULT_ERROR_ICON;
-            DynamicHint.successIcon = DEFAULT_SUCCESS_ICON;
-            DynamicHint.warningIcon = DEFAULT_WARNING_ICON;
-            DynamicHint.disableIcon = DEFAULT_DISABLE_ICON;
-            DynamicHint.iconSize = DEFAULT_ICON_SIZE;
-            DynamicHint.textSize = DEFAULT_TEXT_SIZE;
-            DynamicHint.textTypeface = DEFAULT_TEXT_TYPEFACE;
-            DynamicHint.toastBackground = DEFAULT_TOAST_BACKGROUND;
+            DynamicHint.defaultBackgroundColor = DAT_DEFAULT_BG_COLOR;
+            DynamicHint.defaultTintColor = DAT_DEFAULT_TINT_COLOR;
+            DynamicHint.errorBackgroundColor = DAT_DEFAULT_ERROR_BG_COLOR;
+            DynamicHint.successBackgroundColor = DAT_DEFAULT_SUCCESS_BG_COLOR;
+            DynamicHint.warningBackgroundColor = DAT_DEFAULT_WARNING_BG_COLOR;
+            DynamicHint.errorIcon = DAT_DEFAULT_ERROR_ICON;
+            DynamicHint.successIcon = DAT_DEFAULT_SUCCESS_ICON;
+            DynamicHint.warningIcon = DAT_DEFAULT_WARNING_ICON;
+            DynamicHint.disableIcon = DAT_DEFAULT_DISABLE_ICON;
+            DynamicHint.iconSize = DAT_DEFAULT_ICON_SIZE;
+            DynamicHint.textSize = DAT_DEFAULT_TEXT_SIZE;
+            DynamicHint.textTypeface = DAT_DEFAULT_TEXT_TYPEFACE;
+            DynamicHint.toastBackground = DAT_DEFAULT_TOAST_BG;
 
             sInstance = null;
         }
