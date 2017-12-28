@@ -201,7 +201,7 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text) {
         return make(context, text, null, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
@@ -218,8 +218,8 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context,
-                             @Nullable CharSequence text, int duration) {
+    public static @NonNull Toast make(@NonNull Context context,
+                                      @Nullable CharSequence text, int duration) {
         return make(context, text, null, defaultTintColor,
                 defaultBackgroundColor, duration);
     }
@@ -235,7 +235,8 @@ public class DynamicToast {
      * @return Error toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeError(@NonNull Context context, @Nullable CharSequence text) {
+    public static @NonNull Toast makeError(@NonNull Context context,
+                                           @Nullable CharSequence text) {
         return make(context, text, errorIcon != ADT_DEFAULT_ERROR_ICON ? errorIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
@@ -254,8 +255,8 @@ public class DynamicToast {
      * @return Error toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeError(@NonNull Context context,
-                                  @Nullable CharSequence text, int duration) {
+    public static @NonNull Toast makeError(@NonNull Context context,
+                                           @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_error),
                 DynamicColorUtils.getTintColor(errorBackgroundColor),
@@ -274,7 +275,8 @@ public class DynamicToast {
      * @return Success toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeSuccess(@NonNull Context context, @Nullable CharSequence text) {
+    public static @NonNull Toast makeSuccess(@NonNull Context context,
+                                             @Nullable CharSequence text) {
         return make(context, text, successIcon != ADT_DEFAULT_SUCCESS_ICON ? successIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
@@ -293,8 +295,8 @@ public class DynamicToast {
      * @return Success toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeSuccess(@NonNull Context context,
-                                    @Nullable CharSequence text, int duration) {
+    public static @NonNull Toast makeSuccess(@NonNull Context context,
+                                             @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_success),
                 DynamicColorUtils.getTintColor(successBackgroundColor),
@@ -313,7 +315,8 @@ public class DynamicToast {
      * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeWarning(@NonNull Context context, @Nullable CharSequence text) {
+    public static @NonNull Toast makeWarning(@NonNull Context context,
+                                             @Nullable CharSequence text) {
         return make(context, text, warningIcon != ADT_DEFAULT_WARNING_ICON ? warningIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
@@ -332,8 +335,8 @@ public class DynamicToast {
      * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast makeWarning(@NonNull Context context,
-                                    @Nullable CharSequence text, int duration) {
+    public static @NonNull Toast makeWarning(@NonNull Context context,
+                                             @Nullable CharSequence text, int duration) {
         return make(context, text, ContextCompat.getDrawable(
                 context, R.drawable.adt_ic_warning),
                 DynamicColorUtils.getTintColor(warningBackgroundColor),
@@ -353,8 +356,8 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @Nullable Drawable icon) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @Nullable Drawable icon) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
@@ -372,8 +375,8 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @Nullable Drawable icon, int duration) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @Nullable Drawable icon, int duration) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, duration);
     }
@@ -393,8 +396,8 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @ColorInt int tintColor, @ColorInt int backgroundColor) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @ColorInt int tintColor, @ColorInt int backgroundColor) {
         return make(context, text, null, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
 
@@ -415,9 +418,9 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @ColorInt int tintColor, @ColorInt int backgroundColor,
-                             int duration) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @ColorInt int tintColor, @ColorInt int backgroundColor,
+                                      int duration) {
         return make(context, text, null, tintColor, backgroundColor, duration);
     }
 
@@ -437,9 +440,9 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @Nullable Drawable icon, @ColorInt int tintColor,
-                             @ColorInt int backgroundColor) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @Nullable Drawable icon, @ColorInt int tintColor,
+                                      @ColorInt int backgroundColor) {
         return make(context, text, icon, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
 
@@ -460,15 +463,13 @@ public class DynamicToast {
      * @return Toast with the supplied parameters. Use {@link Toast#show()}
      *         to display the toast.
      */
-    public static Toast make(@NonNull Context context, @Nullable CharSequence text,
-                             @Nullable Drawable icon, @ColorInt int tintColor,
-                             @ColorInt int backgroundColor, int duration) {
+    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
+                                      @Nullable Drawable icon, @ColorInt int tintColor,
+                                      @ColorInt int backgroundColor, int duration) {
         final Toast toast = new Toast(context);
 
-        final View toastLayout = ((LayoutInflater)
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE))
-                .inflate(R.layout.adt_layout_toast,
-                        new LinearLayout(context), false);
+        final View toastLayout = LayoutInflater.from(context).inflate(
+                R.layout.adt_layout_toast, new LinearLayout(context), false);
 
         final ImageView toastIcon = toastLayout.findViewById(R.id.adt_toast_icon);
         final TextView toastText = toastLayout.findViewById(R.id.adt_toast_text);
