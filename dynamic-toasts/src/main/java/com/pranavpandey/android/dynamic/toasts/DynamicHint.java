@@ -47,8 +47,9 @@ import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 public class DynamicHint {
 
     /**
-     * The estimated height of a toast, in dips (density-independent pixels). This is used to
-     * determine whether or not the toast should appear above or below the UI element.
+     * The estimated height of a toast, in dips (density-independent pixels).
+     * This is used to determine whether or not the toast should appear above
+     * or below the UI element.
      */
     private static final int ADT_ESTIMATED_TOAST_HEIGHT_DIPS = 52;
 
@@ -480,8 +481,8 @@ public class DynamicHint {
         final View toastLayout = LayoutInflater.from(context).inflate(
                 R.layout.adt_layout_hint, new LinearLayout(context), false);
 
-        final ImageView toastIcon = toastLayout.findViewById(R.id.adt_toast_icon);
-        final TextView toastText = toastLayout.findViewById(R.id.adt_toast_text);
+        final ImageView toastIcon = toastLayout.findViewById(R.id.adt_hint_icon);
+        final TextView toastText = toastLayout.findViewById(R.id.adt_hint_text);
 
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
