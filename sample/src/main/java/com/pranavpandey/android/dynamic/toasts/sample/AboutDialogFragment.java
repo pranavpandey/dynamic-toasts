@@ -17,7 +17,9 @@
 package com.pranavpandey.android.dynamic.toasts.sample;
 
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -53,9 +55,9 @@ public class AboutDialogFragment extends DynamicDialogFragment {
         return new AboutDialogFragment();
     }
 
-    @NonNull
     @Override
-    protected DynamicDialog onCustomiseDialog(@NonNull DynamicDialog alertDialog) {
+    protected @NonNull DynamicDialog onCustomiseDialog(@NonNull DynamicDialog alertDialog,
+                                                       @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_about,
                 new LinearLayout(getContext()), false);
         TextView message = view.findViewById(R.id.dialog_about_text);
@@ -71,10 +73,10 @@ public class AboutDialogFragment extends DynamicDialogFragment {
         return alertDialog;
     }
 
-    @NonNull
     @Override
-    protected DynamicDialog.Builder onCustomiseBuilder(
-            @NonNull DynamicDialog.Builder alertDialogBuilder) {
+    protected @NonNull DynamicDialog.Builder onCustomiseBuilder(
+            @NonNull DynamicDialog.Builder alertDialogBuilder,
+            @Nullable Bundle savedInstanceState) {
         return alertDialogBuilder.setTitle(R.string.about)
                 .setPositiveButton(R.string.more_apps, new DialogInterface.OnClickListener() {
                     @Override
