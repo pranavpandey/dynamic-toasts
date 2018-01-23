@@ -832,6 +832,17 @@ public class DynamicHint {
      * @param toast The toast to be displayed.
      */
     public static void show(@NonNull View anchor, @NonNull Toast toast) {
+        show(anchor, toast, ADT_ESTIMATED_TOAST_HEIGHT_DIPS);
+    }
+
+    /**
+     * Show a toast above or below according to the anchor view position.
+     *
+     * @param anchor The anchor view to show the toast.
+     * @param toast The toast to be displayed.
+     * @param offset The toast vertical offset in dips.
+     */
+    public static void show(@NonNull View anchor, @NonNull Toast toast, int offset) {
         final int[] screenPos = new int[2];
         final Rect displayFrame = new Rect();
         anchor.getLocationOnScreen(screenPos);
@@ -841,13 +852,13 @@ public class DynamicHint {
         final int viewHeight = anchor.getHeight();
         final int viewCenterX = screenPos[0] + viewWidth / 2;
         final int screenWidth = anchor.getResources().getDisplayMetrics().widthPixels;
-        final int estimatedToastHeight = DynamicUnitUtils
-                .convertDpToPixels(ADT_ESTIMATED_TOAST_HEIGHT_DIPS);
+        final int estimatedToastHeight = DynamicUnitUtils.convertDpToPixels(offset);
 
         if (screenPos[1] < estimatedToastHeight) {
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
                     viewCenterX - screenWidth / 2,
-                    screenPos[1] - displayFrame.top - viewHeight);
+                    screenPos[1] - displayFrame.top
+                            + Math.max(viewHeight, estimatedToastHeight));
         } else {
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
                     viewCenterX - screenWidth / 2,
