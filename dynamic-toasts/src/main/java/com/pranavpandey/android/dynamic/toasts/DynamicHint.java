@@ -51,7 +51,7 @@ public class DynamicHint {
      * This is used to determine whether or not the toast should appear above
      * or below the UI element.
      */
-    private static final int ADT_ESTIMATED_TOAST_HEIGHT_DIPS = 52;
+    private static final int ADT_ESTIMATED_TOAST_HEIGHT_DIPS = 48;
 
     /**
      * Default background color for the toast.
@@ -862,7 +862,8 @@ public class DynamicHint {
         } else {
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
                     viewCenterX - screenWidth / 2,
-                    screenPos[1] - displayFrame.top - estimatedToastHeight);
+                    screenPos[1] - displayFrame.top
+                            - Math.max(viewHeight, estimatedToastHeight));
         }
 
         toast.show();
