@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.content.res.AppCompatResources;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,15 +44,6 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
 
     public static final String GITHUB_LINK =
             "https://github.com/pranavpandey/dynamic-toasts";
-
-    /*
-      Enable vector drawable support for this activity. Please consider
-      adding {@code vectorDrawables.useSupportLibrary = true} in the
-      project's {@code build.gradle} file.
-     */
-    static {
-        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +120,8 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             // Default toast with icon.
             case R.id.toast_default_icon:
                 DynamicToast.make(this, getString(R.string.with_icon_desc),
-                        ContextCompat.getDrawable(this, R.drawable.ic_toast_icon)).show();
+                        AppCompatResources.getDrawable(
+                                this, R.drawable.ic_toast_icon)).show();
                 break;
 
             // Error toast.
@@ -157,7 +149,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             // Custom toast with icon.
             case R.id.toast_custom_icon:
                 DynamicToast.make(this, getString(R.string.custom_desc),
-                        ContextCompat.getDrawable(this, R.drawable.ic_social_github),
+                        AppCompatResources.getDrawable(this, R.drawable.ic_social_github),
                         Color.parseColor("#FFFFFF"), Color.parseColor("#000000"),
                         Toast.LENGTH_LONG).show();
                 break;
@@ -220,7 +212,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             case R.id.toast_error_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
-                        .setErrorIcon(ContextCompat.getDrawable(
+                        .setErrorIcon(AppCompatResources.getDrawable(
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
@@ -235,7 +227,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             case R.id.toast_success_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
-                        .setSuccessIcon(ContextCompat.getDrawable(
+                        .setSuccessIcon(AppCompatResources.getDrawable(
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
@@ -250,7 +242,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             case R.id.toast_warning_icon:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
-                        .setWarningIcon(ContextCompat.getDrawable(
+                        .setWarningIcon(AppCompatResources.getDrawable(
                                 this, R.drawable.ic_toast_icon))
                         .apply();
 
@@ -308,7 +300,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setTextSize(18)
-                        .setErrorIcon(ContextCompat.getDrawable(
+                        .setErrorIcon(AppCompatResources.getDrawable(
                                 this, R.drawable.ic_toast_icon))
                         .setTextTypeface(Typeface.create(
                                 Typeface.SERIF, Typeface.BOLD_ITALIC))
@@ -325,7 +317,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
             case R.id.toast_config_background:
                 // Customise toast.
                 DynamicToast.Config.getInstance()
-                        .setToastBackground(ContextCompat.getDrawable(
+                        .setToastBackground(AppCompatResources.getDrawable(
                                 this, R.drawable.custom_toast_background))
                         .apply();
 
@@ -363,7 +355,7 @@ public class DynamicToastsActivity extends AppCompatActivity implements View.OnC
                         .apply();
 
                 DynamicHint.show(v, DynamicHint.make(this, getString(R.string.custom_hint),
-                        ContextCompat.getDrawable(this, R.drawable.adt_ic_warning)));
+                        AppCompatResources.getDrawable(this, R.drawable.adt_ic_warning)));
 
                 // Reset customisations.
                 DynamicHint.Config.getInstance().reset();

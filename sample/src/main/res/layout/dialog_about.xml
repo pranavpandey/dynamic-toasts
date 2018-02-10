@@ -24,8 +24,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/dialog_margin_horizontal"
-        android:paddingEnd="@dimen/dialog_margin_horizontal">
+        android:paddingLeft="@dimen/dialog_margin_horizontal"
+        android:paddingRight="@dimen/dialog_margin_horizontal">
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/dialog_about_text"
