@@ -39,16 +39,20 @@ import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils;
 public class AboutDialogFragment extends DynamicDialogFragment {
 
     /**
-     * Text size for the about dialog.
+     * Text size for this about dialog.
      * 15 SP
      */
     private static final int TEXT_SIZE = 15;
 
     /**
-     * Text size for the about dialog.
-     * 15 SP
+     * Url to donate via PayPal.
      */
-    private static final String GOOGLE_PLAY_URL =
+    public static final String URL_DONATE = "https://www.paypal.me/pranavpandeydev";
+
+    /**
+     * Url for other apps on Play Store.
+     */
+    private static final String URL_PLAY_STORE =
             "https://play.google.com/store/apps/dev?id=6608630615059087491";
 
     public static AboutDialogFragment newInstance() {
@@ -78,10 +82,16 @@ public class AboutDialogFragment extends DynamicDialogFragment {
             @NonNull DynamicDialog.Builder alertDialogBuilder,
             @Nullable Bundle savedInstanceState) {
         return alertDialogBuilder.setTitle(R.string.about)
+                .setNeutralButton(R.string.donate, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        DynamicLinkUtils.viewUrl(getContext(), URL_DONATE);
+                    }
+                })
                 .setPositiveButton(R.string.more_apps, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        DynamicLinkUtils.viewUrl(getContext(), GOOGLE_PLAY_URL);
+                        DynamicLinkUtils.viewUrl(getContext(), URL_PLAY_STORE);
                     }
                 })
                 .setNegativeButton(android.R.string.cancel, null)

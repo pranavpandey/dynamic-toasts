@@ -34,9 +34,10 @@
         <a href=\'https://google.com/+pranavpandeydev\'>Google+</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/pranav-pandey-09032974\'>LinkedIn</a>&nbsp;&nbsp;
         <a href=\'https://github.com/pranavpandey\'>GitHub</a><br/><br/>
-        Download my other apps from Google Play to support the development.
+        Please donate via PayPal or download my other apps from Play Store to support the development.
     ]]></string>
-    <string name="more_apps">Google Play</string>
+    <string name="donate">Donate</string>
+    <string name="more_apps">Play Store</string>
 
     <string name="default_toasts">Default toasts</string>
     <string name="without_icon">Without icon</string>
