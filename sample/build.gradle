@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion compileSdk
@@ -24,7 +25,11 @@ android {
 dependencies {
     implementation project(':dynamic-toasts')
     implementation "com.pranavpandey.android:dynamic-dialogs:$mavenVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "com.android.support:design:$androidSupport"
     implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta5'
+}
+repositories {
+    mavenCentral()
 }
