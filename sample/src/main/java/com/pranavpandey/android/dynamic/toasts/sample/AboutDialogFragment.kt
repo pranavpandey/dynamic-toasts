@@ -90,7 +90,7 @@ class AboutDialogFragment : DynamicDialogFragment() {
         message.setTextSize(TypedValue.COMPLEX_UNIT_SP, TEXT_SIZE.toFloat())
         message.setLineSpacing(0f, 1.2f)
         message.movementMethod = LinkMovementMethod.getInstance()
-        message.setLinkTextColor(ContextCompat.getColor(context!!, R.color.colorPrimary))
+        message.setLinkTextColor(ContextCompat.getColor(context!!, R.color.color_primary))
 
         alertDialog.setView(view)
         return alertDialog

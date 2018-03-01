@@ -60,7 +60,7 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setColorFilter(DynamicColorUtils.getTintColor(
-                ContextCompat.getColor(this, R.color.colorAccent)))
+                ContextCompat.getColor(this, R.color.color_accent)))
 
         (findViewById<View>(R.id.gradle) as TextView).text = String.format(
                 getString(R.string.format_version),

@@ -18,8 +18,8 @@
 <resources>
 
     <!-- App color palette. -->
-    <color name="colorPrimary">#F44336</color>
-    <color name="colorPrimaryDark">#D32F2F</color>
-    <color name="colorAccent">#673AB7</color>
+    <color name="color_primary">#F44336</color>
+    <color name="color_primary_dark">#D32F2F</color>
+    <color name="color_accent">#673AB7</color>
 
 </resources>
