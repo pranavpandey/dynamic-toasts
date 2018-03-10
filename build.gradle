@@ -11,7 +11,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
     }
 }
 
@@ -39,7 +39,7 @@ ext {
     githubUrl = 'pranavpandey/dynamic-toasts'
 
     mavenGroup = 'com.pranavpandey.android'
-    mavenVersion = '0.9.0'
+    mavenVersion = '1.0.0'
     mavenInceptionYear = 2017
     mavenArtifactId = 'dynamic-toasts'
     bintrayRepo = 'android'
@@ -53,7 +53,7 @@ ext {
     licenseDistribution = 'repo'
     allLicenses = ["Apache-2.0"]
 
-    versionCode = 9
+    versionCode = 10
 
     buildTools = '27.0.3'
     minSdk = 14
