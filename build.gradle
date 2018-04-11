@@ -55,7 +55,7 @@ ext {
     githubUrl = 'pranavpandey/dynamic-toasts'
 
     mavenGroup = 'com.pranavpandey.android'
-    mavenVersion = '1.0.0'
+    mavenVersion = '1.1.0'
     mavenInceptionYear = 2017
     mavenArtifactId = 'dynamic-toasts'
     bintrayRepo = 'android'
@@ -69,7 +69,7 @@ ext {
     licenseDistribution = 'repo'
     allLicenses = ["Apache-2.0"]
 
-    versionCode = 10
+    versionCode = 11
 
     buildTools = '27.0.3'
     minSdk = 14
