@@ -49,7 +49,7 @@
     <string name="custom">Custom</string>
     <string name="default_color_desc">Default toast with custom color.</string>
     <string name="error">Error</string>
-    <string name="error_desc">An error has been occurred.</string>
+    <string name="error_desc">An error has occurred.</string>
     <string name="error_color_desc">Error toast with custom color.</string>
     <string name="error_icon_desc">Error toast with custom icon.</string>
     <string name="error_icon_disable_desc">Error toast without icon.</string>
