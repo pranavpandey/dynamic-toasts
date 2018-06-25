@@ -60,6 +60,8 @@ object which can be customised further.
 
 Please call `show()` method to display the toast.
 
+> For complete reference, please read the [documentation](https://pranavpandey.github.io/dynamic-toasts).
+
 ### Configuration
 
 Optional configuration to customise the toasts further like custom background color or drawable, 

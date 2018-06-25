@@ -37,9 +37,9 @@ import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 
 /**
- * Helper class to display themed toasts with icon and text. If no
- * color is supplied, it will display default toast based on the vanilla
- * Android.
+ * Helper class to display themed toasts with icon and text.
+ * If no color is supplied, it will display default toast based
+ * on the vanilla Android.
  */
 public class DynamicToast {
 
@@ -194,12 +194,13 @@ public class DynamicToast {
      * Make a standard toast that just contains a text view. Toast duration will
      * be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text) {
         return make(context, text, null, defaultTintColor,
@@ -209,14 +210,16 @@ public class DynamicToast {
     /**
      * Make a standard toast that just contains a text view.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context,
                                       @Nullable CharSequence text, int duration) {
@@ -228,12 +231,13 @@ public class DynamicToast {
      * Make a error toast with icon and the text. Toast duration will
      * be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      *
-     * @return Error toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The error toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeError(@NonNull Context context,
                                            @Nullable CharSequence text) {
@@ -246,14 +250,16 @@ public class DynamicToast {
     /**
      * Make a error toast with icon and the text.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Error toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The error toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeError(@NonNull Context context,
                                            @Nullable CharSequence text, int duration) {
@@ -268,12 +274,13 @@ public class DynamicToast {
      * Make a success toast with icon and the text. Toast duration will
      * be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      *
-     * @return Success toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The success toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeSuccess(@NonNull Context context,
                                              @Nullable CharSequence text) {
@@ -286,14 +293,16 @@ public class DynamicToast {
     /**
      * Make a success toast with icon and the text.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Success toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The success toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeSuccess(@NonNull Context context,
                                              @Nullable CharSequence text, int duration) {
@@ -308,12 +317,13 @@ public class DynamicToast {
      * Make a warning toast with icon and the text. Toast duration will
      * be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      *
-     * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The warning toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeWarning(@NonNull Context context,
                                              @Nullable CharSequence text) {
@@ -326,14 +336,16 @@ public class DynamicToast {
     /**
      * Make a warning toast with icon and the text.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Warning toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The warning toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast makeWarning(@NonNull Context context,
                                              @Nullable CharSequence text, int duration) {
@@ -348,16 +360,17 @@ public class DynamicToast {
      * Make a themed toast with icon and the text. Toast duration
      * will be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
-    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
-                                      @Nullable Drawable icon) {
+    public static @NonNull Toast make(@NonNull Context context,
+                                      @Nullable CharSequence text, @Nullable Drawable icon) {
         return make(context, text, icon, defaultTintColor,
                 defaultBackgroundColor, Toast.LENGTH_SHORT);
     }
@@ -365,15 +378,17 @@ public class DynamicToast {
     /**
      * Make a themed toast with icon and the text.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
                                       @Nullable Drawable icon, int duration) {
@@ -385,16 +400,17 @@ public class DynamicToast {
      * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the toastBackground. It will
-     *                  automatically check for the contrast to provide best
-     *                  visibility.
+     * @param tintColor The toast tint color based on the toastBackground.
+     *                  It will automatically check for the contrast to
+     *                  provide best visibility.
      * @param backgroundColor The toast toastBackground color.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
                                       @ColorInt int tintColor, @ColorInt int backgroundColor) {
@@ -405,18 +421,20 @@ public class DynamicToast {
      * Make a themed toast with text, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
-     * @param tintColor The toast tint color based on the toastBackground. It will
-     *                  automatically check for the contrast to provide best
-     *                  visibility.
+     * @param tintColor The toast tint color based on the toastBackground.
+     *                  It will automatically check for the contrast to
+     *                  provide best visibility.
      * @param backgroundColor The toast toastBackground color.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
                                       @ColorInt int tintColor, @ColorInt int backgroundColor,
@@ -428,17 +446,18 @@ public class DynamicToast {
      * Make a themed toast with text, icon, toastBackground and the tint color. Toast
      * duration will be {@link Toast#LENGTH_SHORT}.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the toastBackground. It will
-     *                  automatically check for the contrast to provide best
-     *                  visibility.
+     * @param tintColor The toast tint color based on the toastBackground.
+     *                  It will automatically check for the contrast to
+     *                  provide best visibility.
      * @param backgroundColor The toast toastBackground color.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
                                       @Nullable Drawable icon, @ColorInt int tintColor,
@@ -449,19 +468,21 @@ public class DynamicToast {
     /**
      * Make a themed toast with text, icon, toastBackground and the tint color.
      *
-     * @param context The context to use. Usually your {@link android.app.Application}
-     *                or {@link android.app.Activity} object.
+     * @param context The context to use. Usually the
+     *                {@link android.app.Application} or
+     *                {@link android.app.Activity} object.
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
-     * @param tintColor The toast tint color based on the toastBackground. It will
-     *                  automatically check for the contrast to provide best
-     *                  visibility.
+     * @param tintColor The toast tint color based on the toastBackground.
+     *                  It will automatically check for the contrast to
+     *                  provide best visibility.
      * @param backgroundColor The toast toastBackground color.
-     * @param duration How long to display the message. Either
-     *                 {@link Toast#LENGTH_SHORT} or {@link Toast#LENGTH_LONG}.
+     * @param duration The duration for the toast. Either
+     *                 {@link Toast#LENGTH_SHORT} or
+     *                 {@link Toast#LENGTH_LONG}.
      *
-     * @return Toast with the supplied parameters. Use {@link Toast#show()}
-     *         to display the toast.
+     * @return The toast with the supplied parameters. 
+     *         Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
                                       @Nullable Drawable icon, @ColorInt int tintColor,
@@ -597,10 +618,10 @@ public class DynamicToast {
         private Config() { }
 
         /**
-         * Get instance to access public methods. Must be called before accessing
-         * methods.
+         * Get instance to access public methods. Must be called before 
+         * accessing methods.
          *
-         * @return {@link #sInstance} Singleton {@link Config} instance.
+         * @return The singleton instance of this class.
          */
         public static Config getInstance() {
             if (sInstance == null) {
@@ -611,10 +632,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #defaultBackgroundColor}.
+         * Set the default background color.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param defaultBackgroundColor The background color to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
             this.defaultBackgroundColor = defaultBackgroundColor;
@@ -623,10 +646,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #defaultTintColor}.
+         * Set the default tint color.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param defaultTintColor The tint color to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setDefaultTintColor(@ColorInt int defaultTintColor) {
             this.defaultTintColor = defaultTintColor;
@@ -635,10 +660,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #errorBackgroundColor}.
+         * Set the error background color.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param errorBackgroundColor The error background color 
+         *                             to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setErrorBackgroundColor(@ColorInt int errorBackgroundColor) {
             this.errorBackgroundColor = errorBackgroundColor;
@@ -647,10 +675,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #successBackgroundColor}.
+         * Set the success background color.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param successBackgroundColor The success background color 
+         *                               to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setSuccessBackgroundColor(@ColorInt int successBackgroundColor) {
             this.successBackgroundColor = successBackgroundColor;
@@ -659,10 +690,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #warningBackgroundColor}.
+         * Set the warning background color.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param warningBackgroundColor The warning background color 
+         *                               to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setWarningBackgroundColor(@ColorInt int warningBackgroundColor) {
             this.warningBackgroundColor = warningBackgroundColor;
@@ -671,11 +705,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #errorIcon}. Pass {@code null} to use default
-         * icon.
+         * Set the error icon. Pass {@code null} to use default icon.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param errorIcon The error icon to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setErrorIcon(@Nullable Drawable errorIcon) {
             this.errorIcon = errorIcon;
@@ -684,11 +719,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #successIcon}. Pass {@code null} to use default
-         * icon.
+         * Set the success icon. Pass {@code null} to use default icon.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param successIcon The success icon to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setSuccessIcon(@Nullable Drawable successIcon) {
             this.successIcon = successIcon;
@@ -697,11 +733,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #warningIcon}. Pass {@code null} to use default
-         * icon.
+         * Set the warning icon. Pass {@code null} to use default icon.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param warningIcon The warning icon to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setWarningIcon(@Nullable Drawable warningIcon) {
             this.warningIcon = warningIcon;
@@ -710,11 +747,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #disableIcon}. {@code true} to disable icon for all
-         * the toasts.
+         * Set the icon visibility.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param disableIcon {@code true} to disable icon for all 
+         *                    the hints.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setDisableIcon(boolean disableIcon) {
             this.disableIcon = disableIcon;
@@ -723,10 +762,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #iconSize}.
+         * Set the icon size.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param iconSize The icon size to be set in {@code pixels}.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setIconSize(int iconSize) {
             this.iconSize = iconSize;
@@ -735,10 +776,12 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #textSize}.
+         * Set the text size.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param textSize The text size to be set in {@code sp}.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setTextSize(int textSize) {
             this.textSize = textSize;
@@ -747,11 +790,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #textTypeface}. Pass {@code null} to use default
+         * Set the text typeface. Pass {@code null} to use default 
          * typeface.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param textTypeface The text typeface to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setTextTypeface(@Nullable Typeface textTypeface) {
             this.textTypeface = textTypeface;
@@ -760,11 +805,13 @@ public class DynamicToast {
         }
 
         /**
-         * Setter for {@link #toastBackground}. Pass {@code null} to use default
-         * background.
+         * Set the toast background. Pass {@code null} to use 
+         * default background.
          *
-         * @return {@link Config} object to allow for chaining of calls to set
-         *         methods.
+         * @param toastBackground The toast background to be set.
+         *
+         * @return The {@link Config} object to allow for chaining of
+         *         calls to set methods.
          */
         public Config setToastBackground(@Nullable Drawable toastBackground) {
             this.toastBackground = toastBackground;

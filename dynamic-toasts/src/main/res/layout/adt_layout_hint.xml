@@ -28,7 +28,8 @@
         android:layout_width="@dimen/adt_icon_hint"
         android:layout_height="@dimen/adt_icon_hint"
         android:layout_marginRight="@dimen/adt_margin_hint_small"
-        android:layout_marginEnd="@dimen/adt_margin_hint_small" />
+        android:layout_marginEnd="@dimen/adt_margin_hint_small"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/adt_hint_text"

@@ -28,7 +28,8 @@
         android:layout_width="@dimen/adt_icon_toast"
         android:layout_height="@dimen/adt_icon_toast"
         android:layout_marginRight="@dimen/adt_margin_toast_small"
-        android:layout_marginEnd="@dimen/adt_margin_toast_small" />
+        android:layout_marginEnd="@dimen/adt_margin_toast_small"
+        android:contentDescription="@null" />
 
     <TextView
         android:id="@+id/adt_toast_text"
