@@ -15,17 +15,16 @@
 	limitations under the License.
 -->
 
-<adaptive-icon
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportHeight="108"
+    android:viewportWidth="108"
+    android:autoMirrored="true">
 
-    <background android:drawable="@android:color/white" />
+    <path
+        android:fillColor="@color/color_primary"
+        android:pathData="m93.06 5.13h-78.47c-5.4 0 -9.76 4.41 -9.76 9.81l-0.05 88.28l19.62 -19.62h68.66c5.39 0 9.81 -4.42 9.81 -9.81v-58.85c0 -5.4 -4.42 -9.81 -9.81 -9.81zm-34.33 44.14h-9.81v-29.43h9.81v29.43zm0 19.62h-9.81v-9.81h9.81v9.81z" />
 
-    <foreground>
-
-        <inset
-            android:drawable="@drawable/ic_launcher_foreground"
-            android:inset="27.92%" />
-
-    </foreground>
-
-</adaptive-icon>
+</vector>

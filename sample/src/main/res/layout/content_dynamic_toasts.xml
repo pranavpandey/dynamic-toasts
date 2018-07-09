@@ -177,7 +177,6 @@
                     android:text="@string/error"
                     style="@style/Button"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/toast_success_color" />
 
@@ -188,7 +187,6 @@
                     android:text="@string/success"
                     style="@style/Button"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/toast_error_color"
                     app:layout_constraintRight_toLeftOf="@+id/toast_warning_color" />
 
@@ -199,7 +197,6 @@
                     android:text="@string/warning"
                     style="@style/Button"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@id/toast_success_color" />
 
                 <android.support.v7.widget.AppCompatButton
