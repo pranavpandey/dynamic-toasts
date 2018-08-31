@@ -18,14 +18,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion compileSdk
-    buildToolsVersion buildTools
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
         applicationId "com.pranavpandey.android.dynamic.toasts.sample"
-        minSdkVersion minSdk
-        targetSdkVersion targetSdk
-        versionCode versionCode
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode mavenVersionCode
         versionName mavenVersion
 
         vectorDrawables.useSupportLibrary = true
@@ -41,8 +41,8 @@ android {
 
 dependencies {
     implementation project(':dynamic-toasts')
-    implementation "com.pranavpandey.android:dynamic-dialogs:$mavenVersion"
-    implementation "com.android.support:design:$androidSupport"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.pranavpandey.android:dynamic-dialogs:${mavenVersion}"
+    implementation "com.android.support:design:${versions.androidSupport}"
+    implementation "com.android.support.constraint:constraint-layout:${versions.constraintLayout}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 }

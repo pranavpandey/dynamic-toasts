@@ -85,8 +85,7 @@ class AboutDialogFragment : DynamicDialogFragment() {
                 LinearLayout(context), false)
         val message = view.findViewById<TextView>(R.id.dialog_about_text)
 
-        message.text = fromHtml(getString(R.string.about_content)
-                .replace("\n", "<br/>"))
+        message.text = fromHtml(getString(R.string.about_content))
         message.setTextSize(TypedValue.COMPLEX_UNIT_SP, TEXT_SIZE.toFloat())
         message.setLineSpacing(0f, 1.2f)
         message.movementMethod = LinkMovementMethod.getInstance()

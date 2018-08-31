@@ -15,7 +15,15 @@
  */
 
 buildscript {
-    ext.kotlin_version = '1.2.61'
+    ext.versions = [
+            'compileSdk'       : 28,
+            'minSdk'           : 14,
+            'targetSdk'        : 28,
+            'buildTools'       : '28.0.2',
+            'androidSupport'   : '27.1.1',
+            'constraintLayout' : '1.1.3',
+            'kotlin'           : '1.2.61'
+    ]
 
     repositories {
         jcenter()
@@ -26,7 +34,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.3.0-alpha08'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     }
 }
 
@@ -47,18 +55,19 @@ ext {
             'devices.'
     versionDesc = 'A simple library to display themed toasts with icon and text on Android 14+ ' +
             '(ICS or above) devices.'
+    referenceTitle = 'Dynamic Toasts Reference'
+
     siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     gitUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     issueUrl = 'https://github.com/pranavpandey/dynamic-toasts/issues'
-
     githubUrl = 'pranavpandey/dynamic-toasts'
-    referenceTitle = 'Dynamic Toasts Reference'
 
+    mavenRepo = 'android'
     mavenGroup = 'com.pranavpandey.android'
-    mavenVersion = '1.2.0'
-    mavenInceptionYear = 2017
     mavenArtifactId = 'dynamic-toasts'
-    bintrayRepo = 'android'
+    mavenInceptionYear = 2017
+    mavenVersion = '1.2.0'
+    mavenVersionCode = 13
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
@@ -68,13 +77,4 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     licenseDistribution = 'repo'
     allLicenses = ["Apache-2.0"]
-
-    versionCode = 13
-
-    buildTools = '28.0.2'
-    minSdk = 14
-    compileSdk = 28
-    targetSdk = 28
-
-    androidSupport = '27.1.1'
 }
