@@ -510,7 +510,7 @@ public class DynamicHint {
         } else {
             DynamicDrawableUtils.setBackground(toastLayout,
                     DynamicDrawableUtils.colorizeDrawable(
-                            ContextCompat.getDrawable(context, R.drawable.adt_hint_frame),
+                            ContextCompat.getDrawable(context, R.drawable.adt_hint_background),
                             backgroundColor, PorterDuff.Mode.MULTIPLY));
         }
 

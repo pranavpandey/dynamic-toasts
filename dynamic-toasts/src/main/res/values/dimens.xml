@@ -20,13 +20,15 @@
     <!-- Toast dimensions -->
     <dimen name="adt_font_toast">15sp</dimen>
     <dimen name="adt_icon_toast">24dp</dimen>
-    <dimen name="adt_margin_toast">12dp</dimen>
-    <dimen name="adt_margin_toast_small">4dp</dimen>
+    <dimen name="adt_margin_toast_top_bottom">12dp</dimen>
+    <dimen name="adt_margin_toast_right_left">16dp</dimen>
+    <dimen name="adt_margin_toast_small">8dp</dimen>
 
     <!-- Hint dimensions -->
     <dimen name="adt_font_hint">13sp</dimen>
     <dimen name="adt_icon_hint">20dp</dimen>
-    <dimen name="adt_margin_hint">4dp</dimen>
-    <dimen name="adt_margin_hint_small">2dp</dimen>
+    <dimen name="adt_margin_hint_top_bottom">8dp</dimen>
+    <dimen name="adt_margin_hint_right_left">12dp</dimen>
+    <dimen name="adt_margin_hint_small">4dp</dimen>
 
 </resources>

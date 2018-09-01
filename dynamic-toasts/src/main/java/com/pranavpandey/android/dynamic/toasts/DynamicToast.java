@@ -500,7 +500,7 @@ public class DynamicToast {
         } else {
             DynamicDrawableUtils.setBackground(toastLayout,
                     DynamicDrawableUtils.colorizeDrawable(
-                            ContextCompat.getDrawable(context, R.drawable.adt_toast_frame),
+                            ContextCompat.getDrawable(context, R.drawable.adt_toast_background),
                             backgroundColor, PorterDuff.Mode.MULTIPLY));
         }
 
