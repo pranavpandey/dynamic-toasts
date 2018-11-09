@@ -50,8 +50,9 @@ project.afterEvaluate {
                 description = "Generates javadocs"
                 failOnError = false
                 destinationDir = new File(destinationDir, variant.baseName)
-                source = files(variant.javaCompiler.source)
-                classpath = files(variant.javaCompiler.classpath.files) + files(android.bootClasspath)
+                source = android.sourceSets.main.java.srcDirs
+                classpath += configurations.compile
+                classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
                 options.windowTitle(referenceTitle)
                 options.docTitle(referenceTitle)
                 options.header(referenceTitle)

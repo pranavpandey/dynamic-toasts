@@ -15,7 +15,7 @@
 	limitations under the License.
 -->
 
-<android.support.v4.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/dialog_about_root"
     android:layout_width="match_parent"
@@ -27,11 +27,11 @@
         android:paddingLeft="@dimen/dialog_margin_horizontal"
         android:paddingRight="@dimen/dialog_margin_horizontal">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/dialog_about_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>
