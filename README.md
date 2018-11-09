@@ -11,6 +11,8 @@ devices.
 
 > Since v0.4.0, it uses [26.x.x support libraries](https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0)
 so, minimum SDK will be Android 14+ (ICS or above).
+<br/>Since v2.0.0, it uses [AndroidX](https://developer.android.com/jetpack/androidx/) so, first
+[migrate](https://developer.android.com/jetpack/androidx/migrate) your project to AndroidX.
 
 <img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts-preview.png">
 
@@ -47,6 +49,10 @@ It can be installed by adding the following dependency to your `build.gradle` fi
 
 ```groovy
 dependencies {
+    // For AndroidX enabled projects
+    implementation 'com.pranavpandey.android:dynamic-toasts:2.0.0'
+
+    // For legacy projects
     implementation 'com.pranavpandey.android:dynamic-toasts:1.3.0'
 }
 ```
