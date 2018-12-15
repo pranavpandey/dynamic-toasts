@@ -16,6 +16,7 @@
 
 package com.pranavpandey.android.dynamic.toasts;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -414,6 +415,10 @@ public class DynamicToast {
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
             @Nullable Drawable icon, @ColorInt int tintColor, @ColorInt int backgroundColor,
             int duration) {
+        if (context instanceof Activity && ((Activity) context).isFinishing()) {
+            context = context.getApplicationContext();
+        }
+
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
         Toast toast = new Toast(context);
