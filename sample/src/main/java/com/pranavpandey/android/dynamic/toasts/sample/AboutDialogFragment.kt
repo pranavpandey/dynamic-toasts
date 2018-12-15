@@ -18,7 +18,6 @@ package com.pranavpandey.android.dynamic.toasts.sample
 
 import android.os.Build
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
@@ -26,6 +25,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.pranavpandey.android.dynamic.dialogs.DynamicDialog
 import com.pranavpandey.android.dynamic.dialogs.fragment.DynamicDialogFragment
 import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils

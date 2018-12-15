@@ -15,30 +15,39 @@
 	limitations under the License.
 -->
 
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/adt_toast"
-    android:layout_width="wrap_content"
+    android:id="@+id/adt_hint"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="@dimen/adt_margin_toast_top_bottom"
-    android:paddingBottom="@dimen/adt_margin_toast_top_bottom"
-    android:paddingLeft="@dimen/adt_margin_toast_right_left"
-    android:paddingRight="@dimen/adt_margin_toast_right_left"
-    android:orientation="horizontal"
-    android:gravity="center">
+    android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/adt_toast_icon"
-        android:layout_width="@dimen/adt_icon_toast"
-        android:layout_height="@dimen/adt_icon_toast"
-        android:layout_marginRight="@dimen/adt_margin_toast_small"
-        android:layout_marginEnd="@dimen/adt_margin_toast_small"
-        android:contentDescription="@null" />
-
-    <TextView
-        android:id="@+id/adt_toast_text"
+    <LinearLayout
+        android:id="@+id/adt_toast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/adt_font_toast" />
+        android:paddingTop="@dimen/adt_margin_toast_top_bottom"
+        android:paddingBottom="@dimen/adt_margin_toast_top_bottom"
+        android:paddingLeft="@dimen/adt_margin_toast_right_left"
+        android:paddingRight="@dimen/adt_margin_toast_right_left"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/transparent">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/adt_toast_icon"
+            android:layout_width="@dimen/adt_icon_toast"
+            android:layout_height="@dimen/adt_icon_toast"
+            android:layout_marginRight="@dimen/adt_margin_toast_small"
+            android:layout_marginEnd="@dimen/adt_margin_toast_small"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/adt_toast_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/adt_font_toast" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -19,17 +19,16 @@ package com.pranavpandey.android.dynamic.toasts.sample
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import androidx.core.content.ContextCompat
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pranavpandey.android.dynamic.toasts.DynamicHint
 import com.pranavpandey.android.dynamic.toasts.DynamicToast
 import com.pranavpandey.android.dynamic.utils.DynamicColorUtils
@@ -313,7 +312,7 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
                 // Customise toast.
                 DynamicToast.Config.getInstance()
                         .setToastBackground(AppCompatResources.getDrawable(
-                                this, R.drawable.custom_toast_background))
+                                this, R.drawable.bg_custom_toast))
                         .apply()
 
                 DynamicToast.makeSuccess(this, getString(R.string.background_desc)).show()
