@@ -28,15 +28,12 @@ android {
     }
 
     sourceSets {
-        main.res.srcDirs = [
-            'src/main/res'
-        ]
+        main.res.srcDirs 'res'
     }
 }
 
 dependencies {
     api "com.pranavpandey.android:dynamic-utils:$mavenVersion"
-    implementation "androidx.core:core:${versions.androidx}"
 }
 
 if (project.rootProject.file('local.properties').exists()) {
