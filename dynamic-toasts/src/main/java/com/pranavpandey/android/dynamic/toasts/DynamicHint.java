@@ -815,14 +815,14 @@ public class DynamicHint {
         final int screenWidth = anchor.getResources().getDisplayMetrics().widthPixels;
         final int estimatedToastHeight = DynamicUnitUtils.convertDpToPixels(offset);
 
-        if (screenPos[1] < estimatedToastHeight) {
+        if (screenPos[1] < estimatedToastHeight + displayFrame.top) {
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
-                    viewCenterX - screenWidth / 2,
+                    viewCenterX - screenWidth / 2 - displayFrame.left,
                     screenPos[1] - displayFrame.top
                             + Math.max(viewHeight, estimatedToastHeight));
         } else {
             toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
-                    viewCenterX - screenWidth / 2,
+                    viewCenterX - screenWidth / 2 - displayFrame.left,
                     screenPos[1] - displayFrame.top
                             - Math.max(viewHeight, estimatedToastHeight));
         }
