@@ -22,6 +22,7 @@ buildscript {
             'buildTools'      : '28.0.3',
             'androidx'        : '1.0.1',
             'constraintlayout': '2.0.0-alpha2',
+            'dynamic'         : '2.1.0',
             'kotlin'          : '1.3.11'
     ]
 
@@ -66,8 +67,8 @@ ext {
     mavenGroup = 'com.pranavpandey.android'
     mavenArtifactId = 'dynamic-toasts'
     mavenInceptionYear = 2017
-    mavenVersion = '2.1.0'
-    mavenVersionCode = 16
+    mavenVersion = '2.1.1'
+    mavenVersionCode = 17
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
