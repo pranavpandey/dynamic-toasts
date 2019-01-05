@@ -42,6 +42,7 @@ android {
 dependencies {
     implementation project(':dynamic-toasts')
     implementation "com.pranavpandey.android:dynamic-dialogs:${mavenVersion}"
-    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}"
+    implementation "com.google.android:flexbox:${versions.flexbox}"
 }

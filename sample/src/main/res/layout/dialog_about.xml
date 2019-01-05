@@ -21,17 +21,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/dialog_about_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/dialog_margin_horizontal"
-        android:paddingRight="@dimen/dialog_margin_horizontal">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dialog_about_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
+        android:paddingRight="@dimen/dialog_margin_horizontal"
+        android:layout_gravity="start"
+        android:textAlignment="viewStart" />
 
 </androidx.core.widget.NestedScrollView>

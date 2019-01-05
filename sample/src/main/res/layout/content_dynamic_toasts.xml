@@ -39,339 +39,325 @@
             android:paddingBottom="@dimen/activity_margin_fab"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/gradle" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/gradle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/default_toasts" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_default"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gradle_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/without_icon"
-                    style="@style/Button"
+                    android:text="@string/gradle"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_default_icon" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_default_icon"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gradle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/with_icon"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_default" />
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/gradle_title"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/inbuilt_toasts" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_error"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_default"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/error"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_success" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/default_toasts"
+                    app:layout_constraintTop_toBottomOf="@id/gradle"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_success"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_default_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_default"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/without_icon" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_default_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/with_icon" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_inbuilt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/success"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_error"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_warning" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/inbuilt_toasts"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_default_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_warning"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_inbuilt_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_inbuilt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_success"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/success" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_warning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_custom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/warning"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_success" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/custom_toasts"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_inbuilt_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_custom_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_custom"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/custom_toasts" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/without_icon" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_custom_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/with_icon" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_custom"
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_colors"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/without_icon"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_custom_icon" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/custom_colors"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_custom_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_custom_icon"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_colors_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_colors"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_error_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_success_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/success" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_warning_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_default_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_custom" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_icons"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/with_icon"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_custom" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/custom_icons"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_colors_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_icons_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icons"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/custom_colors" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_error_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_success_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/success" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_error_color"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_warning_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_icons_disable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/error"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_success_color" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/disable_icons"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icons_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_success_color"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_icons_disable_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icons_disable"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_error_icon_disable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_success_icon_disable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/success" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_warning_icon_disable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_config"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/success"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_error_color"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_warning_color" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/config"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icons_disable_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_warning_color"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_config_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_config"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_config_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_config_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/background" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_config_icon_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/icon_size" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_hint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/warning"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_success_color" />
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/cheat_sheets"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_config_content"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_default_color"
-                    android:layout_width="wrap_content"
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_hint_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/default_custom"
-                    style="@style/Button"
-                    app:layout_constraintTop_toBottomOf="@id/toast_error_color"
-                    app:layout_constraintLeft_toLeftOf="parent"  />
+                    app:layout_constraintTop_toBottomOf="@id/toasts_hint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/hint_default"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/default_custom" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/custom_icons" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/hint_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/custom" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_error_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/error"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_success_icon" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_success_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/success"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_error_icon"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_warning_icon" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_warning_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/warning"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_success_icon" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/disable_icons" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_error_icon_disable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/error"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_success_icon_disable" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_success_icon_disable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/success"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_error_icon_disable"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_warning_icon_disable" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_warning_icon_disable"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/warning"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_success_icon_disable" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/config" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_config_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/text"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_config_background" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_config_background"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/background"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_config_text"
-                    app:layout_constraintRight_toLeftOf="@+id/toast_config_icon_size" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/toast_config_icon_size"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/icon_size"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/toast_config_background" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_margin"
-                android:text="@string/cheat_sheets" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/hint_default"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/default_custom"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toLeftOf="@+id/hint_custom" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/hint_custom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/custom"
-                    style="@style/Button"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/hint_default" />
+                </com.google.android.flexbox.FlexboxLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
