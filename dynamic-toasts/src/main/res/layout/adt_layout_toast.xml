@@ -46,6 +46,8 @@
             android:id="@+id/adt_toast_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAlignment="viewStart"
+            android:gravity="start"
             android:textSize="@dimen/adt_font_toast" />
 
     </LinearLayout>
