@@ -26,6 +26,8 @@
         android:supportsRtl="true"
         android:allowBackup="false">
 
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+
         <activity
             android:name=".DynamicToastsActivity"
             android:label="@string/app_name"

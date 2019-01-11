@@ -68,8 +68,8 @@ ext {
     mavenGroup = 'com.pranavpandey.android'
     mavenArtifactId = 'dynamic-toasts'
     mavenInceptionYear = 2017
-    mavenVersion = '2.1.1'
-    mavenVersionCode = 17
+    mavenVersion = '2.2.0'
+    mavenVersionCode = 18
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
