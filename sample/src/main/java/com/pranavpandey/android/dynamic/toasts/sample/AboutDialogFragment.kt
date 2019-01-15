@@ -38,11 +38,6 @@ class AboutDialogFragment : DynamicDialogFragment() {
     companion object {
 
         /**
-         * Url to donate via PayPal.
-         */
-        const val URL_DONATE = "https://www.paypal.me/pranavpandeydev"
-
-        /**
          * Url for other apps on Play Store.
          */
         const val URL_PLAY_STORE =
@@ -98,9 +93,6 @@ class AboutDialogFragment : DynamicDialogFragment() {
         // Customise dialog builder to add neutral, positive and negative buttons.
         // Also, set a view root to add top and bottom scroll indicators.
         return alertDialogBuilder.setTitle(R.string.about)
-                .setNeutralButton(R.string.donate) {
-                    _, _ -> DynamicLinkUtils.viewUrl(context!!, URL_DONATE)
-                }
                 .setPositiveButton(R.string.more_apps) {
                     _, _ -> DynamicLinkUtils.viewUrl(context!!, URL_PLAY_STORE)
                 }

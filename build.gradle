@@ -20,7 +20,6 @@ buildscript {
             'minSdk'          : 14,
             'targetSdk'       : 28,
             'buildTools'      : '28.0.3',
-            'androidx'        : '1.0.1',
             'constraintlayout': '2.0.0-alpha3',
             'dynamic'         : '2.1.1',
             'flexbox'         : '1.1.0',
@@ -70,6 +69,7 @@ ext {
     mavenInceptionYear = 2017
     mavenVersion = '2.2.0'
     mavenVersionCode = 18
+    sampleVersionCode = 19
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
