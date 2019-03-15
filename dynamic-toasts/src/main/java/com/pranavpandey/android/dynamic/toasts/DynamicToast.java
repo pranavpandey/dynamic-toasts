@@ -35,6 +35,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
+import com.pranavpandey.android.dynamic.toasts.internal.ToastCompat;
 import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 
@@ -421,7 +422,7 @@ public class DynamicToast {
 
         tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
 
-        Toast toast = new Toast(context);
+        ToastCompat toast = new ToastCompat(context, new Toast(context));
         View toastLayout = LayoutInflater.from(context).inflate(
                 R.layout.adt_layout_toast, new LinearLayout(context), false);
         ImageView toastIcon = toastLayout.findViewById(R.id.adt_toast_icon);
