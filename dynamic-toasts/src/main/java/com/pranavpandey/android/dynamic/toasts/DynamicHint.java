@@ -43,8 +43,8 @@ import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 
 /**
- * Helper class to display themed cheat sheets with icon and text. If no color is supplied,
- * it will display default hint based on the Android support library.
+ * Helper class to display themed cheat sheets with icon and text by using {@link Toast}.
+ * <p>If no color is supplied, it will display default hint based on the Android support library.
  */
 public class DynamicHint {
 
@@ -476,7 +476,7 @@ public class DynamicHint {
     }
 
     /**
-     * Configuration class to customise toast attributes.
+     * Configuration class to customise the {@link DynamicHint} attributes.
      */
     public static class Config {
 

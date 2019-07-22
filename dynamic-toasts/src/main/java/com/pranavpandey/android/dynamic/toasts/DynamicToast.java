@@ -40,8 +40,8 @@ import com.pranavpandey.android.dynamic.utils.DynamicColorUtils;
 import com.pranavpandey.android.dynamic.utils.DynamicDrawableUtils;
 
 /**
- * Helper class to display themed toasts with icon and text. If no color is supplied, it will
- * display default toast based on the vanilla Android.
+ * Helper class to display themed {@link Toast} with icon and text.
+ * <p>If no color is supplied, it will display default toast based on the vanilla Android.
  */
 public class DynamicToast {
 
@@ -467,7 +467,7 @@ public class DynamicToast {
     }
 
     /**
-     * Configuration class to customise the toast attributes.
+     * Configuration class to customise the {@link DynamicToast} attributes.
      */
     public static class Config {
 
