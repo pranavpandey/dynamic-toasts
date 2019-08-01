@@ -23,6 +23,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -49,10 +50,21 @@ import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils;
 public class DynamicHint {
 
     /**
-     * The estimated height of a toast, in dips (density-independent pixels).
+     * The minimum top inset to mimic status bar.
+     */
+    private static final int ADT_INSET_TOP = 32;
+
+    /**
+     * The minimum height for anchor, in dips (density-independent pixels).
+     * <p>It will be used to avoid overlapping for the smaller view height.
+     */
+    private static final int ADT_MIN_ANCHOR_HEIGHT = 48;
+
+    /**
+     * The toast offset, in dips (density-independent pixels).
      * <p>It will be used to determine whether the toast should appear above or below the UI element.
      */
-    private static final int ADT_ESTIMATED_TOAST_HEIGHT_DIPS = 52;
+    private static final int ADT_TOAST_OFFSET = 4;
 
     /**
      * Default background color for the toast.
@@ -794,7 +806,7 @@ public class DynamicHint {
      * @param toast The toast to be displayed.
      */
     public static void show(@NonNull View anchor, @NonNull Toast toast) {
-        show(anchor, toast, ADT_ESTIMATED_TOAST_HEIGHT_DIPS);
+        show(anchor, toast, ADT_TOAST_OFFSET);
     }
 
     /**
@@ -805,27 +817,32 @@ public class DynamicHint {
      * @param offset The toast vertical offset in dips.
      */
     public static void show(@NonNull View anchor, @NonNull Toast toast, int offset) {
-        final int[] screenPos = new int[2];
-        final Rect displayFrame = new Rect();
-        anchor.getLocationOnScreen(screenPos);
+        Rect displayFrame = new Rect();
+        int[] screenLocation = new int[2];
         anchor.getWindowVisibleDisplayFrame(displayFrame);
+        anchor.getLocationOnScreen(screenLocation);
+        int anchorLeft = screenLocation[0];
+        int anchorTop = Math.max(0, screenLocation[1]
+                - DynamicUnitUtils.convertDpToPixels(ADT_INSET_TOP));
+        int minAnchorHeight = DynamicUnitUtils.convertDpToPixels(ADT_MIN_ANCHOR_HEIGHT);
+        int yOffset = DynamicUnitUtils.convertDpToPixels(offset);
 
-        final int viewWidth = anchor.getWidth();
-        final int viewHeight = anchor.getHeight();
-        final int viewCenterX = screenPos[0] + viewWidth / 2;
-        final int screenWidth = anchor.getResources().getDisplayMetrics().widthPixels;
-        final int estimatedToastHeight = DynamicUnitUtils.convertDpToPixels(offset);
+        DisplayMetrics metrics = anchor.getResources().getDisplayMetrics();
+        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(
+                metrics.widthPixels, View.MeasureSpec.UNSPECIFIED);
+        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(
+                metrics.heightPixels, View.MeasureSpec.UNSPECIFIED);
+        toast.getView().measure(widthMeasureSpec, heightMeasureSpec);
+        int toastWidth = toast.getView().getMeasuredWidth();
 
-        if (screenPos[1] < estimatedToastHeight + displayFrame.top) {
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
-                    viewCenterX - screenWidth / 2 - displayFrame.left,
-                    screenPos[1] - displayFrame.top
-                            + Math.max(viewHeight, estimatedToastHeight));
+        if (anchorTop < displayFrame.top + yOffset) {
+            toast.setGravity(Gravity.START | Gravity.TOP,
+                    anchorLeft + (anchor.getWidth() - toastWidth) / 2,
+                    anchorTop + Math.max(minAnchorHeight, anchor.getHeight()) + yOffset);
         } else {
-            toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL,
-                    viewCenterX - screenWidth / 2 - displayFrame.left,
-                    screenPos[1] - displayFrame.top
-                            - Math.max(viewHeight, estimatedToastHeight));
+            toast.setGravity(Gravity.START | Gravity.TOP,
+                    anchorLeft + (anchor.getWidth() - toastWidth) / 2,
+                    anchorTop - Math.max(minAnchorHeight, anchor.getHeight()) - yOffset);
         }
 
         toast.show();
