@@ -6,11 +6,11 @@
 [![Build Status](https://travis-ci.org/pranavpandey/dynamic-toasts.svg?branch=master)](https://travis-ci.org/pranavpandey/dynamic-toasts)
 [![Download](https://api.bintray.com/packages/pranavpandey/android/dynamic-toasts/images/download.svg)](https://bintray.com/pranavpandey/android/dynamic-toasts/_latestVersion)
 
-A simple library to display themed toasts with icon and text on Android 9+ (Gingerbread or above) 
+A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above
 devices.
 
 > Since v0.4.0, it uses [26.x.x support libraries](https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0)
-so, minimum SDK will be Android 14+ (ICS or above).
+so, minimum SDK will be Android 4 (API 14).
 <br/>Since v2.0.0, it uses [AndroidX](https://developer.android.com/jetpack/androidx/) so, first
 [migrate](https://developer.android.com/jetpack/androidx/migrate) your project to AndroidX.
 
@@ -244,7 +244,7 @@ various internal operations. So, its functions can also be used to perform other
 
 ## License
 
-    Copyright 2017 Pranav Pandey
+    Copyright 2019 Pranav Pandey
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

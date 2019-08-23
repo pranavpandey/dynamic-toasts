@@ -30,7 +30,7 @@ import com.pranavpandey.android.dynamic.utils.DynamicVersionUtils;
 import java.lang.reflect.Field;
 
 /**
- * A Toast to fix the bad token exception on Android N MR1 devices.
+ * A Toast to fix the bad token exception on API 25 devices.
  */
 public final class ToastCompat extends Toast {
 
