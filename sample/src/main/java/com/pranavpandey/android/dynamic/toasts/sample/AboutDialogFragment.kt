@@ -38,7 +38,7 @@ class AboutDialogFragment : DynamicDialogFragment() {
     companion object {
 
         /**
-         * Url for other apps on Play Store.
+         * Url for other apps on Google Play.
          */
         const val URL_PLAY_STORE =
                 "https://play.google.com/store/apps/dev?id=6608630615059087491"
