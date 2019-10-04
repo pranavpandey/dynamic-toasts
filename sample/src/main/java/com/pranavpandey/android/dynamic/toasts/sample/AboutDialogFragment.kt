@@ -29,7 +29,6 @@ import com.pranavpandey.android.dynamic.dialogs.DynamicDialog
 import com.pranavpandey.android.dynamic.dialogs.fragment.DynamicDialogFragment
 import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils
 
-
 /**
  * About dialog to show library info.
  */

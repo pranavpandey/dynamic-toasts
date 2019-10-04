@@ -25,7 +25,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
-import com.pranavpandey.android.dynamic.utils.DynamicVersionUtils;
+import com.pranavpandey.android.dynamic.utils.DynamicSdkUtils;
 
 import java.lang.reflect.Field;
 
@@ -80,7 +80,7 @@ public final class ToastCompat extends Toast {
      * @param context The context used by the toast.
      */
     private static void setToastContext(@NonNull View view, @NonNull Context context) {
-        if (DynamicVersionUtils.isNougatMR1()) {
+        if (DynamicSdkUtils.is25()) {
             try {
                 Field field = View.class.getDeclaredField("mContext");
                 field.setAccessible(true);

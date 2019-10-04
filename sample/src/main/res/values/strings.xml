@@ -33,37 +33,37 @@
         <a href=\'https://www.facebook.com/pranavpandeydev\'>Facebook</a>&nbsp;&nbsp;
         <a href=\'https://www.linkedin.com/in/pranav-pandey-09032974\'>LinkedIn</a>&nbsp;&nbsp;
         <a href=\'https://github.com/pranavpandey\'>GitHub</a><br/><br/>
-        Please download my other apps from Google Play to support the development.
+        Please download my other apps via Google Play to support the development.
     ]]></string>
     <string name="donate">Donate</string>
     <string name="more_apps">Google Play</string>
 
     <string name="default_toasts">Default toasts</string>
     <string name="without_icon">Without icon</string>
-    <string name="without_icon_desc">Default toast without icon.</string>
+    <string name="without_icon_desc">Default toast without icon</string>
     <string name="with_icon">With icon</string>
-    <string name="with_icon_desc">Default toast with icon.</string>
+    <string name="with_icon_desc">Default toast with icon</string>
     <string name="inbuilt_toasts">In-built toasts</string>
     <string name="default_custom">Default</string>
     <string name="custom">Custom</string>
-    <string name="default_color_desc">Default toast with custom color.</string>
+    <string name="default_color_desc">Default toast with custom color</string>
     <string name="error">Error</string>
-    <string name="error_desc">An error has occurred.</string>
-    <string name="error_color_desc">Error toast with custom color.</string>
-    <string name="error_icon_desc">Error toast with custom icon.</string>
-    <string name="error_icon_disable_desc">Error toast without icon.</string>
+    <string name="error_desc">An error has occurred</string>
+    <string name="error_color_desc">Error toast with custom color</string>
+    <string name="error_icon_desc">Error toast with custom icon</string>
+    <string name="error_icon_disable_desc">Error toast without icon</string>
     <string name="success">Success</string>
-    <string name="success_desc">Task has been completed successfully.</string>
-    <string name="success_color_desc">Success toast with custom color.</string>
-    <string name="success_icon_desc">Success toast with custom icon.</string>
-    <string name="success_icon_disable_desc">Success toast without icon.</string>
+    <string name="success_desc">Task has been completed successfully</string>
+    <string name="success_color_desc">Success toast with custom color</string>
+    <string name="success_icon_desc">Success toast with custom icon</string>
+    <string name="success_icon_disable_desc">Success toast without icon</string>
     <string name="warning">Warning</string>
     <string name="warning_desc">This is a warning!</string>
-    <string name="warning_color_desc">Warning toast with custom color.</string>
-    <string name="warning_icon_desc">Warning toast with custom icon.</string>
-    <string name="warning_icon_disable_desc">Warning toast without icon.</string>
+    <string name="warning_color_desc">Warning toast with custom color</string>
+    <string name="warning_icon_desc">Warning toast with custom icon</string>
+    <string name="warning_icon_disable_desc">Warning toast without icon</string>
     <string name="custom_toasts">Custom toasts</string>
-    <string name="custom_desc">Sources are available on GitHub.</string>
+    <string name="custom_desc">Sources are available on GitHub</string>
     <string name="custom_colors">Custom colors</string>
     <string name="custom_icons">Custom icons</string>
     <string name="disable_icons">Disable icons</string>
@@ -72,10 +72,10 @@
     <string name="default_hint">Default hint</string>
     <string name="custom_hint">Custom hint</string>
     <string name="text">text</string>
-    <string name="text_desc">Toast with custom text size and typeface.</string>
+    <string name="text_desc">Toast with custom text size and typeface</string>
     <string name="background">background</string>
-    <string name="background_desc">Toast with custom background.</string>
+    <string name="background_desc">Toast with custom background</string>
     <string name="icon_size">Icon size</string>
-    <string name="icon_size_desc">Toast with custom icon size.</string>
+    <string name="icon_size_desc">Toast with custom icon size</string>
 
 </resources>

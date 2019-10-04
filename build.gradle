@@ -21,7 +21,7 @@ buildscript {
             'targetSdk'       : 29,
             'buildTools'      : '29.0.2',
             'constraintlayout': '2.0.0-alpha3',
-            'dynamic'         : '2.3.0',
+            'dynamic'         : '3.0.0',
             'flexbox'         : '1.1.0',
             'kotlin'          : '1.3.50'
     ]
@@ -54,7 +54,7 @@ ext {
     projectName = 'dynamic-toasts'
     projectDesc = 'A simple library to display themed toasts with icon and text on Android ' +
             'devices.'
-    versionDesc = 'A simple library to display themed toasts with icon and text on Android 4 ' +
+    versionDesc = 'A simple library to display themed toasts with icon and text on Android 4.0 ' +
             '(API 14) and above devices.'
     referenceTitle = 'Dynamic Toasts Reference'
 
@@ -67,9 +67,9 @@ ext {
     mavenGroup = 'com.pranavpandey.android'
     mavenArtifactId = 'dynamic-toasts'
     mavenInceptionYear = 2017
-    mavenVersion = '2.3.0'
-    mavenVersionCode = 20
-    sampleVersionCode = 21
+    mavenVersion = '3.0.0'
+    mavenVersionCode = 21
+    sampleVersionCode = 22
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'
