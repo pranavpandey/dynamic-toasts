@@ -16,6 +16,7 @@
 
 package com.pranavpandey.android.dynamic.toasts.sample
 
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -24,6 +25,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
@@ -89,6 +91,20 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.toast_config_icon_size).setOnClickListener(this)
         findViewById<View>(R.id.hint_default).setOnClickListener(this)
         findViewById<View>(R.id.hint_custom).setOnClickListener(this)
+    }
+
+    /**
+     * Fix for AppCompat 1.1.0.
+     *
+     * https://issuetracker.google.com/issues/140602653
+     */
+    override fun applyOverrideConfiguration(@Nullable overrideConfiguration: Configuration?) {
+        if (overrideConfiguration != null) {
+            val uiMode = overrideConfiguration.uiMode
+            overrideConfiguration.setTo(baseContext.resources.configuration)
+            overrideConfiguration.uiMode = uiMode
+        }
+        super.applyOverrideConfiguration(resources.configuration)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
