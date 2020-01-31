@@ -20,7 +20,7 @@ buildscript {
             'minSdk'          : 14,
             'targetSdk'       : 29,
             'buildTools'      : '29.0.3',
-            'constraintlayout': '2.0.0-beta3',
+            'constraintlayout': '2.0.0-beta4',
             'dynamic'         : '3.0.2',
             'dialogs'         : '3.0.1',
             'flexbox'         : '1.1.0',
