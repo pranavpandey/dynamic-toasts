@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-	Copyright 2019 Pranav Pandey
+	Copyright 2017-2020 Pranav Pandey
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@
     <string name="gradle">Gradle dependency</string>
     <string name="format_version">com.pranavpandey.android:dynamic-toasts:%1$s</string>
 
+    <string name="sources">Sources</string>
     <string name="about">About</string>
     <string name="about_content"><![CDATA[
         <b>dynamic-toasts</b><br/>
