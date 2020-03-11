@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Pranav Pandey
+ * Copyright 2017-2020 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 
 import com.pranavpandey.android.dynamic.utils.DynamicSdkUtils;
@@ -53,7 +54,8 @@ public final class ToastCompat extends Toast {
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
      */
-    public static ToastCompat makeText(Context context, CharSequence text, int duration) {
+    public static ToastCompat makeText(@NonNull Context context,
+            @Nullable CharSequence text, int duration) {
         @SuppressLint("ShowToast")
         Toast toast = Toast.makeText(context, text, duration);
         setToastContext(toast.getView(), new ToastContext(context, toast));
@@ -68,7 +70,7 @@ public final class ToastCompat extends Toast {
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
      */
-    public static Toast makeText(Context context, @StringRes int resId, int duration)
+    public static Toast makeText(@NonNull Context context, @StringRes int resId, int duration)
             throws Resources.NotFoundException {
         return makeText(context, context.getResources().getText(resId), duration);
     }
@@ -79,8 +81,8 @@ public final class ToastCompat extends Toast {
      * @param view The view used by the toast
      * @param context The context used by the toast.
      */
-    private static void setToastContext(@NonNull View view, @NonNull Context context) {
-        if (DynamicSdkUtils.is25()) {
+    private static void setToastContext(@Nullable View view, @NonNull Context context) {
+        if (view != null && DynamicSdkUtils.is25()) {
             try {
                 Field field = View.class.getDeclaredField("mContext");
                 field.setAccessible(true);
@@ -158,7 +160,7 @@ public final class ToastCompat extends Toast {
     }
 
     @Override
-    public View getView() {
+    public @Nullable View getView() {
         return mToast.getView();
     }
 

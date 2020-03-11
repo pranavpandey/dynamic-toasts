@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Pranav Pandey
+ * Copyright 2017-2020 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * A ContextWrapper to fix bad token exception.
@@ -56,7 +57,7 @@ public final class ToastContext extends ContextWrapper {
     /**
      * A ContextWrapper to initialize window manager service.
      */
-    final class ApplicationContextWrapper extends ContextWrapper {
+    static final class ApplicationContextWrapper extends ContextWrapper {
 
         /**
          * Constructor to initialize an object of this class.
@@ -69,10 +70,15 @@ public final class ToastContext extends ContextWrapper {
 
         @Override
         public Object getSystemService(@NonNull String name) {
+            @Nullable Object service = null;
             if (Context.WINDOW_SERVICE.equals(name)) {
-                return new WindowManagerWrapper(
-                        (WindowManager) getBaseContext().getSystemService(name));
+                service = getBaseContext().getSystemService(name);
             }
+
+            if (service != null) {
+                return new WindowManagerWrapper((WindowManager) service);
+            }
+
             return super.getSystemService(name);
         }
     }
@@ -80,7 +86,7 @@ public final class ToastContext extends ContextWrapper {
     /**
      * A WindowManager to fix the bad token exception.
      */
-    final class WindowManagerWrapper implements WindowManager {
+    static final class WindowManagerWrapper implements WindowManager {
 
         /**
          * The base window manager used by this wrapper.
