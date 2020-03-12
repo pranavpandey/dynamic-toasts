@@ -77,7 +77,7 @@ class AboutDialogFragment : DynamicDialogFragment() {
         message.text = fromHtml(getString(R.string.about_content))
         message.setLineSpacing(0f, 1.2f)
         message.movementMethod = LinkMovementMethod.getInstance()
-        message.setLinkTextColor(ContextCompat.getColor(context!!, R.color.color_primary))
+        message.setLinkTextColor(ContextCompat.getColor(requireContext(), R.color.color_primary))
 
         alertDialog.setView(view)
         return alertDialog
@@ -93,7 +93,7 @@ class AboutDialogFragment : DynamicDialogFragment() {
         // Also, set a view root to add top and bottom scroll indicators.
         return alertDialogBuilder.setTitle(R.string.about)
                 .setPositiveButton(R.string.more_apps) {
-                    _, _ -> DynamicLinkUtils.viewUrl(context!!, URL_PLAY_STORE)
+                    _, _ -> DynamicLinkUtils.viewUrl(requireContext(), URL_PLAY_STORE)
                 }
                 .setNegativeButton(android.R.string.cancel, null)
                 .setViewRoot(R.id.dialog_about_root)
