@@ -24,11 +24,11 @@ after_success:
   - ./gradlew javadocRelease
 
 deploy:
-  provider: pages:git
+  provider: pages
   token: $GITHUB_TOKEN
   edge: true
   keep_history: true
   local_dir: dynamic-toasts/build/docs/javadoc/release
   on:
-    all_branches: true
+    branch: master
     tags: true
