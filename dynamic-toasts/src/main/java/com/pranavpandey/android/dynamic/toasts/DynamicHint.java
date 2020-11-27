@@ -103,6 +103,12 @@ public class DynamicHint {
     private static final boolean ADT_DEFAULT_DISABLE_ICON = false;
 
     /**
+     * Default value for the {@link #tintIcon}.
+     * <p>{@code true} to tint the toast icon.
+     */
+    private static final boolean ADT_DEFAULT_TINT_ICON = true;
+
+    /**
      * Default icon size for the toast in pixels.
      * <p>{@code -1} to use in-built icon size.
      */
@@ -119,27 +125,29 @@ public class DynamicHint {
     /**
      * Background color for the default toast.
      */
-    private static @ColorInt int defaultBackgroundColor = ADT_DEFAULT_BG_COLOR;
+    private static @Nullable @ColorInt Integer defaultBackgroundColor = ADT_DEFAULT_BG_COLOR;
 
     /**
      * Tint color for the default toast.
      */
-    private static @ColorInt int defaultTintColor = ADT_DEFAULT_TINT_COLOR;
+    private static @Nullable @ColorInt Integer defaultTintColor = ADT_DEFAULT_TINT_COLOR;
 
     /**
      * Background color for the error toast.
      */
-    private static @ColorInt int errorBackgroundColor = ADT_DEFAULT_ERROR_BG_COLOR;
+    private static @Nullable @ColorInt Integer errorBackgroundColor = ADT_DEFAULT_ERROR_BG_COLOR;
 
     /**
      * Background color for the success toast.
      */
-    private static @ColorInt int successBackgroundColor = ADT_DEFAULT_SUCCESS_BG_COLOR;
+    private static @Nullable @ColorInt Integer successBackgroundColor =
+            ADT_DEFAULT_SUCCESS_BG_COLOR;
 
     /**
      * Background color for the warning toast.
      */
-    private static @ColorInt int warningBackgroundColor = ADT_DEFAULT_WARNING_BG_COLOR;
+    private static @Nullable @ColorInt Integer warningBackgroundColor =
+            ADT_DEFAULT_WARNING_BG_COLOR;
 
     /**
      * Custom icon for the error toast.
@@ -165,6 +173,11 @@ public class DynamicHint {
     private static boolean disableIcon = ADT_DEFAULT_DISABLE_ICON;
 
     /**
+     * {@code true} to tint icon for all the toasts.
+     */
+    private static boolean tintIcon = ADT_DEFAULT_TINT_ICON;
+
+    /**
      * Icon size for the toast in pixels.
      */
     private static int iconSize = ADT_DEFAULT_ICON_SIZE;
@@ -187,6 +200,24 @@ public class DynamicHint {
      * <p>{@code null} to use the default background.
      */
     private static Drawable toastBackground = null;
+
+    /**
+     * Generate tint color according to the supplied color, otherwise return the default value.
+     *
+     * @param color The color to be used to generate the tint color.
+     * @param defaultColor The default value for the tint color.
+     *
+     * @return The generated tint color according to the supplied color, otherwise return the
+     *         default value.
+     */
+    private static @Nullable @ColorInt Integer generateTintColor(
+            @Nullable @ColorInt Integer color, @Nullable @ColorInt Integer defaultColor) {
+        if (color != null) {
+            return DynamicColorUtils.getTintColor(color);
+        }
+
+        return defaultColor;
+    }
 
     /**
      * Make a standard toast that just contains a text view.
@@ -233,7 +264,7 @@ public class DynamicHint {
     public static @NonNull Toast makeError(@NonNull Context context, @Nullable CharSequence text) {
         return make(context, text, errorIcon != null ? errorIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
-                DynamicColorUtils.getTintColor(errorBackgroundColor), errorBackgroundColor);
+                generateTintColor(errorBackgroundColor, defaultTintColor), errorBackgroundColor);
     }
 
     /**
@@ -249,9 +280,8 @@ public class DynamicHint {
      */
     public static @NonNull Toast makeError(@NonNull Context context,
             @Nullable CharSequence text, int duration) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_error),
-                DynamicColorUtils.getTintColor(errorBackgroundColor),
+        return make(context, text, ContextCompat.getDrawable(context, R.drawable.adt_ic_error),
+                generateTintColor(errorBackgroundColor, defaultTintColor),
                 errorBackgroundColor, duration);
     }
 
@@ -269,7 +299,7 @@ public class DynamicHint {
             @Nullable CharSequence text) {
         return make(context, text, successIcon != null ? successIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
-                DynamicColorUtils.getTintColor(successBackgroundColor), successBackgroundColor);
+                generateTintColor(successBackgroundColor, defaultTintColor), successBackgroundColor);
     }
 
     /**
@@ -285,9 +315,8 @@ public class DynamicHint {
      */
     public static @NonNull Toast makeSuccess(@NonNull Context context,
             @Nullable CharSequence text, int duration) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_success),
-                DynamicColorUtils.getTintColor(successBackgroundColor),
+        return make(context, text, ContextCompat.getDrawable(context, R.drawable.adt_ic_success),
+                generateTintColor(successBackgroundColor, defaultTintColor),
                 successBackgroundColor, duration);
     }
 
@@ -305,7 +334,7 @@ public class DynamicHint {
             @Nullable CharSequence text) {
         return make(context, text, warningIcon != null ? warningIcon
                         : ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
-                DynamicColorUtils.getTintColor(warningBackgroundColor), warningBackgroundColor);
+                generateTintColor(warningBackgroundColor, defaultTintColor), warningBackgroundColor);
     }
 
     /**
@@ -321,9 +350,8 @@ public class DynamicHint {
      */
     public static @NonNull Toast makeWarning(@NonNull Context context,
             @Nullable CharSequence text, int duration) {
-        return make(context, text, ContextCompat.getDrawable(
-                context, R.drawable.adt_ic_warning),
-                DynamicColorUtils.getTintColor(warningBackgroundColor),
+        return make(context, text, ContextCompat.getDrawable(context, R.drawable.adt_ic_warning),
+                generateTintColor(warningBackgroundColor, defaultTintColor),
                 warningBackgroundColor, duration);
     }
 
@@ -358,8 +386,7 @@ public class DynamicHint {
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
             @Nullable Drawable icon, int duration) {
-        return make(context, text, icon, defaultTintColor,
-                defaultBackgroundColor, duration);
+        return make(context, text, icon, defaultTintColor, defaultBackgroundColor, duration);
     }
 
     /**
@@ -376,7 +403,7 @@ public class DynamicHint {
      *         <p>Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
-            @ColorInt int tintColor, @ColorInt int backgroundColor) {
+            @Nullable @ColorInt Integer tintColor, @Nullable @ColorInt Integer backgroundColor) {
         return make(context, text, null, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
 
@@ -395,8 +422,9 @@ public class DynamicHint {
      * @return The toast with the supplied parameters.
      *         <p>Use {@link Toast#show()} to display the toast.
      */
-    public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
-            @ColorInt int tintColor, @ColorInt int backgroundColor, int duration) {
+    public static @NonNull Toast make(@NonNull Context context,
+            @Nullable CharSequence text, @Nullable @ColorInt Integer tintColor,
+            @Nullable @ColorInt Integer backgroundColor, int duration) {
         return make(context, text, null, tintColor, backgroundColor, duration);
     }
 
@@ -415,7 +443,8 @@ public class DynamicHint {
      *         <p>Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
-            @Nullable Drawable icon, @ColorInt int tintColor, @ColorInt int backgroundColor) {
+            @Nullable Drawable icon, @Nullable @ColorInt Integer tintColor,
+            @Nullable @ColorInt Integer backgroundColor) {
         return make(context, text, icon, tintColor, backgroundColor, Toast.LENGTH_SHORT);
     }
 
@@ -435,13 +464,16 @@ public class DynamicHint {
      *         <p>Use {@link Toast#show()} to display the toast.
      */
     public static @NonNull Toast make(@NonNull Context context, @Nullable CharSequence text,
-            @Nullable Drawable icon, @ColorInt int tintColor, @ColorInt int backgroundColor,
-            int duration) {
+            @Nullable Drawable icon, @Nullable @ColorInt Integer tintColor,
+            @Nullable @ColorInt Integer backgroundColor, int duration) {
         if (context instanceof Activity && ((Activity) context).isFinishing()) {
             context = context.getApplicationContext();
         }
 
-        tintColor = DynamicColorUtils.getContrastColor(tintColor, backgroundColor);
+        @Nullable @ColorInt Integer toastTintColor = tintColor;
+        if (tintColor != null && backgroundColor != null) {
+            toastTintColor = DynamicColorUtils.getContrastColor(toastTintColor, backgroundColor);
+        }
 
         ToastCompat toast = new ToastCompat(context, new Toast(context));
         View toastLayout = LayoutInflater.from(context).inflate(
@@ -449,13 +481,18 @@ public class DynamicHint {
         ImageView toastIcon = toastLayout.findViewById(R.id.adt_hint_icon);
         TextView toastText = toastLayout.findViewById(R.id.adt_hint_text);
 
-        if (icon != null && !disableIcon) {
+        if (!disableIcon && icon != null) {
             if (iconSize != ADT_DEFAULT_ICON_SIZE) {
                 toastIcon.getLayoutParams().width = iconSize;
                 toastIcon.getLayoutParams().height = iconSize;
                 toastIcon.requestLayout();
             }
-            toastIcon.setColorFilter(tintColor);
+
+            if (tintIcon && toastTintColor != null) {
+                toastIcon.setColorFilter(toastTintColor);
+            } else {
+                toastIcon.clearColorFilter();
+            }
             toastIcon.setImageDrawable(icon);
         } else {
             toastIcon.setVisibility(View.GONE);
@@ -467,18 +504,21 @@ public class DynamicHint {
         if (textSize != ADT_DEFAULT_TEXT_SIZE) {
             toastText.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
         }
-        toastText.setTextColor(tintColor);
+
+        if (toastTintColor != null) {
+            toastText.setTextColor(toastTintColor);
+        }
         toastText.setText(text);
 
         if (toastBackground != null) {
-            DynamicDrawableUtils.setBackground(toastLayout,
-                    DynamicDrawableUtils.colorizeDrawable(toastBackground,
-                            backgroundColor, PorterDuff.Mode.MULTIPLY));
+            DynamicDrawableUtils.setBackground(toastLayout, backgroundColor != null
+                    ? DynamicDrawableUtils.colorizeDrawable(toastBackground,
+                    backgroundColor, PorterDuff.Mode.MULTIPLY) : toastBackground);
         } else {
-            DynamicDrawableUtils.setBackground(toastLayout,
-                    DynamicDrawableUtils.colorizeDrawable(
-                            ContextCompat.getDrawable(context, R.drawable.adt_hint_background),
-                            backgroundColor, PorterDuff.Mode.MULTIPLY));
+            DynamicDrawableUtils.setBackground(toastLayout, backgroundColor != null
+                    ? DynamicDrawableUtils.colorizeDrawable(ContextCompat.getDrawable(context,
+                    R.drawable.adt_hint_background), backgroundColor, PorterDuff.Mode.MULTIPLY)
+                    : ContextCompat.getDrawable(context, R.drawable.adt_hint_background));
         }
 
         toast.setDuration(duration);
@@ -500,27 +540,27 @@ public class DynamicHint {
         /**
          * Background color for the default toast.
          */
-        private @ColorInt int defaultBackgroundColor = DynamicHint.defaultBackgroundColor;
+        private @ColorInt Integer defaultBackgroundColor = DynamicHint.defaultBackgroundColor;
 
         /**
          * Tint color for the default toast.
          */
-        private @ColorInt int defaultTintColor = DynamicHint.defaultTintColor;
+        private @ColorInt Integer defaultTintColor = DynamicHint.defaultTintColor;
 
         /**
          * Background color for the error toast.
          */
-        private @ColorInt int errorBackgroundColor = DynamicHint.errorBackgroundColor;
+        private @ColorInt Integer errorBackgroundColor = DynamicHint.errorBackgroundColor;
 
         /**
          * Background color for the success toast.
          */
-        private @ColorInt int successBackgroundColor = DynamicHint.successBackgroundColor;
+        private @ColorInt Integer successBackgroundColor = DynamicHint.successBackgroundColor;
 
         /**
          * Background color for the warning toast.
          */
-        private @ColorInt int warningBackgroundColor = DynamicHint.warningBackgroundColor;
+        private @ColorInt Integer warningBackgroundColor = DynamicHint.warningBackgroundColor;
 
         /**
          * Custom icon for the error toast.
@@ -541,6 +581,11 @@ public class DynamicHint {
          * {@code true} to disable icon for all the toasts.
          */
         private boolean disableIcon = DynamicHint.disableIcon;
+
+        /**
+         * {@code true} to tint icon for all the toasts.
+         */
+        private boolean tintIcon = DynamicHint.tintIcon;
 
         /**
          * Icon size for the toast in pixels.
@@ -574,7 +619,7 @@ public class DynamicHint {
          *
          * @return The singleton instance of this class.
          */
-        public static Config getInstance() {
+        public static @NonNull Config getInstance() {
             if (sInstance == null) {
                 sInstance = new Config();
             }
@@ -589,7 +634,8 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setDefaultBackgroundColor(@ColorInt int defaultBackgroundColor) {
+        public @NonNull Config setDefaultBackgroundColor(
+                @Nullable @ColorInt Integer defaultBackgroundColor) {
             this.defaultBackgroundColor = defaultBackgroundColor;
 
             return this;
@@ -602,7 +648,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setDefaultTintColor(@ColorInt int defaultTintColor) {
+        public @NonNull Config setDefaultTintColor(@Nullable @ColorInt Integer defaultTintColor) {
             this.defaultTintColor = defaultTintColor;
 
             return this;
@@ -615,7 +661,8 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setErrorBackgroundColor(@ColorInt int errorBackgroundColor) {
+        public @NonNull Config setErrorBackgroundColor(
+                @Nullable @ColorInt Integer errorBackgroundColor) {
             this.errorBackgroundColor = errorBackgroundColor;
 
             return this;
@@ -624,11 +671,13 @@ public class DynamicHint {
         /**
          * Set the success background color.
          *
-         * @param successBackgroundColor The success background color to be set.
+         * @param successBackgroundColor The success background color
+         *         to be set.
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setSuccessBackgroundColor(@ColorInt int successBackgroundColor) {
+        public @NonNull Config setSuccessBackgroundColor(
+                @Nullable @ColorInt Integer successBackgroundColor) {
             this.successBackgroundColor = successBackgroundColor;
 
             return this;
@@ -641,7 +690,8 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setWarningBackgroundColor(@ColorInt int warningBackgroundColor) {
+        public @NonNull Config setWarningBackgroundColor(
+                @Nullable @ColorInt Integer warningBackgroundColor) {
             this.warningBackgroundColor = warningBackgroundColor;
 
             return this;
@@ -655,7 +705,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setErrorIcon(@Nullable Drawable errorIcon) {
+        public @NonNull Config setErrorIcon(@Nullable Drawable errorIcon) {
             this.errorIcon = errorIcon;
 
             return this;
@@ -669,7 +719,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setSuccessIcon(@Nullable Drawable successIcon) {
+        public @NonNull Config setSuccessIcon(@Nullable Drawable successIcon) {
             this.successIcon = successIcon;
 
             return this;
@@ -683,7 +733,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setWarningIcon(@Nullable Drawable warningIcon) {
+        public @NonNull Config setWarningIcon(@Nullable Drawable warningIcon) {
             this.warningIcon = warningIcon;
 
             return this;
@@ -696,8 +746,21 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setDisableIcon(boolean disableIcon) {
+        public @NonNull Config setDisableIcon(boolean disableIcon) {
             this.disableIcon = disableIcon;
+
+            return this;
+        }
+
+        /**
+         * Set whether to tint the icon.
+         *
+         * @param tintIcon {@code true} to tint icon for all the toasts.
+         *
+         * @return The {@link Config} object to allow for chaining of calls to set methods.
+         */
+        public @NonNull Config setTintIcon(boolean tintIcon) {
+            this.tintIcon = tintIcon;
 
             return this;
         }
@@ -709,7 +772,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setIconSize(int iconSize) {
+        public @NonNull Config setIconSize(int iconSize) {
             this.iconSize = iconSize;
 
             return this;
@@ -722,7 +785,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setTextSize(int textSize) {
+        public @NonNull Config setTextSize(int textSize) {
             this.textSize = textSize;
 
             return this;
@@ -736,7 +799,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setTextTypeface(@Nullable Typeface textTypeface) {
+        public @NonNull Config setTextTypeface(@Nullable Typeface textTypeface) {
             this.textTypeface = textTypeface;
 
             return this;
@@ -750,7 +813,7 @@ public class DynamicHint {
          *
          * @return The {@link Config} object to allow for chaining of calls to set methods.
          */
-        public Config setToastBackground(@Nullable Drawable toastBackground) {
+        public @NonNull Config setToastBackground(@Nullable Drawable toastBackground) {
             this.toastBackground = toastBackground;
 
             return this;
@@ -769,6 +832,7 @@ public class DynamicHint {
             DynamicHint.successIcon = successIcon;
             DynamicHint.warningIcon = warningIcon;
             DynamicHint.disableIcon = disableIcon;
+            DynamicHint.tintIcon = tintIcon;
             DynamicHint.iconSize = iconSize;
             DynamicHint.textSize = textSize;
             DynamicHint.textTypeface = textTypeface;
@@ -790,6 +854,7 @@ public class DynamicHint {
             DynamicHint.successIcon = null;
             DynamicHint.warningIcon = null;
             DynamicHint.disableIcon = ADT_DEFAULT_DISABLE_ICON;
+            DynamicHint.tintIcon = ADT_DEFAULT_TINT_ICON;
             DynamicHint.iconSize = ADT_DEFAULT_ICON_SIZE;
             DynamicHint.textSize = ADT_DEFAULT_TEXT_SIZE;
             DynamicHint.textTypeface = null;

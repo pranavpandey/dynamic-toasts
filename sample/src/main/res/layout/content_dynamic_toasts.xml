@@ -249,19 +249,19 @@
                 </com.google.android.flexbox.FlexboxLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/toasts_icons_disable"
+                    android:id="@+id/toasts_icon_disable"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_margin"
-                    android:text="@string/disable_icons"
+                    android:text="@string/disable_icon"
                     app:layout_constraintTop_toBottomOf="@id/toasts_icons_content"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <com.google.android.flexbox.FlexboxLayout
-                    android:id="@+id/toasts_icons_disable_content"
+                    android:id="@+id/toasts_icon_disable_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/toasts_icons_disable"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icon_disable"
                     app:layout_constraintStart_toStartOf="parent"
                     app:flexWrap="wrap"
                     app:alignItems="stretch"
@@ -288,12 +288,51 @@
                 </com.google.android.flexbox.FlexboxLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/toasts_icon_disable_tint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_margin"
+                    android:text="@string/disable_icon_tint"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icon_disable_content"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/toasts_icon_disable_tint_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icon_disable_tint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_error_icon_disable_tint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/error" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_success_icon_disable_tint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/success" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/toast_warning_icon_disable_tint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/warning" />
+
+                </com.google.android.flexbox.FlexboxLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/toasts_config"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_margin"
                     android:text="@string/config"
-                    app:layout_constraintTop_toBottomOf="@id/toasts_icons_disable_content"
+                    app:layout_constraintTop_toBottomOf="@id/toasts_icon_disable_tint_content"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <com.google.android.flexbox.FlexboxLayout

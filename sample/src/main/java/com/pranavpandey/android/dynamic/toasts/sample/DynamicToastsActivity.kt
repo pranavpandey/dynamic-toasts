@@ -86,6 +86,9 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
         findViewById<View>(R.id.toast_error_icon_disable).setOnClickListener(this)
         findViewById<View>(R.id.toast_success_icon_disable).setOnClickListener(this)
         findViewById<View>(R.id.toast_warning_icon_disable).setOnClickListener(this)
+        findViewById<View>(R.id.toast_error_icon_disable_tint).setOnClickListener(this)
+        findViewById<View>(R.id.toast_success_icon_disable_tint).setOnClickListener(this)
+        findViewById<View>(R.id.toast_warning_icon_disable_tint).setOnClickListener(this)
         findViewById<View>(R.id.toast_config_text).setOnClickListener(this)
         findViewById<View>(R.id.toast_config_background).setOnClickListener(this)
         findViewById<View>(R.id.toast_config_icon_size).setOnClickListener(this)
@@ -300,6 +303,54 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
 
                 DynamicToast.makeWarning(this, getString(
                         R.string.warning_icon_disable_desc)).show()
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset()
+            }
+
+            // Error toast without icon tint.
+            R.id.toast_error_icon_disable_tint -> {
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setErrorIcon(AppCompatResources.getDrawable(
+                                this, R.mipmap.ic_launcher))
+                        .setTintIcon(false)
+                        .apply()
+
+                DynamicToast.makeError(this,
+                        getString(R.string.error_icon_disable_tint_desc)).show()
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset()
+            }
+
+            // Success toast without icon tint.
+            R.id.toast_success_icon_disable_tint -> {
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setSuccessIcon(AppCompatResources.getDrawable(
+                                this, R.mipmap.ic_launcher))
+                        .setTintIcon(false)
+                        .apply()
+
+                DynamicToast.makeSuccess(this,
+                        getString(R.string.success_icon_disable_tint_desc)).show()
+
+                // Reset customisations.
+                DynamicToast.Config.getInstance().reset()
+            }
+
+            // Warning toast without icon tint.
+            R.id.toast_warning_icon_disable_tint -> {
+                // Customise toast.
+                DynamicToast.Config.getInstance()
+                        .setWarningIcon(AppCompatResources.getDrawable(
+                                this, R.mipmap.ic_launcher))
+                        .setTintIcon(false)
+                        .apply()
+
+                DynamicToast.makeWarning(this, getString(
+                        R.string.warning_icon_disable_tint_desc)).show()
 
                 // Reset customisations.
                 DynamicToast.Config.getInstance().reset()
