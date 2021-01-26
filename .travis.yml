@@ -1,5 +1,5 @@
 language: android
-jdk: oraclejdk8
+jdk: oraclejdk11
 
 before_install:
   - mkdir "$ANDROID_HOME/licenses" || true
@@ -21,7 +21,7 @@ script:
   - ./gradlew build
 
 after_success:
-  - ./gradlew javadocRelease
+  - ./gradlew generateJavadoc
 
 deploy:
   provider: pages
