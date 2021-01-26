@@ -19,12 +19,12 @@ buildscript {
             'compileSdk'      : 29,
             'minSdk'          : 14,
             'targetSdk'       : 29,
-            'buildTools'      : '29.0.3',
-            'constraintlayout': '2.0.0-beta4',
-            'dynamic'         : '3.2.0',
+            'buildTools'      : '30.0.3',
+            'constraintlayout': '2.0.4',
+            'dynamic'         : '3.3.0',
             'dialogs'         : '3.2.0',
-            'flexbox'         : '1.1.0',
-            'kotlin'          : '1.4.10'
+            'flexbox'         : '2.0.1',
+            'kotlin'          : '1.4.21'
     ]
 
     repositories {
