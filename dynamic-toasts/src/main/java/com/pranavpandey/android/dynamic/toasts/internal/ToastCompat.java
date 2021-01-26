@@ -53,6 +53,8 @@ public final class ToastCompat extends Toast {
      * @param text The text to show. Can be formatted text.
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
+     *
+     * @return The standard toast that just contains a text view.
      */
     public static ToastCompat makeText(@NonNull Context context,
             @Nullable CharSequence text, int duration) {
@@ -69,6 +71,8 @@ public final class ToastCompat extends Toast {
      * @param resId The resource id of the string resource to use. Can be formatted text.
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
+     *
+     * @return The standard toast that just contains a text view.
      */
     public static Toast makeText(@NonNull Context context, @StringRes int resId, int duration)
             throws Resources.NotFoundException {
