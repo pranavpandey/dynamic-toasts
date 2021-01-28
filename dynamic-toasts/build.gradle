@@ -47,8 +47,9 @@ task generateJavadoc() {
 project.afterEvaluate {
     android.libraryVariants.all { variant ->
         def task = project.tasks.create("generate${variant.name.capitalize()}Javadoc", Javadoc) {
-            title "${referenceTitle} (${project.android.defaultConfig.versionName})"
+            title "${referenceTitle}"
             description "Generates Javadoc for $variant.name."
+            destinationDir = new File(destinationDir, variant.baseName)
 
             source = variant.sourceSets.collect { it.java.sourceFiles }.inject { m, i -> m + i }
             doFirst {
@@ -66,11 +67,11 @@ project.afterEvaluate {
                 options.addStringOption('Xdoclint:none', '-quiet')
             }
 
-            options.windowTitle = "${referenceTitle} (${project.android.defaultConfig.versionName})"
-            options.memberLevel = JavadocMemberLevel.PROTECTED
+            options.windowTitle = "${referenceTitle}"
+            options.footer = "<h5>${project.android.defaultConfig.versionName}</h5>"
             options.links('http://docs.oracle.com/javase/8/docs/api')
             options.links('https://developer.android.com/reference')
-            options.author = false
+            options.memberLevel = JavadocMemberLevel.PROTECTED
 
             failOnError false
         }
