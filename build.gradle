@@ -16,9 +16,9 @@
 
 buildscript {
     ext.versions = [
-            'compileSdk'      : 29,
+            'compileSdk'      : 30,
             'minSdk'          : 14,
-            'targetSdk'       : 29,
+            'targetSdk'       : 30,
             'buildTools'      : '30.0.3',
             'constraintlayout': '2.0.4',
             'dynamic'         : '3.3.0',
@@ -56,7 +56,7 @@ ext {
             'devices.'
     versionDesc = 'A simple library to display themed toasts with icon and text on Android 4.0 ' +
             '(API 14) and above devices.'
-    referenceTitle = 'Dynamic Toasts Reference'
+    referenceTitle = 'Dynamic Toasts API reference'
 
     siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
     gitUrl = 'https://github.com/pranavpandey/dynamic-toasts'
