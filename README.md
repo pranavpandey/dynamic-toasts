@@ -4,10 +4,9 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?)](https://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/pranavpandey/dynamic-toasts.svg?branch=master)](https://travis-ci.org/pranavpandey/dynamic-toasts)
-[![Download](https://api.bintray.com/packages/pranavpandey/android/dynamic-toasts/images/download.svg)](https://bintray.com/pranavpandey/android/dynamic-toasts/_latestVersion)
+[![Release](https://img.shields.io/maven-central/v/com.pranavpandey.android/dynamic-toasts)](https://search.maven.org/artifact/com.pranavpandey.android/dynamic-toasts)
 
-A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above
-devices.
+A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above.
 
 > Since v0.4.0, it uses [26.x.x support libraries](https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0)
 so, minimum SDK will be Android 4.0 (API 14).

@@ -24,16 +24,17 @@ buildscript {
             'dynamic'         : '3.4.1',
             'dialogs'         : '3.3.1',
             'flexbox'         : '2.0.1',
-            'kotlin'          : '1.4.21'
+            'kotlin'          : '1.5.0'
     ]
 
     repositories {
-        jcenter()
+        mavenCentral()
         google()
+        jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0-alpha05'
+        classpath 'com.android.tools.build:gradle:7.1.0-alpha01'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     }
@@ -41,8 +42,9 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
+        jcenter()
     }
 }
 
@@ -52,10 +54,9 @@ task clean(type: Delete) {
 
 ext {
     projectName = 'dynamic-toasts'
-    projectDesc = 'A simple library to display themed toasts with icon and text on Android ' +
-            'devices.'
+    projectDesc = 'A simple library to display themed toasts with icon and text on Android.'
     versionDesc = 'A simple library to display themed toasts with icon and text on Android 4.0 ' +
-            '(API 14) and above devices.'
+            '(API 14) and above.'
     referenceTitle = 'Dynamic Toasts API reference'
 
     siteUrl = 'https://github.com/pranavpandey/dynamic-toasts'
