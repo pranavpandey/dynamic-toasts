@@ -86,6 +86,7 @@ public final class ToastContext extends ContextWrapper {
     /**
      * A WindowManager to fix the bad token exception.
      */
+    @SuppressWarnings("deprecation")
     static final class WindowManagerWrapper implements WindowManager {
 
         /**

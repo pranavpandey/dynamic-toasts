@@ -31,8 +31,9 @@ import com.pranavpandey.android.dynamic.utils.DynamicSdkUtils;
 import java.lang.reflect.Field;
 
 /**
- * A Toast to fix the bad token exception on API 25 devices.
+ * A Toast to fix the bad token exception on API 25.
  */
+@SuppressWarnings("deprecation")
 public final class ToastCompat extends Toast {
 
     /**
@@ -56,9 +57,9 @@ public final class ToastCompat extends Toast {
      *
      * @return The standard toast that just contains a text view.
      */
+    @SuppressLint("ShowToast")
     public static ToastCompat makeText(@NonNull Context context,
             @Nullable CharSequence text, int duration) {
-        @SuppressLint("ShowToast")
         Toast toast = Toast.makeText(context, text, duration);
         setToastContext(toast.getView(), new ToastContext(context, toast));
         return new ToastCompat(context, toast);
@@ -85,6 +86,7 @@ public final class ToastCompat extends Toast {
      * @param view The view used by the toast
      * @param context The context used by the toast.
      */
+    @SuppressLint("DiscouragedPrivateApi")
     private static void setToastContext(@Nullable View view, @NonNull Context context) {
         if (view != null && DynamicSdkUtils.is25()) {
             try {

@@ -26,7 +26,7 @@
     <string name="about">About</string>
     <string name="about_content"><![CDATA[
         <b>dynamic-toasts</b><br/>
-        A simple library to display themed toasts with icon and text on Android devices.<br/><br/>
+        A simple library to display themed toasts with icon and text on Android.<br/><br/>
         Written and designed by<br/>
         <b>&#169; Pranav Pandey</b><br/><br/>
         <a href=\'https://pranavpandey.com\'>Website</a>&nbsp;&nbsp;

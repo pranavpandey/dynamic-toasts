@@ -881,6 +881,7 @@ public class DynamicHint {
      * @param toast The toast to be displayed.
      * @param offset The toast vertical offset in dips.
      */
+    @SuppressWarnings("deprecation")
     public static void show(@NonNull View anchor, @NonNull Toast toast, int offset) {
         Rect displayFrame = new Rect();
         int[] screenLocation = new int[2];
@@ -897,8 +898,12 @@ public class DynamicHint {
                 metrics.widthPixels, View.MeasureSpec.UNSPECIFIED);
         int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(
                 metrics.heightPixels, View.MeasureSpec.UNSPECIFIED);
-        toast.getView().measure(widthMeasureSpec, heightMeasureSpec);
-        int toastWidth = toast.getView().getMeasuredWidth();
+        int toastWidth = DynamicUnitUtils.convertDpToPixels(ADT_MIN_ANCHOR_HEIGHT);
+
+        if (toast.getView() != null) {
+            toast.getView().measure(widthMeasureSpec, heightMeasureSpec);
+            toastWidth = toast.getView().getMeasuredWidth();
+        }
 
         if (anchorTop < displayFrame.top + yOffset) {
             toast.setGravity(Gravity.START | Gravity.TOP,
