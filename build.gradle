@@ -24,7 +24,7 @@ buildscript {
             'dynamic'         : '3.4.1',
             'dialogs'         : '3.3.1',
             'flexbox'         : '3.0.0',
-            'kotlin'          : '1.5.0'
+            'kotlin'          : '1.5.10'
     ]
 
     repositories {
@@ -34,7 +34,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0-alpha01'
+        classpath 'com.android.tools.build:gradle:7.1.0-alpha02'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
     }
