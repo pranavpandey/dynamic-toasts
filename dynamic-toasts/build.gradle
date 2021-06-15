@@ -36,8 +36,8 @@ dependencies {
     api "com.pranavpandey.android:dynamic-utils:${versions.dynamic}"
 }
 
-if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'bintray.gradle'
+if (project.rootProject.file("${publication}").exists()) {
+    apply from: 'maven.gradle'
 }
 
 task generateJavadoc() {
