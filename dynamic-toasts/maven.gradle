@@ -23,8 +23,8 @@ version = mavenVersion
 // Android libraries
 if (project.hasProperty("android")) {
     task sourcesJar(type: Jar) {
-        from android.sourceSets.main.java.srcDirs
         archiveClassifier.set("sources")
+        from android.sourceSets.main.java.srcDirs
     }
 
     task javadoc(type: Javadoc) {

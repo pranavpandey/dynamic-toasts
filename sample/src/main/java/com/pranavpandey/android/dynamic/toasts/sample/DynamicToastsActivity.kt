@@ -65,7 +65,7 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
 
         (findViewById<View>(R.id.gradle) as TextView).text = String.format(
                 getString(R.string.format_version),
-                DynamicPackageUtils.getAppVersion(this))
+                DynamicPackageUtils.getVersionName(this))
 
         fab.setOnClickListener(this)
         findViewById<View>(R.id.toast_default).setOnClickListener(this)

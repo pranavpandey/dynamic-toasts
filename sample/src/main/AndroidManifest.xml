@@ -17,7 +17,15 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pranavpandey.android.dynamic.toasts.sample" >
+    package="com.pranavpandey.android.dynamic.toasts.sample">
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -31,7 +39,8 @@
         <activity
             android:name=".DynamicToastsActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
