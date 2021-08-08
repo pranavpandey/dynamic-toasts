@@ -22,7 +22,7 @@ buildscript {
             'buildTools'      : '31.0.0',
             'constraintlayout': '2.1.0',
             'dynamic'         : '4.2.0',
-            'dialogs'         : '4.0.0',
+            'dialogs'         : '4.1.0',
             'flexbox'         : '3.0.0',
             'kotlin'          : '1.5.21'
     ]
@@ -69,10 +69,10 @@ ext {
     mavenGroup = 'com.pranavpandey.android'
     mavenDir = 'com/pranavpandey/android'
     mavenArtifactId = 'dynamic-toasts'
-    mavenInceptionYear = 2017
-    mavenVersion = '4.0.0'
-    mavenVersionCode = 27
-    sampleVersionCode = 28
+    mavenInceptionYear = '2017'
+    mavenVersion = '4.1.0'
+    mavenVersionCode = 28
+    sampleVersionCode = 29
 
     developerId = 'pranavpandey'
     developerName = 'Pranav Pandey'

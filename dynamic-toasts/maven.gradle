@@ -83,7 +83,7 @@ publishing {
 
                 // SCM
                 def scm = asNode().appendNode('scm')
-                scm.appendNode('connection', "${gitUrl}.git")
+                scm.appendNode('connection', "scm:git:${gitUrl}.git")
                 scm.appendNode('developerConnection', gitUrl)
                 scm.appendNode('url', siteUrl)
 
