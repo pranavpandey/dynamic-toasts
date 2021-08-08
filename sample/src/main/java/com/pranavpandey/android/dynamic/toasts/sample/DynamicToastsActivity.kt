@@ -33,10 +33,10 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pranavpandey.android.dynamic.toasts.DynamicHint
 import com.pranavpandey.android.dynamic.toasts.DynamicToast
-import com.pranavpandey.android.dynamic.utils.DynamicColorUtils
-import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils
-import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils
-import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils
+import com.pranavpandey.android.dynamic.util.DynamicColorUtils
+import com.pranavpandey.android.dynamic.util.DynamicLinkUtils
+import com.pranavpandey.android.dynamic.util.DynamicPackageUtils
+import com.pranavpandey.android.dynamic.util.DynamicUnitUtils
 
 /**
  * Main activity to show the implementation of [DynamicToast].

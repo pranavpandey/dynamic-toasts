@@ -27,7 +27,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.pranavpandey.android.dynamic.dialogs.DynamicDialog
 import com.pranavpandey.android.dynamic.dialogs.fragment.DynamicDialogFragment
-import com.pranavpandey.android.dynamic.utils.DynamicLinkUtils
+import com.pranavpandey.android.dynamic.util.DynamicLinkUtils
 
 /**
  * About dialog to show library info.
