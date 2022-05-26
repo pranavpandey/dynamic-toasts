@@ -16,15 +16,15 @@
 
 buildscript {
     ext.versions = [
-            'compileSdk'      : 31,
+            'compileSdk'      : 32,
             'minSdk'          : 14,
-            'targetSdk'       : 31,
-            'buildTools'      : '31.0.0',
-            'constraintlayout': '2.1.0',
-            'dynamic'         : '4.2.0',
-            'dialogs'         : '4.1.0',
+            'targetSdk'       : 32,
+            'buildTools'      : '32.0.0',
+            'constraintlayout': '2.1.4',
+            'dynamic'         : '4.4.2',
+            'dialogs'         : '4.2.1',
             'flexbox'         : '3.0.0',
-            'kotlin'          : '1.5.21'
+            'kotlin'          : '1.6.20'
     ]
 
     repositories {
