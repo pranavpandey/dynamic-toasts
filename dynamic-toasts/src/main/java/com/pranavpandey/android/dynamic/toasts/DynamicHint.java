@@ -396,7 +396,8 @@ public class DynamicHint {
      * @param context The context to use.
      * @param text The text to show. Can be formatted text.
      * @param tintColor The toast tint color based on the toast background.
-     *                  <p>It will automatically check for the contrast to provide best visibility.
+     *                  <p>It will automatically check for the contrast to provide the
+     *                  best visibility.
      * @param backgroundColor The toast background color.
      *
      * @return The toast with the supplied parameters.
@@ -414,7 +415,8 @@ public class DynamicHint {
      * @param context The context to use.
      * @param text The text to show. Can be formatted text.
      * @param tintColor The toast tint color based on the toast background.
-     *                  <p>It will automatically check for the contrast to provide best visibility.
+     *                  <p>It will automatically check for the contrast to provide the
+     *                  best visibility.
      * @param backgroundColor The toast background color.
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
@@ -436,7 +438,8 @@ public class DynamicHint {
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
      * @param tintColor The toast tint color based on the toast background.
-     *                  <p>It will automatically check for the contrast to provide best visibility.
+     *                  <p>It will automatically check for the contrast to provide the
+     *                  best visibility.
      * @param backgroundColor The toast background color.
      *
      * @return The toast with the supplied parameters.
@@ -455,7 +458,8 @@ public class DynamicHint {
      * @param text The text to show. Can be formatted text.
      * @param icon The toast icon to show.
      * @param tintColor The toast tint color based on the toast background.
-     *                  <p>It will automatically check for the contrast to provide best visibility.
+     *                  <p>It will automatically check for the contrast to provide the
+     *                  best visibility.
      * @param backgroundColor The toast background color.
      * @param duration The duration for the toast, either {@link Toast#LENGTH_SHORT}
      *                 or {@link Toast#LENGTH_LONG}.
