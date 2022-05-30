@@ -25,7 +25,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.Toolbar
@@ -33,6 +32,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.pranavpandey.android.dynamic.toasts.DynamicHint
 import com.pranavpandey.android.dynamic.toasts.DynamicToast
+import com.pranavpandey.android.dynamic.toasts.sample.dialog.AboutDialogFragment
 import com.pranavpandey.android.dynamic.util.DynamicColorUtils
 import com.pranavpandey.android.dynamic.util.DynamicLinkUtils
 import com.pranavpandey.android.dynamic.util.DynamicPackageUtils
@@ -101,7 +101,7 @@ class DynamicToastsActivity : AppCompatActivity(), View.OnClickListener {
      *
      * https://issuetracker.google.com/issues/140602653
      */
-    override fun applyOverrideConfiguration(@Nullable overrideConfiguration: Configuration?) {
+    override fun applyOverrideConfiguration(overrideConfiguration: Configuration?) {
         if (overrideConfiguration != null) {
             val uiMode = overrideConfiguration.uiMode
             overrideConfiguration.setTo(baseContext.resources.configuration)

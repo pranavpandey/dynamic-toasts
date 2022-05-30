@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.pranavpandey.android.dynamic.toasts.sample
+package com.pranavpandey.android.dynamic.toasts.sample.dialog
 
 import android.os.Build
 import android.os.Bundle
@@ -22,11 +22,13 @@ import android.text.Html
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.pranavpandey.android.dynamic.dialogs.DynamicDialog
 import com.pranavpandey.android.dynamic.dialogs.fragment.DynamicDialogFragment
+import com.pranavpandey.android.dynamic.toasts.sample.R
 import com.pranavpandey.android.dynamic.util.DynamicLinkUtils
 
 /**
@@ -65,37 +67,45 @@ class AboutDialogFragment : DynamicDialogFragment() {
     }
 
     /**
-     * Customise [DynamicDialog] by overriding this method.
-     */
-    override fun onCustomiseDialog(alertDialog: DynamicDialog,
-                                   savedInstanceState: Bundle?): DynamicDialog {
-        // Customise dialog to add a custom view.
-        val view = LayoutInflater.from(context).inflate(R.layout.dialog_about,
-                LinearLayout(context), false)
-        val message = view.findViewById<TextView>(R.id.dialog_about_text)
-
-        message.text = fromHtml(getString(R.string.about_content))
-        message.setLineSpacing(0f, 1.2f)
-        message.movementMethod = LinkMovementMethod.getInstance()
-        message.setLinkTextColor(ContextCompat.getColor(requireContext(), R.color.color_primary))
-
-        alertDialog.setView(view)
-        return alertDialog
-    }
-
-    /**
      * Customise [DynamicDialog.Builder] by overriding this method.
      */
     override fun onCustomiseBuilder(
-            alertDialogBuilder: DynamicDialog.Builder,
-            savedInstanceState: Bundle?): DynamicDialog.Builder {
+        alertDialogBuilder: DynamicDialog.Builder,
+        savedInstanceState: Bundle?
+    ): DynamicDialog.Builder {
         // Customise dialog builder to add neutral, positive and negative buttons.
         // Also, set a view root to add top and bottom scroll indicators.
         return alertDialogBuilder.setTitle(R.string.about)
-                .setPositiveButton(R.string.more_apps) {
-                    _, _ -> DynamicLinkUtils.viewUrl(requireContext(), URL_PLAY_STORE)
-                }
-                .setNegativeButton(android.R.string.cancel, null)
-                .setViewRoot(R.id.dialog_about_root)
+            .setPositiveButton(R.string.more_apps) { _, _ ->
+                DynamicLinkUtils.viewUrl(requireContext(), URL_PLAY_STORE)
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            // Set custom view for the dialog.
+            .setView(
+                LayoutInflater.from(context).inflate(
+                    R.layout.dialog_about,
+                    LinearLayout(context), false
+                )
+            )
+            // Set view root to automatically add scroll dividers.
+            .setViewRoot(R.id.dialog_about_root)
+    }
+
+    /**
+     * Customise [DynamicDialog] by overriding this method.
+     */
+    override fun onCustomiseDialog(
+        alertDialog: DynamicDialog,
+        view: View?, savedInstanceState: Bundle?
+    ) {
+        super.onCustomiseDialog(alertDialog, view, savedInstanceState)
+
+        // Customise the custom view.
+        val message = view?.findViewById<TextView>(R.id.dialog_about_text)
+
+        message?.text = fromHtml(getString(R.string.about_content))
+        message?.setLineSpacing(0f, 1.2f)
+        message?.movementMethod = LinkMovementMethod.getInstance()
+        message?.setLinkTextColor(ContextCompat.getColor(requireContext(), R.color.color_primary))
     }
 }

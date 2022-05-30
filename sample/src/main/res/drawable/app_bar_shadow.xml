@@ -23,6 +23,6 @@
         android:startColor="#05000000"
         android:centerColor="#20000000"
         android:endColor="#35000000"
-        android:angle="90"/>
+        android:angle="90" />
 
 </shape>
