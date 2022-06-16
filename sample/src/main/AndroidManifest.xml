@@ -16,8 +16,7 @@
 -->
 
 <manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.pranavpandey.android.dynamic.toasts.sample">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <queries>
         <intent>

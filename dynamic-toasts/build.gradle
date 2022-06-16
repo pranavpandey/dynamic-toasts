@@ -19,6 +19,7 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
+    namespace 'com.pranavpandey.android.dynamic.toasts'
 
     defaultConfig {
         minSdkVersion versions.minSdk
