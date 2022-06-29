@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts.png" width="160" height="160" align="right" hspace="20">
+<img src="./graphics/icon.png" width="160" height="160" align="right" hspace="20">
 
 # Dynamic Toasts
 
@@ -15,7 +15,7 @@ so, minimum SDK will be Android 4.0 (API 14).
 <br/>Since v4.1.0, it is dependent on Java 8 due to the dependency on
 [Dynamic Utils](https://github.com/pranavpandey/dynamic-utils).
 
-<img src="https://raw.githubusercontent.com/pranavpandey/dynamic-toasts/master/graphics/dynamic-toasts-preview.png">
+<img src="./graphics/preview.png">
 
 ---
 
