@@ -8,12 +8,12 @@
 
 A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above.
 
-> Since v0.4.0, it uses [26.x.x support libraries](https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0)
-so, minimum SDK will be Android 4.0 (API 14).
-<br/>Since v2.0.0, it uses [AndroidX](https://developer.android.com/jetpack/androidx/) so, first
-[migrate](https://developer.android.com/jetpack/androidx/migrate) your project to AndroidX.
+> Since v0.4.0, it uses [26.x.x support libraries][android-support] so, minimum SDK will be 
+Android 4.0 (API 14).
+<br/>Since v2.0.0, it uses [AndroidX][androidx] so, first [migrate][androidx-migrate] your 
+project to AndroidX.
 <br/>Since v4.1.0, it is dependent on Java 8 due to the dependency on
-[Dynamic Utils](https://github.com/pranavpandey/dynamic-utils).
+[Dynamic Utils][dynamic-utils].
 
 <img src="./graphics/preview.png">
 
@@ -21,26 +21,26 @@ so, minimum SDK will be Android 4.0 (API 14).
 
 ## Contents
 
-- [Installation](https://github.com/pranavpandey/dynamic-toasts#installation)
-- [Usage](https://github.com/pranavpandey/dynamic-toasts#usage)
-    - [Configuration](https://github.com/pranavpandey/dynamic-toasts#cofiguaration)
-    - [Default toast](https://github.com/pranavpandey/dynamic-toasts#default-toast)
-    - [Default toast with duration](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-duration)
-    - [Default toast with icon](https://github.com/pranavpandey/dynamic-toasts#default-toast-with-icon)
-    - [Default toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts##default-toast-with-icon-and-duration)
-    - [Error toast](https://github.com/pranavpandey/dynamic-toasts#error-toast)
-    - [Error toast with duration](https://github.com/pranavpandey/dynamic-toasts#error-toast-with-duration)
-    - [Success toast](https://github.com/pranavpandey/dynamic-toasts#success-toast)
-    - [Success toast with duration](https://github.com/pranavpandey/dynamic-toasts#success-toast-with-duration)
-    - [Warning toast](https://github.com/pranavpandey/dynamic-toasts#warning-toast)
-    - [Warning toast with duration](https://github.com/pranavpandey/dynamic-toasts#warning-toast-with-duration)
-    - [Custom toast](https://github.com/pranavpandey/dynamic-toasts#custom-toast)
-    - [Custom toast with duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-duration)
-    - [Custom toast with icon](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon)
-    - [Custom toast with icon and duration](https://github.com/pranavpandey/dynamic-toasts#custom-toast-with-icon-and-duration)
-    - [Cheat sheets](https://github.com/pranavpandey/dynamic-toasts#cheat-sheets)
-    - [Dependency](https://github.com/pranavpandey/dynamic-toasts#dependency)
-- [License](https://github.com/pranavpandey/dynamic-toasts#license)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Configuration](#configuration)
+    - [Default toast](#default-toast)
+    - [Default toast with duration](#default-toast-with-duration)
+    - [Default toast with icon](#default-toast-with-icon)
+    - [Default toast with icon and duration](#default-toast-with-icon-and-duration)
+    - [Error toast](#error-toast)
+    - [Error toast with duration](#error-toast-with-duration)
+    - [Success toast](#success-toast)
+    - [Success toast with duration](#success-toast-with-duration)
+    - [Warning toast](#warning-toast)
+    - [Warning toast with duration](#warning-toast-with-duration)
+    - [Custom toast](#custom-toast)
+    - [Custom toast with duration](#custom-toast-with-duration)
+    - [Custom toast with icon](#custom-toast-with-icon)
+    - [Custom toast with icon and duration](#custom-toast-with-icon-and-duration)
+    - [Cheat sheets](#cheat-sheets)
+    - [Dependency](#dependency)
+- [License](#license)
 
 ---
 
@@ -67,7 +67,7 @@ object which can be customised further.
 
 Please call `show()` method to display the toast.
 
-> For complete reference, please read the [documentation](https://pranavpandey.github.io/dynamic-toasts).
+> For complete reference, please read the [documentation][documentation].
 
 ### Configuration
 
@@ -238,8 +238,8 @@ above, just replace `DynamicToast` with `DynamicHint` to create a cheat sheet.
 
 ### Dependency
 
-It depends on the [dynamic-utils](https://github.com/pranavpandey/dynamic-utils) to perform
-various internal operations. So, its functions can also be used to perform other useful operations.
+It depends on the [dynamic-utils][dynamic-utils] to perform various internal operations. 
+So, its functions can also be used to perform other useful operations.
 
 ---
 
@@ -268,3 +268,11 @@ Pranav Pandey
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+
+[android-support]: https://developer.android.com/topic/libraries/support-library/revisions.html#26-0-0
+[androidx]: https://developer.android.com/jetpack/androidx
+[androidx core]: https://developer.android.com/jetpack/androidx/releases/core
+[androidx-migrate]: https://developer.android.com/jetpack/androidx/migrate
+[documentation]: https://pranavpandey.github.io/dynamic-toasts
+[dynamic-utils]: https://github.com/pranavpandey/dynamic-utils
