@@ -67,7 +67,7 @@ object which can be customised further.
 
 Please call `show()` method to display the toast.
 
-> For complete reference, please read the [documentation][documentation].
+> For a complete reference, please read the [documentation][documentation].
 
 ### Configuration
 
