@@ -21,10 +21,10 @@ buildscript {
             'targetSdk'       : 33,
             'buildTools'      : '33.0.0',
             'constraintlayout': '2.1.4',
-            'dynamic'         : '4.4.3',
-            'dialogs'         : '4.3.0',
+            'dynamic'         : '4.4.7',
+            'dialogs'         : '4.3.1',
             'flexbox'         : '3.0.0',
-            'kotlin'          : '1.6.21'
+            'kotlin'          : '1.7.20'
     ]
 
     repositories {
