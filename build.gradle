@@ -19,7 +19,7 @@ buildscript {
             'compileSdk'      : 33,
             'minSdk'          : 14,
             'targetSdk'       : 33,
-            'buildTools'      : '33.0.0',
+            'buildTools'      : '33.0.1',
             'constraintlayout': '2.1.4',
             'dynamic'         : '4.4.7',
             'dialogs'         : '4.3.1',
