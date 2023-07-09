@@ -28,8 +28,11 @@ if (project.hasProperty("android")) {
     }
 
     task javadoc(type: Javadoc) {
+        dependsOn("generateReleaseRFile")
+
         source = android.sourceSets.main.java.srcDirs
         classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        doNotTrackState("Javadoc needs to be generated every time.")
 
         failOnError = false
     }
