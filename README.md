@@ -14,6 +14,7 @@ Android 4.0 (API 14).
 project to AndroidX.
 <br/>Since v4.1.0, it is dependent on Java 8 due to the dependency on
 [Dynamic Utils][dynamic-utils].
+<br/>Since v4.2.0, it is targeting Java 17 to provide maximum compatibility.
 
 <img src="./graphics/preview.png">
 
