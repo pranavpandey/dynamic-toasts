@@ -46,18 +46,21 @@ if (project.rootProject.file("${publication}").exists()) {
     apply from: 'maven.gradle'
 }
 
-task generateJavadoc() {
+tasks.register('generateJavadoc') {
     description "Generates Javadoc."
 }
 
 project.afterEvaluate {
-    android.libraryVariants.all { variant ->
-        def task = project.tasks.create("generate${variant.name.capitalize()}Javadoc", Javadoc) {
+    android.libraryVariants.configureEach { variant ->
+        def task = project.tasks.create(
+                "generate${variant.name.capitalize()}Javadoc", Javadoc) {
             title "${referenceTitle}<h4>${versionDesc}</h4><h5>${mavenVersion}</h5>"
             description "Generates Javadoc for $variant.name."
             destinationDir = new File(destinationDir, variant.baseName)
 
-            source = variant.sourceSets.collect { it.java.sourceFiles }.inject { m, i -> m + i }
+            source = variant.sourceSets.collect {
+                it.java.sourceFiles }.inject { m, i -> m + i
+            }
             doFirst {
                 classpath = project.files(variant.javaCompileProvider.get().classpath.files,
                         project.android.getBootClasspath())
@@ -67,16 +70,16 @@ project.afterEvaluate {
                 options.addStringOption('Xdoclint:none', '-quiet')
             }
 
+            options.memberLevel = JavadocMemberLevel.PROTECTED
             exclude "**/R", "**/R.**", "**/R\$**", "**/BuildConfig*"
 
-            if (JavaVersion.current().isJava8Compatible()) {
-                options.addStringOption('Xdoclint:none', '-quiet')
-            }
-
             options.windowTitle = "${referenceTitle}"
-            options.links('http://docs.oracle.com/javase/8/docs/api')
+            options.links('http://docs.oracle.com/javase/8/docs/api',
+                    'http://docs.oracle.com/javase/17/docs/api')
             options.links('https://developer.android.com/reference')
-            options.memberLevel = JavadocMemberLevel.PROTECTED
+            options.linksOffline('https://developer.android.com/reference',
+                    'https://developer.android.com/reference/androidx')
+            options.links('https://pranavpandey.org/dynamic-utils')
 
             failOnError false
         }
