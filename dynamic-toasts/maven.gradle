@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2023 Pranav Pandey
+ * Copyright 2017-2024 Pranav Pandey
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,28 +22,46 @@ version = mavenVersion
 
 // Android libraries
 if (project.hasProperty("android")) {
-    task sourcesJar(type: Jar) {
+    tasks.register('sourcesJar', Jar) {
         archiveClassifier.set("sources")
         from android.sourceSets.main.java.srcDirs
     }
 
-    task javadoc(type: Javadoc) {
-        dependsOn("generateReleaseRFile")
+    tasks.register('javadoc', Javadoc) {
+        dependsOn "generateReleaseRFile"
+        title "${referenceTitle}<h4>${versionDesc}</h4><h5>${mavenVersion}</h5>"
+        failOnError = false
 
-        source = android.sourceSets.main.java.srcDirs
-        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        source = android.sourceSets.main.java.sourceFiles
         doNotTrackState("Javadoc needs to be generated every time.")
 
-        failOnError = false
+        if (JavaVersion.current().isJava8Compatible()) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+
+        options.memberLevel = JavadocMemberLevel.PROTECTED
+        exclude "**/R", "**/R.**", "**/R\$**", "**/BuildConfig*"
+
+        options.windowTitle = "${referenceTitle}"
+        options.links('http://docs.oracle.com/javase/8/docs/api',
+                'http://docs.oracle.com/javase/17/docs/api')
+        options.links('https://developer.android.com/reference')
+        options.linksOffline('https://developer.android.com/reference',
+                'https://developer.android.com/reference/androidx')
+        options.links('https://pranavpandey.org/dynamic-utils')
     }
 } else { // Java libraries
-    task sourcesJar(type: Jar, dependsOn: classes) {
+    tasks.register('sourcesJar', Jar) {
+        dependsOn classes
+
         archiveClassifier.set("sources")
         from sourceSets.main.allSource
     }
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+tasks.register('javadocJar', Jar) {
+    dependsOn javadoc
+
     archiveClassifier.set("javadoc")
     from javadoc.destinationDir
 }
@@ -96,7 +114,7 @@ publishing {
                     dependenciesNode = asNode().appendNode('dependencies')
                 }
 
-                // Add all that are 'compile'
+                // Add all that are 'compile' dependencies.
                 configurations.api.allDependencies.each {
                     def dependencyNode = dependenciesNode.appendNode('dependency')
                     dependencyNode.appendNode('groupId', it.group)
@@ -117,13 +135,16 @@ signing {
 }
 
 afterEvaluate { project ->
-    // Fix javadoc generation
+    // Fix javadoc generation.
     javadoc.classpath += files(android.libraryVariants.collect { variant ->
         variant.javaCompileProvider.get().classpath.files
     })
 
     def pomTask = "generatePomFileForLibraryPublication"
+    def dependencies = [javadocJar, sourcesJar, assembleRelease, pomTask]
 
-    // Convenience task to prepare everything we need for releases
-    task prepareArtifacts(dependsOn: [javadocJar, sourcesJar, assembleRelease, pomTask]) { }
+    // Convenience task to prepare everything we need for releases.
+    tasks.register('prepareArtifacts') {
+        dependsOn dependencies
+    }
 }
