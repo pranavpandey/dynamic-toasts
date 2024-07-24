@@ -15,6 +15,7 @@ project to AndroidX.
 <br/>Since v4.1.0, it is dependent on Java 8 due to the dependency on
 [Dynamic Utils][dynamic-utils].
 <br/>Since v4.2.0, it is targeting Java 17 to provide maximum compatibility.
+<br/>Since v4.3.0, the minimum SDK is Android 4.4 (API 19) to comply with the latest policies.
 
 <img src="./graphics/preview.png">
 
