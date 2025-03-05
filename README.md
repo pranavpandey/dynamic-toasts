@@ -1,4 +1,4 @@
-<img src="./graphics/icon.png" width="160" height="160" align="right" hspace="20">
+<img src="./graphics/icon.png" height="160">
 
 # Dynamic Toasts
 
@@ -6,8 +6,9 @@
 [![Build Status](https://travis-ci.org/pranavpandey/dynamic-toasts.svg?branch=master)](https://travis-ci.org/pranavpandey/dynamic-toasts)
 [![Release](https://img.shields.io/maven-central/v/com.pranavpandey.android/dynamic-toasts)](https://search.maven.org/artifact/com.pranavpandey.android/dynamic-toasts)
 
-A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above.
+**A simple library to display themed toasts with icon and text on Android 2.3 (API 9) and above.**
 
+> [!IMPORTANT]
 > Since v0.4.0, it uses [26.x.x support libraries][android-support] so, minimum SDK will be 
 Android 4.0 (API 14).
 <br/>Since v2.0.0, it uses [AndroidX][androidx] so, first [migrate][androidx-migrate] your 
